@@ -235,10 +235,10 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(883, 524)
-        Me.Controls.Add(Me.TabSitio)
+        Me.Controls.Add(Me.TabControl)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        Me.TabSitio.ResumeLayout(False)
+        Me.TabControl.ResumeLayout(False)
         Me.TabPaises.ResumeLayout(False)
         Me.TabPaises.PerformLayout()
         Me.ResumeLayout(False)
