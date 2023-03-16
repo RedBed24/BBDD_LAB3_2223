@@ -1,13 +1,21 @@
 ﻿Public Class Form1
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPaises.Click
 
     End Sub
 
-    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabArtista.Click
 
     End Sub
 
-    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles Albumes.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
