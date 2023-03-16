@@ -29,7 +29,15 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.cmbBoxArtistas = New System.Windows.Forms.ComboBox()
+        Me.lblArtistas = New System.Windows.Forms.Label()
+        Me.btnObtenerArtistas = New System.Windows.Forms.Button()
+        Me.txtBoxNombreArtista = New System.Windows.Forms.TextBox()
+        Me.lblNombreArtista = New System.Windows.Forms.Label()
+        Me.txtBoxPaisArtista = New System.Windows.Forms.TextBox()
+        Me.lblPaisArtista = New System.Windows.Forms.Label()
         Me.TabControl.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl
@@ -48,6 +56,13 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lblPaisArtista)
+        Me.TabPage2.Controls.Add(Me.txtBoxPaisArtista)
+        Me.TabPage2.Controls.Add(Me.lblNombreArtista)
+        Me.TabPage2.Controls.Add(Me.txtBoxNombreArtista)
+        Me.TabPage2.Controls.Add(Me.btnObtenerArtistas)
+        Me.TabPage2.Controls.Add(Me.lblArtistas)
+        Me.TabPage2.Controls.Add(Me.cmbBoxArtistas)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -106,6 +121,64 @@ Partial Class Form1
         Me.TabPage6.Text = "TabPage6"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
+        'cmbBoxArtistas
+        '
+        Me.cmbBoxArtistas.FormattingEnabled = True
+        Me.cmbBoxArtistas.Location = New System.Drawing.Point(22, 47)
+        Me.cmbBoxArtistas.Name = "cmbBoxArtistas"
+        Me.cmbBoxArtistas.Size = New System.Drawing.Size(256, 24)
+        Me.cmbBoxArtistas.TabIndex = 0
+        '
+        'lblArtistas
+        '
+        Me.lblArtistas.AutoSize = True
+        Me.lblArtistas.Location = New System.Drawing.Point(40, 16)
+        Me.lblArtistas.Name = "lblArtistas"
+        Me.lblArtistas.Size = New System.Drawing.Size(54, 16)
+        Me.lblArtistas.TabIndex = 1
+        Me.lblArtistas.Text = "Artistas:"
+        '
+        'btnObtenerArtistas
+        '
+        Me.btnObtenerArtistas.Location = New System.Drawing.Point(112, 10)
+        Me.btnObtenerArtistas.Name = "btnObtenerArtistas"
+        Me.btnObtenerArtistas.Size = New System.Drawing.Size(154, 28)
+        Me.btnObtenerArtistas.TabIndex = 2
+        Me.btnObtenerArtistas.Text = "Ver todos los Artistas"
+        Me.btnObtenerArtistas.UseVisualStyleBackColor = True
+        '
+        'txtBoxNombreArtista
+        '
+        Me.txtBoxNombreArtista.Location = New System.Drawing.Point(317, 47)
+        Me.txtBoxNombreArtista.Name = "txtBoxNombreArtista"
+        Me.txtBoxNombreArtista.Size = New System.Drawing.Size(256, 22)
+        Me.txtBoxNombreArtista.TabIndex = 3
+        '
+        'lblNombreArtista
+        '
+        Me.lblNombreArtista.AutoSize = True
+        Me.lblNombreArtista.Location = New System.Drawing.Point(328, 22)
+        Me.lblNombreArtista.Name = "lblNombreArtista"
+        Me.lblNombreArtista.Size = New System.Drawing.Size(120, 16)
+        Me.lblNombreArtista.TabIndex = 4
+        Me.lblNombreArtista.Text = "Nombre del artista:"
+        '
+        'txtBoxPaisArtista
+        '
+        Me.txtBoxPaisArtista.Location = New System.Drawing.Point(317, 118)
+        Me.txtBoxPaisArtista.Name = "txtBoxPaisArtista"
+        Me.txtBoxPaisArtista.Size = New System.Drawing.Size(256, 22)
+        Me.txtBoxPaisArtista.TabIndex = 5
+        '
+        'lblPaisArtista
+        '
+        Me.lblPaisArtista.AutoSize = True
+        Me.lblPaisArtista.Location = New System.Drawing.Point(328, 88)
+        Me.lblPaisArtista.Name = "lblPaisArtista"
+        Me.lblPaisArtista.Size = New System.Drawing.Size(95, 16)
+        Me.lblPaisArtista.TabIndex = 6
+        Me.lblPaisArtista.Text = "País del artista"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -115,6 +188,8 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TabControl.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -126,4 +201,11 @@ Partial Class Form1
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents lblArtistas As Label
+    Friend WithEvents cmbBoxArtistas As ComboBox
+    Friend WithEvents lblNombreArtista As Label
+    Friend WithEvents txtBoxNombreArtista As TextBox
+    Friend WithEvents btnObtenerArtistas As Button
+    Friend WithEvents lblPaisArtista As Label
+    Friend WithEvents txtBoxPaisArtista As TextBox
 End Class
