@@ -23,12 +23,12 @@ Partial Class FormularioPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TabControl = New System.Windows.Forms.TabControl()
-        Me.TabArtista = New System.Windows.Forms.TabPage()
+        Me.Artista_TabArtista = New System.Windows.Forms.TabPage()
         Me.lblPaisArtista = New System.Windows.Forms.Label()
         Me.txtBoxPaisArtista = New System.Windows.Forms.TextBox()
-        Me.lblNombreArtista = New System.Windows.Forms.Label()
+        Me.Artista_lblNombreArtista = New System.Windows.Forms.Label()
         Me.txtBoxNombreArtista = New System.Windows.Forms.TextBox()
-        Me.btnObtenerArtistas = New System.Windows.Forms.Button()
+        Me.Artista_buttomVerTodosArtistas = New System.Windows.Forms.Button()
         Me.lblArtistas = New System.Windows.Forms.Label()
         Me.cmbBoxArtistas = New System.Windows.Forms.ComboBox()
         Me.TabPaises = New System.Windows.Forms.TabPage()
@@ -41,14 +41,19 @@ Partial Class FormularioPrincipal
         Me.TabConciertos = New System.Windows.Forms.TabPage()
         Me.TabCanciones = New System.Windows.Forms.TabPage()
         Me.TabSitio = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ListBoxConciertos = New System.Windows.Forms.ListBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabControl.SuspendLayout()
-        Me.TabArtista.SuspendLayout()
+        Me.Artista_TabArtista.SuspendLayout()
         Me.TabPaises.SuspendLayout()
+        Me.TabConciertos.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl
         '
-        Me.TabControl.Controls.Add(Me.TabArtista)
+        Me.TabControl.Controls.Add(Me.Artista_TabArtista)
         Me.TabControl.Controls.Add(Me.TabPaises)
         Me.TabControl.Controls.Add(Me.TabAlbum)
         Me.TabControl.Controls.Add(Me.TabConciertos)
@@ -60,22 +65,22 @@ Partial Class FormularioPrincipal
         Me.TabControl.Size = New System.Drawing.Size(635, 531)
         Me.TabControl.TabIndex = 0
         '
-        'TabArtista
+        'Artista_TabArtista
         '
-        Me.TabArtista.Controls.Add(Me.lblPaisArtista)
-        Me.TabArtista.Controls.Add(Me.txtBoxPaisArtista)
-        Me.TabArtista.Controls.Add(Me.lblNombreArtista)
-        Me.TabArtista.Controls.Add(Me.txtBoxNombreArtista)
-        Me.TabArtista.Controls.Add(Me.btnObtenerArtistas)
-        Me.TabArtista.Controls.Add(Me.lblArtistas)
-        Me.TabArtista.Controls.Add(Me.cmbBoxArtistas)
-        Me.TabArtista.Location = New System.Drawing.Point(4, 25)
-        Me.TabArtista.Name = "TabArtista"
-        Me.TabArtista.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabArtista.Size = New System.Drawing.Size(627, 502)
-        Me.TabArtista.TabIndex = 1
-        Me.TabArtista.Text = "Artista"
-        Me.TabArtista.UseVisualStyleBackColor = True
+        Me.Artista_TabArtista.Controls.Add(Me.lblPaisArtista)
+        Me.Artista_TabArtista.Controls.Add(Me.txtBoxPaisArtista)
+        Me.Artista_TabArtista.Controls.Add(Me.Artista_lblNombreArtista)
+        Me.Artista_TabArtista.Controls.Add(Me.txtBoxNombreArtista)
+        Me.Artista_TabArtista.Controls.Add(Me.Artista_buttomVerTodosArtistas)
+        Me.Artista_TabArtista.Controls.Add(Me.lblArtistas)
+        Me.Artista_TabArtista.Controls.Add(Me.cmbBoxArtistas)
+        Me.Artista_TabArtista.Location = New System.Drawing.Point(4, 25)
+        Me.Artista_TabArtista.Name = "Artista_TabArtista"
+        Me.Artista_TabArtista.Padding = New System.Windows.Forms.Padding(3)
+        Me.Artista_TabArtista.Size = New System.Drawing.Size(627, 502)
+        Me.Artista_TabArtista.TabIndex = 1
+        Me.Artista_TabArtista.Text = "Artista"
+        Me.Artista_TabArtista.UseVisualStyleBackColor = True
         '
         'lblPaisArtista
         '
@@ -93,14 +98,14 @@ Partial Class FormularioPrincipal
         Me.txtBoxPaisArtista.Size = New System.Drawing.Size(256, 22)
         Me.txtBoxPaisArtista.TabIndex = 5
         '
-        'lblNombreArtista
+        'Artista_lblNombreArtista
         '
-        Me.lblNombreArtista.AutoSize = True
-        Me.lblNombreArtista.Location = New System.Drawing.Point(331, 25)
-        Me.lblNombreArtista.Name = "lblNombreArtista"
-        Me.lblNombreArtista.Size = New System.Drawing.Size(120, 16)
-        Me.lblNombreArtista.TabIndex = 4
-        Me.lblNombreArtista.Text = "Nombre del artista:"
+        Me.Artista_lblNombreArtista.AutoSize = True
+        Me.Artista_lblNombreArtista.Location = New System.Drawing.Point(331, 25)
+        Me.Artista_lblNombreArtista.Name = "Artista_lblNombreArtista"
+        Me.Artista_lblNombreArtista.Size = New System.Drawing.Size(120, 16)
+        Me.Artista_lblNombreArtista.TabIndex = 4
+        Me.Artista_lblNombreArtista.Text = "Nombre del artista:"
         '
         'txtBoxNombreArtista
         '
@@ -109,14 +114,14 @@ Partial Class FormularioPrincipal
         Me.txtBoxNombreArtista.Size = New System.Drawing.Size(256, 22)
         Me.txtBoxNombreArtista.TabIndex = 3
         '
-        'btnObtenerArtistas
+        'Artista_buttomVerTodosArtistas
         '
-        Me.btnObtenerArtistas.Location = New System.Drawing.Point(112, 10)
-        Me.btnObtenerArtistas.Name = "btnObtenerArtistas"
-        Me.btnObtenerArtistas.Size = New System.Drawing.Size(154, 28)
-        Me.btnObtenerArtistas.TabIndex = 2
-        Me.btnObtenerArtistas.Text = "Ver todos los Artistas"
-        Me.btnObtenerArtistas.UseVisualStyleBackColor = True
+        Me.Artista_buttomVerTodosArtistas.Location = New System.Drawing.Point(112, 10)
+        Me.Artista_buttomVerTodosArtistas.Name = "Artista_buttomVerTodosArtistas"
+        Me.Artista_buttomVerTodosArtistas.Size = New System.Drawing.Size(154, 28)
+        Me.Artista_buttomVerTodosArtistas.TabIndex = 2
+        Me.Artista_buttomVerTodosArtistas.Text = "Ver todos los Artistas"
+        Me.Artista_buttomVerTodosArtistas.UseVisualStyleBackColor = True
         '
         'lblArtistas
         '
@@ -153,15 +158,14 @@ Partial Class FormularioPrincipal
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(551, 158)
+        Me.Label3.Location = New System.Drawing.Point(21, 391)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 16)
+        Me.Label3.Size = New System.Drawing.Size(0, 16)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Label3"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(192, 73)
+        Me.TextBox1.Location = New System.Drawing.Point(205, 88)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 3
@@ -169,7 +173,7 @@ Partial Class FormularioPrincipal
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 82)
+        Me.Label2.Location = New System.Drawing.Point(21, 91)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(178, 16)
         Me.Label2.TabIndex = 2
@@ -178,7 +182,7 @@ Partial Class FormularioPrincipal
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(321, 16)
+        Me.ComboBox1.Location = New System.Drawing.Point(331, 31)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox1.TabIndex = 1
@@ -186,7 +190,7 @@ Partial Class FormularioPrincipal
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 19)
+        Me.Label1.Location = New System.Drawing.Point(21, 34)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(307, 16)
         Me.Label1.TabIndex = 0
@@ -204,6 +208,10 @@ Partial Class FormularioPrincipal
         '
         'TabConciertos
         '
+        Me.TabConciertos.Controls.Add(Me.TextBox2)
+        Me.TabConciertos.Controls.Add(Me.Label5)
+        Me.TabConciertos.Controls.Add(Me.ListBoxConciertos)
+        Me.TabConciertos.Controls.Add(Me.Label4)
         Me.TabConciertos.Location = New System.Drawing.Point(4, 25)
         Me.TabConciertos.Name = "TabConciertos"
         Me.TabConciertos.Padding = New System.Windows.Forms.Padding(3)
@@ -232,6 +240,40 @@ Partial Class FormularioPrincipal
         Me.TabSitio.Text = "Sitio"
         Me.TabSitio.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(17, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(151, 16)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Ver todos los conciertos"
+        '
+        'ListBoxConciertos
+        '
+        Me.ListBoxConciertos.FormattingEnabled = True
+        Me.ListBoxConciertos.ItemHeight = 16
+        Me.ListBoxConciertos.Location = New System.Drawing.Point(20, 47)
+        Me.ListBoxConciertos.Name = "ListBoxConciertos"
+        Me.ListBoxConciertos.Size = New System.Drawing.Size(148, 244)
+        Me.ListBoxConciertos.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(365, 34)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(247, 16)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "¿Desea agregar algun concierto nuevo?"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(368, 68)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(208, 22)
+        Me.TextBox2.TabIndex = 3
+        '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -241,17 +283,19 @@ Partial Class FormularioPrincipal
         Me.Name = "FormularioPrincipal"
         Me.Text = "Aplicación BBDD"
         Me.TabControl.ResumeLayout(False)
-        Me.TabArtista.ResumeLayout(False)
-        Me.TabArtista.PerformLayout()
+        Me.Artista_TabArtista.ResumeLayout(False)
+        Me.Artista_TabArtista.PerformLayout()
         Me.TabPaises.ResumeLayout(False)
         Me.TabPaises.PerformLayout()
+        Me.TabConciertos.ResumeLayout(False)
+        Me.TabConciertos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl As TabControl
     Friend WithEvents TabPaises As TabPage
-    Friend WithEvents TabArtista As TabPage
+    Friend WithEvents Artista_TabArtista As TabPage
     Friend WithEvents TabAlbum As TabPage
     Friend WithEvents TabConciertos As TabPage
     Friend WithEvents TabCanciones As TabPage
@@ -263,9 +307,13 @@ Partial Class FormularioPrincipal
     Friend WithEvents Label2 As Label
     Friend WithEvents lblArtistas As Label
     Friend WithEvents cmbBoxArtistas As ComboBox
-    Friend WithEvents lblNombreArtista As Label
+    Friend WithEvents Artista_lblNombreArtista As Label
     Friend WithEvents txtBoxNombreArtista As TextBox
-    Friend WithEvents btnObtenerArtistas As Button
+    Friend WithEvents Artista_buttomVerTodosArtistas As Button
     Friend WithEvents lblPaisArtista As Label
     Friend WithEvents txtBoxPaisArtista As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ListBoxConciertos As ListBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
 End Class
