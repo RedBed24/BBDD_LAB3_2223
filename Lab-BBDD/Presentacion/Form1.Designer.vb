@@ -38,17 +38,18 @@ Partial Class FormularioPrincipal
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabAlbum = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Albumes_ListBoxAlbumes = New System.Windows.Forms.ListBox()
+        Me.Albumes_ButtonVerTodosLosArtistas = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Albumes_ComboBoxArtistas = New System.Windows.Forms.ComboBox()
         Me.TabConciertos = New System.Windows.Forms.TabPage()
         Me.TabCanciones = New System.Windows.Forms.TabPage()
         Me.TabSitio = New System.Windows.Forms.TabPage()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ListBoxConciertos = New System.Windows.Forms.ListBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabControl.SuspendLayout()
         Me.Artista_TabArtista.SuspendLayout()
         Me.TabPaises.SuspendLayout()
-        Me.TabConciertos.SuspendLayout()
+        Me.TabAlbum.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl
@@ -165,7 +166,7 @@ Partial Class FormularioPrincipal
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(205, 88)
+        Me.TextBox1.Location = New System.Drawing.Point(195, 79)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 3
@@ -198,6 +199,17 @@ Partial Class FormularioPrincipal
         '
         'TabAlbum
         '
+        Me.TabAlbum.Controls.Add(Me.Albumes_ButtonAñadirAlbum)
+        Me.TabAlbum.Controls.Add(Me.Albumes_ButtonAplicarCambios)
+        Me.TabAlbum.Controls.Add(Me.Label6)
+        Me.TabAlbum.Controls.Add(Me.Albumes_TextBoxAñoAlbum)
+        Me.TabAlbum.Controls.Add(Me.Label7)
+        Me.TabAlbum.Controls.Add(Me.Albumes_TextBoxNombreAlbum)
+        Me.TabAlbum.Controls.Add(Me.Label5)
+        Me.TabAlbum.Controls.Add(Me.Albumes_ListBoxAlbumes)
+        Me.TabAlbum.Controls.Add(Me.Albumes_ButtonVerTodosLosArtistas)
+        Me.TabAlbum.Controls.Add(Me.Label4)
+        Me.TabAlbum.Controls.Add(Me.Albumes_ComboBoxArtistas)
         Me.TabAlbum.Location = New System.Drawing.Point(4, 25)
         Me.TabAlbum.Name = "TabAlbum"
         Me.TabAlbum.Padding = New System.Windows.Forms.Padding(3)
@@ -205,6 +217,50 @@ Partial Class FormularioPrincipal
         Me.TabAlbum.TabIndex = 2
         Me.TabAlbum.Text = "Albumes"
         Me.TabAlbum.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(425, 36)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(63, 16)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "Álbumes:"
+        '
+        'Albumes_ListBoxAlbumes
+        '
+        Me.Albumes_ListBoxAlbumes.FormattingEnabled = True
+        Me.Albumes_ListBoxAlbumes.ItemHeight = 16
+        Me.Albumes_ListBoxAlbumes.Location = New System.Drawing.Point(385, 61)
+        Me.Albumes_ListBoxAlbumes.Name = "Albumes_ListBoxAlbumes"
+        Me.Albumes_ListBoxAlbumes.Size = New System.Drawing.Size(150, 260)
+        Me.Albumes_ListBoxAlbumes.TabIndex = 6
+        '
+        'Albumes_ButtonVerTodosLosArtistas
+        '
+        Me.Albumes_ButtonVerTodosLosArtistas.Location = New System.Drawing.Point(133, 24)
+        Me.Albumes_ButtonVerTodosLosArtistas.Name = "Albumes_ButtonVerTodosLosArtistas"
+        Me.Albumes_ButtonVerTodosLosArtistas.Size = New System.Drawing.Size(154, 28)
+        Me.Albumes_ButtonVerTodosLosArtistas.TabIndex = 5
+        Me.Albumes_ButtonVerTodosLosArtistas.Text = "Ver todos los Artistas"
+        Me.Albumes_ButtonVerTodosLosArtistas.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(64, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 16)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Artistas:"
+        '
+        'Albumes_ComboBoxArtistas
+        '
+        Me.Albumes_ComboBoxArtistas.FormattingEnabled = True
+        Me.Albumes_ComboBoxArtistas.Location = New System.Drawing.Point(43, 61)
+        Me.Albumes_ComboBoxArtistas.Name = "Albumes_ComboBoxArtistas"
+        Me.Albumes_ComboBoxArtistas.Size = New System.Drawing.Size(256, 24)
+        Me.Albumes_ComboBoxArtistas.TabIndex = 3
         '
         'TabConciertos
         '
@@ -240,39 +296,55 @@ Partial Class FormularioPrincipal
         Me.TabSitio.Text = "Sitio"
         Me.TabSitio.UseVisualStyleBackColor = True
         '
-        'Label4
+        'Label6
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 18)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(151, 16)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Ver todos los conciertos"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(57, 317)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(71, 16)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Año álbum"
         '
-        'ListBoxConciertos
+        'Albumes_TextBoxAñoAlbum
         '
-        Me.ListBoxConciertos.FormattingEnabled = True
-        Me.ListBoxConciertos.ItemHeight = 16
-        Me.ListBoxConciertos.Location = New System.Drawing.Point(20, 47)
-        Me.ListBoxConciertos.Name = "ListBoxConciertos"
-        Me.ListBoxConciertos.Size = New System.Drawing.Size(148, 244)
-        Me.ListBoxConciertos.TabIndex = 1
+        Me.Albumes_TextBoxAñoAlbum.Location = New System.Drawing.Point(43, 344)
+        Me.Albumes_TextBoxAñoAlbum.Name = "Albumes_TextBoxAñoAlbum"
+        Me.Albumes_TextBoxAñoAlbum.Size = New System.Drawing.Size(256, 22)
+        Me.Albumes_TextBoxAñoAlbum.TabIndex = 10
         '
-        'Label5
+        'Label7
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(365, 34)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(247, 16)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "¿Desea agregar algun concierto nuevo?"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(57, 251)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(118, 16)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Nombre del álbum"
         '
-        'TextBox2
+        'Albumes_TextBoxNombreAlbum
         '
-        Me.TextBox2.Location = New System.Drawing.Point(368, 68)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(208, 22)
-        Me.TextBox2.TabIndex = 3
+        Me.Albumes_TextBoxNombreAlbum.Location = New System.Drawing.Point(43, 273)
+        Me.Albumes_TextBoxNombreAlbum.Name = "Albumes_TextBoxNombreAlbum"
+        Me.Albumes_TextBoxNombreAlbum.Size = New System.Drawing.Size(256, 22)
+        Me.Albumes_TextBoxNombreAlbum.TabIndex = 8
+        '
+        'Albumes_ButtonAplicarCambios
+        '
+        Me.Albumes_ButtonAplicarCambios.Location = New System.Drawing.Point(43, 399)
+        Me.Albumes_ButtonAplicarCambios.Name = "Albumes_ButtonAplicarCambios"
+        Me.Albumes_ButtonAplicarCambios.Size = New System.Drawing.Size(119, 44)
+        Me.Albumes_ButtonAplicarCambios.TabIndex = 12
+        Me.Albumes_ButtonAplicarCambios.Text = "Aplicar cambios"
+        Me.Albumes_ButtonAplicarCambios.UseVisualStyleBackColor = True
+        '
+        'Albumes_ButtonAñadirAlbum
+        '
+        Me.Albumes_ButtonAñadirAlbum.Location = New System.Drawing.Point(180, 399)
+        Me.Albumes_ButtonAñadirAlbum.Name = "Albumes_ButtonAñadirAlbum"
+        Me.Albumes_ButtonAñadirAlbum.Size = New System.Drawing.Size(119, 44)
+        Me.Albumes_ButtonAñadirAlbum.TabIndex = 13
+        Me.Albumes_ButtonAñadirAlbum.Text = "Añadir álbum"
+        Me.Albumes_ButtonAñadirAlbum.UseVisualStyleBackColor = True
         '
         'FormularioPrincipal
         '
@@ -287,8 +359,8 @@ Partial Class FormularioPrincipal
         Me.Artista_TabArtista.PerformLayout()
         Me.TabPaises.ResumeLayout(False)
         Me.TabPaises.PerformLayout()
-        Me.TabConciertos.ResumeLayout(False)
-        Me.TabConciertos.PerformLayout()
+        Me.TabAlbum.ResumeLayout(False)
+        Me.TabAlbum.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -312,8 +384,15 @@ Partial Class FormularioPrincipal
     Friend WithEvents Artista_buttomVerTodosArtistas As Button
     Friend WithEvents lblPaisArtista As Label
     Friend WithEvents txtBoxPaisArtista As TextBox
+    Friend WithEvents Albumes_ListBoxAlbumes As ListBox
+    Friend WithEvents Albumes_ButtonVerTodosLosArtistas As Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents ListBoxConciertos As ListBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Albumes_ComboBoxArtistas As ComboBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Albumes_ButtonAplicarCambios As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Albumes_TextBoxAñoAlbum As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Albumes_TextBoxNombreAlbum As TextBox
+    Friend WithEvents Albumes_ButtonAñadirAlbum As Button
 End Class
