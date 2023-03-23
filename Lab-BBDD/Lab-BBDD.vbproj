@@ -99,6 +99,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Persistencia\AgenteBD.vb" />
+    <Compile Include="Persistencia\ArtistaDAO.vb" />
     <Compile Include="Presentacion\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
