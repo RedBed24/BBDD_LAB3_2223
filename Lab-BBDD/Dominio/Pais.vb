@@ -7,6 +7,11 @@
         idPais = id
     End Sub
 
+    Public Sub New(id As String, nombre As String)
+        idPais = id
+        NombrePais = nombre
+    End Sub
+
     Private Sub obtainID()
         idPais = NombrePais.Substring(0, 3).ToUpper
     End Sub
