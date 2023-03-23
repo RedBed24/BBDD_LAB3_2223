@@ -98,7 +98,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Persistencia\AgenteBD.vb" />
+    <Compile Include="Persistencia\AgenteBD.vb" />
     <Compile Include="Persistencia\PaisDAO.vb" />
     <Compile Include="Persistencia\ArtistaDAO.vb" />
     <Compile Include="Presentacion\Form1.Designer.vb">
