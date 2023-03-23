@@ -99,7 +99,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Persistencia\AgenteBD.vb" />
+<<<<<<< HEAD
     <Compile Include="Persistencia\PaisDAO.vb" />
+=======
+    <Compile Include="Persistencia\ArtistaDAO.vb" />
+>>>>>>> 108eda4d229e0cae91ec037504c3b3e822b4a5bb
     <Compile Include="Presentacion\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
