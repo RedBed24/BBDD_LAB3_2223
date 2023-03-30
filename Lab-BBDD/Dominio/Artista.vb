@@ -3,17 +3,38 @@
     Public Property Nombre As String
     Public Property Pais As Pais
 
-    'Public ReadOnly Property ArtistaDAO As ArtistaDAO'
+    Public ReadOnly Property ArtistDAO As ArtistaDAO
 
     Public Sub New(id As String)
+        ArtistDAO = New ArtistaDAO
         IdArtista = id
     End Sub
 
-    ' Set list no tiene porqué ser una clase sola, la podemos poner como 1'
+    Public Sub New(id As String, nomb As String, pai As Pais)
+        ArtistDAO = New ArtistaDAO
+        IdArtista = id
+        Nombre = nomb
+        Pais = pai
+    End Sub
 
-    ' Nos piden una serie de consultas '
+    Public Sub LeerTodosArtistas()
+        Me.ArtistDAO.LeerTodo()
+    End Sub
 
-    ' Navegaciones, permite mostrar información sobre los conciertos de un cierto artista'
-    ' Filtrado por pais...'
+    Public Sub LeerArtista()
+        Me.ArtistDAO.Leer(Me)
+    End Sub
+
+    Public Function InsertarArtista() As Integer
+        Return Me.ArtistDAO.Insertar(Me)
+    End Function
+
+    Public Function ActualizarArtista() As Integer
+        Return Me.ArtistDAO.Actualizar(Me)
+    End Function
+
+    Public Function BorrarArtista() As Integer
+        Return Me.ArtistDAO.Borrar(Me)
+    End Function
 
 End Class
