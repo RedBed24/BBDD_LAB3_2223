@@ -32,7 +32,7 @@
         Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " values ('" & pais.idPais & "', '" & pais.NombrePais & "');")
     End Function
     Public Function Actualizar(ByVal pais As Pais) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombrePais='" & pais.NombrePais & "' where " & campoIdentificador & "='" & pais.NombrePais & "';")
+        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombrePais='" & pais.NombrePais & "' where " & campoIdentificador & "='" & pais.idPais & "';")
     End Function
 
     Public Function Borrar(ByVal pais As Pais) As Integer
