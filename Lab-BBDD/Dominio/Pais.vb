@@ -3,6 +3,10 @@
     Public Property NombrePais As String
     Public ReadOnly Property PaiDAO As PaisDAO
 
+    Public Sub New()
+        Me.PaiDAO = New PaisDAO
+    End Sub
+
     Public Sub New(id As String)
         Me.PaiDAO = New PaisDAO
         idPais = id
@@ -36,6 +40,10 @@
 
     Public Function BorrarPais() As Integer
         Return Me.PaiDAO.Borrar(Me)
+    End Function
+
+    Overrides Public Function ToString() As String
+        Return idPais & " - " & NombrePais
     End Function
 
 End Class

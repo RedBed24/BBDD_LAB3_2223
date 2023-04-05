@@ -5,12 +5,22 @@
 
     Public ReadOnly Property ArtistDAO As ArtistaDAO
 
-    Public Sub New(id As String)
+    Public Sub New()
+        ArtistDAO = New ArtistaDAO
+    End Sub
+
+    Public Sub New(id As Integer)
         ArtistDAO = New ArtistaDAO
         IdArtista = id
     End Sub
 
-    Public Sub New(id As String, nomb As String, pai As Pais)
+    Public Sub New(nomb As String, pai As Pais)
+        ArtistDAO = New ArtistaDAO
+        Nombre = nomb
+        Pais = pai
+    End Sub
+
+    Public Sub New(id As Integer, nomb As String, pai As Pais)
         ArtistDAO = New ArtistaDAO
         IdArtista = id
         Nombre = nomb
@@ -37,4 +47,7 @@
         Return Me.ArtistDAO.Borrar(Me)
     End Function
 
+    Public Overrides Function ToString() As String
+        Return IdArtista & ": " & Nombre & ", from " & Pais.ToString
+    End Function
 End Class
