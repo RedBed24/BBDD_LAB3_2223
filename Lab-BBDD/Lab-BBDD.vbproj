@@ -118,10 +118,11 @@
     <Compile Include="Persistencia\AgenteBD.vb" />
     <Compile Include="Persistencia\PaisDAO.vb" />
     <Compile Include="Persistencia\ArtistaDAO.vb" />
-    <Compile Include="Presentacion\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Persistencia\SitioDAO.vb" />
+    <Compile Include="Presentacion\FormularioPrincipal.Designer.vb">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form1.vb">
+    <Compile Include="Presentacion\FormularioPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -132,8 +133,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
