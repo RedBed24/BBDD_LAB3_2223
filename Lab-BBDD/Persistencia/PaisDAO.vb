@@ -21,11 +21,11 @@
     End Sub
 
     Public Sub Leer(ByVal pais As Pais)
-        Dim tabla, tupla As Collection
+        Dim tabla As Collection
         tabla = AgenteBD.ObtenerAgente().Leer("select * from " & nombreTabla & " where " & campoIdentificador & "='" & pais.idPais & "';")
-        For Each tupla In tabla
-            pais.NombrePais = tupla(2).ToString
-        Next
+
+        ' tabla debe tener una única tupla
+        pais.NombrePais = tabla(1)(2).ToString
     End Sub
 
     Public Function Insertar(ByVal pais As Pais) As Integer

@@ -32,15 +32,14 @@
     Public Sub Leer(ByVal artista As Artista)
         Dim tempPais As Pais
 
-        Dim tabla, tupla As Collection
+        Dim tabla As Collection
 
         tabla = AgenteBD.ObtenerAgente().Leer("select * from " & nombreTabla & " where " & campoIdentificador & "='" & artista.IdArtista & "';")
 
-        For Each tupla In tabla
-            tempPais = New Pais(tupla(3).ToString)
+        tempPais = New Pais(tabla(1)(3).ToString)
             tempPais.LeerPais()
 
-            artista.Nombre = tupla(2).ToString
+        artista.Nombre = tabla(1)(2).ToString
             artista.Pais = tempPais
         Next
     End Sub
