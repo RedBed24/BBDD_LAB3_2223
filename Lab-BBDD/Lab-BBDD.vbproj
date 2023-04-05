@@ -98,7 +98,7 @@
     <Compile Include="Dominio\Canciones.vb" />
     <Compile Include="Dominio\Conciertos.vb" />
     <Compile Include="Dominio\Pais.vb" />
-    <Compile Include="Dominio\Sitios.vb" />
+    <Compile Include="Dominio\Sitio.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
