@@ -1,12 +1,12 @@
 ﻿Public Class PaisDAO
 
-    Public ReadOnly Property Pais As Collection
+    Public ReadOnly Property Paises As Collection
 
     Private Shared nombreTabla As String = "paises"
     Private Shared campoIdentificador As String = "idPais"
 
     Public Sub New()
-        Me.Pais = New Collection
+        Me.Paises = New Collection
     End Sub
 
     Public Sub LeerTodo()
@@ -16,7 +16,7 @@
         tabla = AgenteBD.ObtenerAgente().Leer("select * from " & nombreTabla & "")
         For Each tupla In tabla
             tempPais = New Pais(tupla(1).ToString, tupla(2).ToString)
-            Me.Pais.Add(tempPais)
+            Me.Paises.Add(tempPais)
         Next
     End Sub
 
