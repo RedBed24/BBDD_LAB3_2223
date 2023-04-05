@@ -41,7 +41,6 @@
 
         artista.Nombre = tabla(1)(2).ToString
             artista.Pais = tempPais
-        Next
     End Sub
 
     Public Function Insertar(ByVal artista As Artista) As Integer
