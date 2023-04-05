@@ -44,7 +44,8 @@
     End Sub
 
     Public Function Insertar(ByVal artista As Artista) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " values ('" & artista.IdArtista & "', '" & artista.Nombre & "');")
+        ' No le pasamos una clave porque esta la genera la bbdd automáticamente
+        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (Nombre, País) values ('" & artista.Nombre & "', '" & artista.Pais.idPais & "');")
     End Function
     Public Function Actualizar(ByVal artista As Artista) As Integer
         Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreArtista='" & artista.Nombre & "' where " & campoIdentificador & "='" & artista.IdArtista & "';")
