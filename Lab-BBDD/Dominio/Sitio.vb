@@ -9,6 +9,23 @@
 
     Public ReadOnly Property SiteDAO As SitioDAO
 
+    Public Sub New()
+        SiteDAO = New SitioDAO
+    End Sub
+
+    Public Sub New(id As String)
+        SiteDAO = New SitioDAO
+        idSitio = id
+    End Sub
+
+    Public Sub New(id As String, nomb As String, pai As Pais, typ As String)
+        SiteDAO = New SitioDAO
+        idSitio = id
+        NombreSitio = nomb
+        Pais = pai
+        tipo = typ
+    End Sub
+
     Public Sub LeerTodosSitios()
         Me.SiteDAO.LeerTodo()
     End Sub
