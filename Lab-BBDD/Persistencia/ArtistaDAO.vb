@@ -22,7 +22,7 @@
             ' leemos la información de ese pais
             tempPais.LeerPais()
 
-            tempArtista = New Artista(tupla(1).ToString, tupla(2).ToString, tempPais)
+            tempArtista = New Artista(Integer.Parse(tupla(1).ToString), tupla(2).ToString, tempPais)
 
             Me.Artistas.Add(tempArtista)
         Next
