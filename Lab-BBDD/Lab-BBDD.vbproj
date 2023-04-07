@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Persistencia\AgenteBD.vb" />
     <Compile Include="Persistencia\AlbumDAO.vb" />
+    <Compile Include="Persistencia\CancionDAO.vb" />
     <Compile Include="Persistencia\PaisDAO.vb" />
     <Compile Include="Persistencia\ArtistaDAO.vb" />
     <Compile Include="Persistencia\SitioDAO.vb" />
