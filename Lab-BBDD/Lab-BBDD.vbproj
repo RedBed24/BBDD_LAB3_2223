@@ -95,8 +95,8 @@
   <ItemGroup>
     <Compile Include="Dominio\Album.vb" />
     <Compile Include="Dominio\Artista.vb" />
-    <Compile Include="Dominio\Canciones.vb" />
-    <Compile Include="Dominio\Conciertos.vb" />
+    <Compile Include="Dominio\Cancion.vb" />
+    <Compile Include="Dominio\Concierto.vb" />
     <Compile Include="Dominio\Pais.vb" />
     <Compile Include="Dominio\Sitio.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

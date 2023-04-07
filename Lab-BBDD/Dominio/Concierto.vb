@@ -1,4 +1,4 @@
-﻿Public Class Conciertos
+﻿Public Class Concierto
     Public Property idConcierto As Integer
     Public Property FechaConciertos As Date
     Public Property OrdenSetlist As Integer
