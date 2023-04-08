@@ -24,23 +24,27 @@ Partial Class FormularioPrincipal
     Private Sub InitializeComponent()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.TabArtista = New System.Windows.Forms.TabPage()
-        Me.Artista_ButtonLimpiar = New System.Windows.Forms.Button()
-        Me.Artista_ButtonEliminar = New System.Windows.Forms.Button()
+        Me.Artista_ListBox_Artistas = New System.Windows.Forms.ListBox()
+        Me.Artista_Button_Limpiar = New System.Windows.Forms.Button()
+        Me.Artista_Button_Eliminar = New System.Windows.Forms.Button()
         Me.Artista_Button_Agregar = New System.Windows.Forms.Button()
         Me.Artista_Button_Actualizar = New System.Windows.Forms.Button()
-        Me.Artista_labelPaisArtista = New System.Windows.Forms.Label()
-        Me.Artista_textBoxPaisArtista = New System.Windows.Forms.TextBox()
-        Me.Artista_labelNombreArtista = New System.Windows.Forms.Label()
-        Me.Artista_textBoxNombreArtista = New System.Windows.Forms.TextBox()
-        Me.Artista_buttonVerTodosArtistas = New System.Windows.Forms.Button()
-        Me.Artista_labelArtistas = New System.Windows.Forms.Label()
-        Me.Artista_ComboBoxArtistas = New System.Windows.Forms.ComboBox()
+        Me.Artista_Label_PaisArtista = New System.Windows.Forms.Label()
+        Me.Artista_TextBox_PaisArtista = New System.Windows.Forms.TextBox()
+        Me.Artista_Label_NombreArtista = New System.Windows.Forms.Label()
+        Me.Artista_TextBox_NombreArtista = New System.Windows.Forms.TextBox()
+        Me.Artista_Button_VerTodosArtistas = New System.Windows.Forms.Button()
+        Me.Artista_Label_Artistas = New System.Windows.Forms.Label()
         Me.TabPaises = New System.Windows.Forms.TabPage()
-        Me.Paises_ListBoxPaises = New System.Windows.Forms.ListBox()
-        Me.Paises_ButtonLimpiar = New System.Windows.Forms.Button()
-        Me.Paises_ButtonEliminar = New System.Windows.Forms.Button()
-        Me.Paises_ButtonAgregar = New System.Windows.Forms.Button()
-        Me.Paises_ButtonActualizar = New System.Windows.Forms.Button()
+        Me.Paises_TextBox_NombrePais = New System.Windows.Forms.TextBox()
+        Me.Paises_Label_Nombre = New System.Windows.Forms.Label()
+        Me.Paises_Label_Paises = New System.Windows.Forms.Label()
+        Me.Paises_Button_VerTodosPaises = New System.Windows.Forms.Button()
+        Me.Paises_ListBox_Paises = New System.Windows.Forms.ListBox()
+        Me.Paises_Button_Limpiar = New System.Windows.Forms.Button()
+        Me.Paises_Button_Eliminar = New System.Windows.Forms.Button()
+        Me.Paises_Button_Agregar = New System.Windows.Forms.Button()
+        Me.Paises_Button_Actualizar = New System.Windows.Forms.Button()
         Me.Paises_ComboBox_Seleccionar = New System.Windows.Forms.ComboBox()
         Me.Paises_LabelSeleccionar = New System.Windows.Forms.Label()
         Me.TabAlbum = New System.Windows.Forms.TabPage()
@@ -106,17 +110,17 @@ Partial Class FormularioPrincipal
         '
         'TabArtista
         '
-        Me.TabArtista.Controls.Add(Me.Artista_ButtonLimpiar)
-        Me.TabArtista.Controls.Add(Me.Artista_ButtonEliminar)
+        Me.TabArtista.Controls.Add(Me.Artista_ListBox_Artistas)
+        Me.TabArtista.Controls.Add(Me.Artista_Button_Limpiar)
+        Me.TabArtista.Controls.Add(Me.Artista_Button_Eliminar)
         Me.TabArtista.Controls.Add(Me.Artista_Button_Agregar)
         Me.TabArtista.Controls.Add(Me.Artista_Button_Actualizar)
-        Me.TabArtista.Controls.Add(Me.Artista_labelPaisArtista)
-        Me.TabArtista.Controls.Add(Me.Artista_textBoxPaisArtista)
-        Me.TabArtista.Controls.Add(Me.Artista_labelNombreArtista)
-        Me.TabArtista.Controls.Add(Me.Artista_textBoxNombreArtista)
-        Me.TabArtista.Controls.Add(Me.Artista_buttonVerTodosArtistas)
-        Me.TabArtista.Controls.Add(Me.Artista_labelArtistas)
-        Me.TabArtista.Controls.Add(Me.Artista_ComboBoxArtistas)
+        Me.TabArtista.Controls.Add(Me.Artista_Label_PaisArtista)
+        Me.TabArtista.Controls.Add(Me.Artista_TextBox_PaisArtista)
+        Me.TabArtista.Controls.Add(Me.Artista_Label_NombreArtista)
+        Me.TabArtista.Controls.Add(Me.Artista_TextBox_NombreArtista)
+        Me.TabArtista.Controls.Add(Me.Artista_Button_VerTodosArtistas)
+        Me.TabArtista.Controls.Add(Me.Artista_Label_Artistas)
         Me.TabArtista.Location = New System.Drawing.Point(4, 25)
         Me.TabArtista.Name = "TabArtista"
         Me.TabArtista.Padding = New System.Windows.Forms.Padding(3)
@@ -125,107 +129,112 @@ Partial Class FormularioPrincipal
         Me.TabArtista.Text = "Artista"
         Me.TabArtista.UseVisualStyleBackColor = True
         '
-        'Artista_ButtonLimpiar
+        'Artista_ListBox_Artistas
         '
-        Me.Artista_ButtonLimpiar.Location = New System.Drawing.Point(451, 401)
-        Me.Artista_ButtonLimpiar.Name = "Artista_ButtonLimpiar"
-        Me.Artista_ButtonLimpiar.Size = New System.Drawing.Size(139, 65)
-        Me.Artista_ButtonLimpiar.TabIndex = 10
-        Me.Artista_ButtonLimpiar.Text = "LIMPIAR"
-        Me.Artista_ButtonLimpiar.UseVisualStyleBackColor = True
+        Me.Artista_ListBox_Artistas.FormattingEnabled = True
+        Me.Artista_ListBox_Artistas.ItemHeight = 16
+        Me.Artista_ListBox_Artistas.Location = New System.Drawing.Point(29, 49)
+        Me.Artista_ListBox_Artistas.Name = "Artista_ListBox_Artistas"
+        Me.Artista_ListBox_Artistas.Size = New System.Drawing.Size(267, 228)
+        Me.Artista_ListBox_Artistas.TabIndex = 11
         '
-        'Artista_ButtonEliminar
+        'Artista_Button_Limpiar
         '
-        Me.Artista_ButtonEliminar.Location = New System.Drawing.Point(286, 401)
-        Me.Artista_ButtonEliminar.Name = "Artista_ButtonEliminar"
-        Me.Artista_ButtonEliminar.Size = New System.Drawing.Size(139, 65)
-        Me.Artista_ButtonEliminar.TabIndex = 9
-        Me.Artista_ButtonEliminar.Text = "ELIMINAR"
-        Me.Artista_ButtonEliminar.UseVisualStyleBackColor = True
+        Me.Artista_Button_Limpiar.Location = New System.Drawing.Point(471, 236)
+        Me.Artista_Button_Limpiar.Name = "Artista_Button_Limpiar"
+        Me.Artista_Button_Limpiar.Size = New System.Drawing.Size(119, 39)
+        Me.Artista_Button_Limpiar.TabIndex = 10
+        Me.Artista_Button_Limpiar.Text = "LIMPIAR"
+        Me.Artista_Button_Limpiar.UseVisualStyleBackColor = True
+        '
+        'Artista_Button_Eliminar
+        '
+        Me.Artista_Button_Eliminar.Location = New System.Drawing.Point(334, 236)
+        Me.Artista_Button_Eliminar.Name = "Artista_Button_Eliminar"
+        Me.Artista_Button_Eliminar.Size = New System.Drawing.Size(119, 39)
+        Me.Artista_Button_Eliminar.TabIndex = 9
+        Me.Artista_Button_Eliminar.Text = "ELIMINAR"
+        Me.Artista_Button_Eliminar.UseVisualStyleBackColor = True
         '
         'Artista_Button_Agregar
         '
-        Me.Artista_Button_Agregar.Location = New System.Drawing.Point(451, 302)
+        Me.Artista_Button_Agregar.Location = New System.Drawing.Point(471, 175)
         Me.Artista_Button_Agregar.Name = "Artista_Button_Agregar"
-        Me.Artista_Button_Agregar.Size = New System.Drawing.Size(139, 65)
+        Me.Artista_Button_Agregar.Size = New System.Drawing.Size(119, 39)
         Me.Artista_Button_Agregar.TabIndex = 8
         Me.Artista_Button_Agregar.Text = "AGREGAR"
         Me.Artista_Button_Agregar.UseVisualStyleBackColor = True
         '
         'Artista_Button_Actualizar
         '
-        Me.Artista_Button_Actualizar.Location = New System.Drawing.Point(286, 302)
+        Me.Artista_Button_Actualizar.Location = New System.Drawing.Point(334, 175)
         Me.Artista_Button_Actualizar.Name = "Artista_Button_Actualizar"
-        Me.Artista_Button_Actualizar.Size = New System.Drawing.Size(139, 65)
+        Me.Artista_Button_Actualizar.Size = New System.Drawing.Size(119, 39)
         Me.Artista_Button_Actualizar.TabIndex = 7
         Me.Artista_Button_Actualizar.Text = "ACTUALIZAR"
         Me.Artista_Button_Actualizar.UseVisualStyleBackColor = True
         '
-        'Artista_labelPaisArtista
+        'Artista_Label_PaisArtista
         '
-        Me.Artista_labelPaisArtista.AutoSize = True
-        Me.Artista_labelPaisArtista.Location = New System.Drawing.Point(348, 93)
-        Me.Artista_labelPaisArtista.Name = "Artista_labelPaisArtista"
-        Me.Artista_labelPaisArtista.Size = New System.Drawing.Size(95, 16)
-        Me.Artista_labelPaisArtista.TabIndex = 6
-        Me.Artista_labelPaisArtista.Text = "País del artista"
+        Me.Artista_Label_PaisArtista.AutoSize = True
+        Me.Artista_Label_PaisArtista.Location = New System.Drawing.Point(348, 93)
+        Me.Artista_Label_PaisArtista.Name = "Artista_Label_PaisArtista"
+        Me.Artista_Label_PaisArtista.Size = New System.Drawing.Size(98, 16)
+        Me.Artista_Label_PaisArtista.TabIndex = 6
+        Me.Artista_Label_PaisArtista.Text = "País del artista:"
         '
-        'Artista_textBoxPaisArtista
+        'Artista_TextBox_PaisArtista
         '
-        Me.Artista_textBoxPaisArtista.Location = New System.Drawing.Point(334, 120)
-        Me.Artista_textBoxPaisArtista.Name = "Artista_textBoxPaisArtista"
-        Me.Artista_textBoxPaisArtista.Size = New System.Drawing.Size(256, 22)
-        Me.Artista_textBoxPaisArtista.TabIndex = 5
+        Me.Artista_TextBox_PaisArtista.Location = New System.Drawing.Point(334, 120)
+        Me.Artista_TextBox_PaisArtista.Name = "Artista_TextBox_PaisArtista"
+        Me.Artista_TextBox_PaisArtista.Size = New System.Drawing.Size(256, 22)
+        Me.Artista_TextBox_PaisArtista.TabIndex = 5
         '
-        'Artista_labelNombreArtista
+        'Artista_Label_NombreArtista
         '
-        Me.Artista_labelNombreArtista.AutoSize = True
-        Me.Artista_labelNombreArtista.Location = New System.Drawing.Point(348, 27)
-        Me.Artista_labelNombreArtista.Name = "Artista_labelNombreArtista"
-        Me.Artista_labelNombreArtista.Size = New System.Drawing.Size(120, 16)
-        Me.Artista_labelNombreArtista.TabIndex = 4
-        Me.Artista_labelNombreArtista.Text = "Nombre del artista:"
+        Me.Artista_Label_NombreArtista.AutoSize = True
+        Me.Artista_Label_NombreArtista.Location = New System.Drawing.Point(348, 27)
+        Me.Artista_Label_NombreArtista.Name = "Artista_Label_NombreArtista"
+        Me.Artista_Label_NombreArtista.Size = New System.Drawing.Size(120, 16)
+        Me.Artista_Label_NombreArtista.TabIndex = 4
+        Me.Artista_Label_NombreArtista.Text = "Nombre del artista:"
         '
-        'Artista_textBoxNombreArtista
+        'Artista_TextBox_NombreArtista
         '
-        Me.Artista_textBoxNombreArtista.Location = New System.Drawing.Point(334, 49)
-        Me.Artista_textBoxNombreArtista.Name = "Artista_textBoxNombreArtista"
-        Me.Artista_textBoxNombreArtista.Size = New System.Drawing.Size(256, 22)
-        Me.Artista_textBoxNombreArtista.TabIndex = 3
+        Me.Artista_TextBox_NombreArtista.Location = New System.Drawing.Point(334, 49)
+        Me.Artista_TextBox_NombreArtista.Name = "Artista_TextBox_NombreArtista"
+        Me.Artista_TextBox_NombreArtista.Size = New System.Drawing.Size(256, 22)
+        Me.Artista_TextBox_NombreArtista.TabIndex = 3
         '
-        'Artista_buttonVerTodosArtistas
+        'Artista_Button_VerTodosArtistas
         '
-        Me.Artista_buttonVerTodosArtistas.Location = New System.Drawing.Point(112, 10)
-        Me.Artista_buttonVerTodosArtistas.Name = "Artista_buttonVerTodosArtistas"
-        Me.Artista_buttonVerTodosArtistas.Size = New System.Drawing.Size(154, 28)
-        Me.Artista_buttonVerTodosArtistas.TabIndex = 2
-        Me.Artista_buttonVerTodosArtistas.Text = "Ver todos los Artistas"
-        Me.Artista_buttonVerTodosArtistas.UseVisualStyleBackColor = True
+        Me.Artista_Button_VerTodosArtistas.Location = New System.Drawing.Point(112, 10)
+        Me.Artista_Button_VerTodosArtistas.Name = "Artista_Button_VerTodosArtistas"
+        Me.Artista_Button_VerTodosArtistas.Size = New System.Drawing.Size(154, 28)
+        Me.Artista_Button_VerTodosArtistas.TabIndex = 2
+        Me.Artista_Button_VerTodosArtistas.Text = "Ver todos los Artistas"
+        Me.Artista_Button_VerTodosArtistas.UseVisualStyleBackColor = True
         '
-        'Artista_labelArtistas
+        'Artista_Label_Artistas
         '
-        Me.Artista_labelArtistas.AutoSize = True
-        Me.Artista_labelArtistas.Location = New System.Drawing.Point(43, 19)
-        Me.Artista_labelArtistas.Name = "Artista_labelArtistas"
-        Me.Artista_labelArtistas.Size = New System.Drawing.Size(54, 16)
-        Me.Artista_labelArtistas.TabIndex = 1
-        Me.Artista_labelArtistas.Text = "Artistas:"
-        '
-        'Artista_ComboBoxArtistas
-        '
-        Me.Artista_ComboBoxArtistas.FormattingEnabled = True
-        Me.Artista_ComboBoxArtistas.Location = New System.Drawing.Point(22, 47)
-        Me.Artista_ComboBoxArtistas.Name = "Artista_ComboBoxArtistas"
-        Me.Artista_ComboBoxArtistas.Size = New System.Drawing.Size(256, 24)
-        Me.Artista_ComboBoxArtistas.TabIndex = 0
+        Me.Artista_Label_Artistas.AutoSize = True
+        Me.Artista_Label_Artistas.Location = New System.Drawing.Point(43, 19)
+        Me.Artista_Label_Artistas.Name = "Artista_Label_Artistas"
+        Me.Artista_Label_Artistas.Size = New System.Drawing.Size(54, 16)
+        Me.Artista_Label_Artistas.TabIndex = 1
+        Me.Artista_Label_Artistas.Text = "Artistas:"
         '
         'TabPaises
         '
-        Me.TabPaises.Controls.Add(Me.Paises_ListBoxPaises)
-        Me.TabPaises.Controls.Add(Me.Paises_ButtonLimpiar)
-        Me.TabPaises.Controls.Add(Me.Paises_ButtonEliminar)
-        Me.TabPaises.Controls.Add(Me.Paises_ButtonAgregar)
-        Me.TabPaises.Controls.Add(Me.Paises_ButtonActualizar)
+        Me.TabPaises.Controls.Add(Me.Paises_TextBox_NombrePais)
+        Me.TabPaises.Controls.Add(Me.Paises_Label_Nombre)
+        Me.TabPaises.Controls.Add(Me.Paises_Label_Paises)
+        Me.TabPaises.Controls.Add(Me.Paises_Button_VerTodosPaises)
+        Me.TabPaises.Controls.Add(Me.Paises_ListBox_Paises)
+        Me.TabPaises.Controls.Add(Me.Paises_Button_Limpiar)
+        Me.TabPaises.Controls.Add(Me.Paises_Button_Eliminar)
+        Me.TabPaises.Controls.Add(Me.Paises_Button_Agregar)
+        Me.TabPaises.Controls.Add(Me.Paises_Button_Actualizar)
         Me.TabPaises.Controls.Add(Me.Paises_ComboBox_Seleccionar)
         Me.TabPaises.Controls.Add(Me.Paises_LabelSeleccionar)
         Me.TabPaises.Location = New System.Drawing.Point(4, 25)
@@ -236,55 +245,89 @@ Partial Class FormularioPrincipal
         Me.TabPaises.Text = "Paises"
         Me.TabPaises.UseVisualStyleBackColor = True
         '
-        'Paises_ListBoxPaises
+        'Paises_TextBox_NombrePais
         '
-        Me.Paises_ListBoxPaises.FormattingEnabled = True
-        Me.Paises_ListBoxPaises.ItemHeight = 16
-        Me.Paises_ListBoxPaises.Location = New System.Drawing.Point(24, 103)
-        Me.Paises_ListBoxPaises.Name = "Paises_ListBoxPaises"
-        Me.Paises_ListBoxPaises.Size = New System.Drawing.Size(205, 276)
-        Me.Paises_ListBoxPaises.TabIndex = 8
+        Me.Paises_TextBox_NombrePais.Location = New System.Drawing.Point(328, 67)
+        Me.Paises_TextBox_NombrePais.Name = "Paises_TextBox_NombrePais"
+        Me.Paises_TextBox_NombrePais.Size = New System.Drawing.Size(265, 22)
+        Me.Paises_TextBox_NombrePais.TabIndex = 12
         '
-        'Paises_ButtonLimpiar
+        'Paises_Label_Nombre
         '
-        Me.Paises_ButtonLimpiar.Location = New System.Drawing.Point(462, 409)
-        Me.Paises_ButtonLimpiar.Name = "Paises_ButtonLimpiar"
-        Me.Paises_ButtonLimpiar.Size = New System.Drawing.Size(131, 56)
-        Me.Paises_ButtonLimpiar.TabIndex = 7
-        Me.Paises_ButtonLimpiar.Text = "LIMPIAR"
-        Me.Paises_ButtonLimpiar.UseVisualStyleBackColor = True
+        Me.Paises_Label_Nombre.AutoSize = True
+        Me.Paises_Label_Nombre.Location = New System.Drawing.Point(351, 37)
+        Me.Paises_Label_Nombre.Name = "Paises_Label_Nombre"
+        Me.Paises_Label_Nombre.Size = New System.Drawing.Size(111, 16)
+        Me.Paises_Label_Nombre.TabIndex = 11
+        Me.Paises_Label_Nombre.Text = "Nombre del País:"
         '
-        'Paises_ButtonEliminar
+        'Paises_Label_Paises
         '
-        Me.Paises_ButtonEliminar.Location = New System.Drawing.Point(304, 409)
-        Me.Paises_ButtonEliminar.Name = "Paises_ButtonEliminar"
-        Me.Paises_ButtonEliminar.Size = New System.Drawing.Size(131, 56)
-        Me.Paises_ButtonEliminar.TabIndex = 6
-        Me.Paises_ButtonEliminar.Text = "ELIMINAR"
-        Me.Paises_ButtonEliminar.UseVisualStyleBackColor = True
+        Me.Paises_Label_Paises.AutoSize = True
+        Me.Paises_Label_Paises.Location = New System.Drawing.Point(41, 27)
+        Me.Paises_Label_Paises.Name = "Paises_Label_Paises"
+        Me.Paises_Label_Paises.Size = New System.Drawing.Size(52, 16)
+        Me.Paises_Label_Paises.TabIndex = 10
+        Me.Paises_Label_Paises.Text = "Paises:"
         '
-        'Paises_ButtonAgregar
+        'Paises_Button_VerTodosPaises
         '
-        Me.Paises_ButtonAgregar.Location = New System.Drawing.Point(462, 323)
-        Me.Paises_ButtonAgregar.Name = "Paises_ButtonAgregar"
-        Me.Paises_ButtonAgregar.Size = New System.Drawing.Size(131, 56)
-        Me.Paises_ButtonAgregar.TabIndex = 5
-        Me.Paises_ButtonAgregar.Text = "AGREGAR"
-        Me.Paises_ButtonAgregar.UseVisualStyleBackColor = True
+        Me.Paises_Button_VerTodosPaises.Location = New System.Drawing.Point(111, 18)
+        Me.Paises_Button_VerTodosPaises.Name = "Paises_Button_VerTodosPaises"
+        Me.Paises_Button_VerTodosPaises.Size = New System.Drawing.Size(146, 35)
+        Me.Paises_Button_VerTodosPaises.TabIndex = 9
+        Me.Paises_Button_VerTodosPaises.Text = "Ver todos los Paises"
+        Me.Paises_Button_VerTodosPaises.UseVisualStyleBackColor = True
         '
-        'Paises_ButtonActualizar
+        'Paises_ListBox_Paises
         '
-        Me.Paises_ButtonActualizar.Location = New System.Drawing.Point(304, 323)
-        Me.Paises_ButtonActualizar.Name = "Paises_ButtonActualizar"
-        Me.Paises_ButtonActualizar.Size = New System.Drawing.Size(131, 56)
-        Me.Paises_ButtonActualizar.TabIndex = 4
-        Me.Paises_ButtonActualizar.Text = "ACTUALIZAR"
-        Me.Paises_ButtonActualizar.UseVisualStyleBackColor = True
+        Me.Paises_ListBox_Paises.FormattingEnabled = True
+        Me.Paises_ListBox_Paises.ItemHeight = 16
+        Me.Paises_ListBox_Paises.Location = New System.Drawing.Point(25, 67)
+        Me.Paises_ListBox_Paises.Name = "Paises_ListBox_Paises"
+        Me.Paises_ListBox_Paises.Size = New System.Drawing.Size(262, 212)
+        Me.Paises_ListBox_Paises.TabIndex = 8
+        '
+        'Paises_Button_Limpiar
+        '
+        Me.Paises_Button_Limpiar.Location = New System.Drawing.Point(473, 219)
+        Me.Paises_Button_Limpiar.Name = "Paises_Button_Limpiar"
+        Me.Paises_Button_Limpiar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Limpiar.TabIndex = 7
+        Me.Paises_Button_Limpiar.Text = "LIMPIAR"
+        Me.Paises_Button_Limpiar.UseVisualStyleBackColor = True
+        '
+        'Paises_Button_Eliminar
+        '
+        Me.Paises_Button_Eliminar.Location = New System.Drawing.Point(328, 219)
+        Me.Paises_Button_Eliminar.Name = "Paises_Button_Eliminar"
+        Me.Paises_Button_Eliminar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Eliminar.TabIndex = 6
+        Me.Paises_Button_Eliminar.Text = "ELIMINAR"
+        Me.Paises_Button_Eliminar.UseVisualStyleBackColor = True
+        '
+        'Paises_Button_Agregar
+        '
+        Me.Paises_Button_Agregar.Location = New System.Drawing.Point(473, 159)
+        Me.Paises_Button_Agregar.Name = "Paises_Button_Agregar"
+        Me.Paises_Button_Agregar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Agregar.TabIndex = 5
+        Me.Paises_Button_Agregar.Text = "AGREGAR"
+        Me.Paises_Button_Agregar.UseVisualStyleBackColor = True
+        '
+        'Paises_Button_Actualizar
+        '
+        Me.Paises_Button_Actualizar.Location = New System.Drawing.Point(328, 159)
+        Me.Paises_Button_Actualizar.Name = "Paises_Button_Actualizar"
+        Me.Paises_Button_Actualizar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Actualizar.TabIndex = 4
+        Me.Paises_Button_Actualizar.Text = "ACTUALIZAR"
+        Me.Paises_Button_Actualizar.UseVisualStyleBackColor = True
         '
         'Paises_ComboBox_Seleccionar
         '
         Me.Paises_ComboBox_Seleccionar.FormattingEnabled = True
-        Me.Paises_ComboBox_Seleccionar.Location = New System.Drawing.Point(331, 45)
+        Me.Paises_ComboBox_Seleccionar.Location = New System.Drawing.Point(354, 336)
         Me.Paises_ComboBox_Seleccionar.Name = "Paises_ComboBox_Seleccionar"
         Me.Paises_ComboBox_Seleccionar.Size = New System.Drawing.Size(121, 24)
         Me.Paises_ComboBox_Seleccionar.TabIndex = 1
@@ -292,7 +335,7 @@ Partial Class FormularioPrincipal
         'Paises_LabelSeleccionar
         '
         Me.Paises_LabelSeleccionar.AutoSize = True
-        Me.Paises_LabelSeleccionar.Location = New System.Drawing.Point(21, 48)
+        Me.Paises_LabelSeleccionar.Location = New System.Drawing.Point(31, 339)
         Me.Paises_LabelSeleccionar.Name = "Paises_LabelSeleccionar"
         Me.Paises_LabelSeleccionar.Size = New System.Drawing.Size(307, 16)
         Me.Paises_LabelSeleccionar.TabIndex = 0
@@ -698,13 +741,12 @@ Partial Class FormularioPrincipal
 
 
 
-    Friend WithEvents Artista_labelArtistas As Label
-    Friend WithEvents Artista_ComboBoxArtistas As ComboBox
-    Friend WithEvents Artista_labelNombreArtista As Label
-    Friend WithEvents Artista_textBoxNombreArtista As TextBox
-    Friend WithEvents Artista_buttonVerTodosArtistas As Button
-    Friend WithEvents Artista_labelPaisArtista As Label
-    Friend WithEvents Artista_textBoxPaisArtista As TextBox
+    Friend WithEvents Artista_Label_Artistas As Label
+    Friend WithEvents Artista_Label_NombreArtista As Label
+    Friend WithEvents Artista_TextBox_NombreArtista As TextBox
+    Friend WithEvents Artista_Button_VerTodosArtistas As Button
+    Friend WithEvents Artista_Label_PaisArtista As Label
+    Friend WithEvents Artista_TextBox_PaisArtista As TextBox
 
 
 
@@ -718,18 +760,18 @@ Partial Class FormularioPrincipal
     Friend WithEvents Albumes_LabelNombre As Label
     Friend WithEvents Albumes_TextBoxNombreAlbum As TextBox
     Friend WithEvents Albumes_ButtonAgregar As Button
-    Friend WithEvents Artista_ButtonEliminar As Button
+    Friend WithEvents Artista_Button_Eliminar As Button
     Friend WithEvents Artista_Button_Agregar As Button
     Friend WithEvents Artista_Button_Actualizar As Button
     Friend WithEvents Conciertos_LabelArtistas As Label
-    Friend WithEvents Artista_ButtonLimpiar As Button
-    Friend WithEvents Paises_ButtonLimpiar As Button
-    Friend WithEvents Paises_ButtonEliminar As Button
-    Friend WithEvents Paises_ButtonAgregar As Button
-    Friend WithEvents Paises_ButtonActualizar As Button
+    Friend WithEvents Artista_Button_Limpiar As Button
+    Friend WithEvents Paises_Button_Limpiar As Button
+    Friend WithEvents Paises_Button_Eliminar As Button
+    Friend WithEvents Paises_Button_Agregar As Button
+    Friend WithEvents Paises_Button_Actualizar As Button
     Friend WithEvents Albumes_ButtonLimpiar As Button
     Friend WithEvents Albumes_ButtonEliminar As Button
-    Friend WithEvents Paises_ListBoxPaises As ListBox
+    Friend WithEvents Paises_ListBox_Paises As ListBox
     Friend WithEvents Conciertos_LabelArtistasActuan As Label
     Friend WithEvents Conciertos_ComboBoxArtistaActua As ComboBox
     Friend WithEvents Conciertos_ComboBoxSitiosDondeHayConcierto As ComboBox
@@ -753,4 +795,9 @@ Partial Class FormularioPrincipal
     Friend WithEvents Canciones_LabelDuracion As Label
     Friend WithEvents Canciones_TextBoxNombreCanciones As TextBox
     Friend WithEvents Canciones_ListBoxTodasLasCanciones As ListBox
+    Friend WithEvents Artista_ListBox_Artistas As ListBox
+    Friend WithEvents Paises_Button_VerTodosPaises As Button
+    Friend WithEvents Paises_Label_Paises As Label
+    Friend WithEvents Paises_Label_Nombre As Label
+    Friend WithEvents Paises_TextBox_NombrePais As TextBox
 End Class
