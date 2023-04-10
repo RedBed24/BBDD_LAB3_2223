@@ -271,9 +271,9 @@ Partial Class FormularioPrincipal
         '
         'Paises_TextBox_NombrePais
         '
-        Me.Paises_TextBox_NombrePais.Location = New System.Drawing.Point(324, 49)
+        Me.Paises_TextBox_NombrePais.Location = New System.Drawing.Point(334, 49)
         Me.Paises_TextBox_NombrePais.Name = "Paises_TextBox_NombrePais"
-        Me.Paises_TextBox_NombrePais.Size = New System.Drawing.Size(156, 22)
+        Me.Paises_TextBox_NombrePais.Size = New System.Drawing.Size(256, 22)
         Me.Paises_TextBox_NombrePais.TabIndex = 12
         '
         'Paises_Label_Nombre
