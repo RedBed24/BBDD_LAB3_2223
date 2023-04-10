@@ -94,6 +94,15 @@
         Artista_TextBox_NombreArtista.Text = artista.Nombre
         Artista_TextBox_PaisArtista.Text = artista.Pais.NombrePais
 
+        Paises_Button_VerTodosPaises.PerformClick()
+
+        For Each pais As Pais In Artista_ComboBox_PaisArtista.Items
+            If pais.idPais = artista.Pais.idPais Then
+                Artista_ComboBox_PaisArtista.SelectedItem = pais
+                Exit For
+            End If
+        Next
+
     End Sub
 
     '
@@ -102,6 +111,7 @@
 
     Private Sub Paises_Button_VerTodosPaises_Click(sender As Object, e As EventArgs) Handles Paises_Button_VerTodosPaises.Click
         Paises_Button_Limpiar.PerformClick()
+        Artista_ComboBox_PaisArtista.Items.Clear()
 
         Dim paises As New Pais
 
@@ -114,6 +124,7 @@
 
         For Each pais As Pais In paises.PaiDAO.Paises
             Paises_ListBox_Paises.Items.Add(pais)
+            Artista_ComboBox_PaisArtista.Items.Add(pais)
         Next
 
     End Sub

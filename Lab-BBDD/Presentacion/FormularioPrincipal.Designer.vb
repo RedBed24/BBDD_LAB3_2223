@@ -24,6 +24,7 @@ Partial Class FormularioPrincipal
     Private Sub InitializeComponent()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.TabArtista = New System.Windows.Forms.TabPage()
+        Me.Artista_ComboBox_PaisArtista = New System.Windows.Forms.ComboBox()
         Me.Artista_ListBox_Artistas = New System.Windows.Forms.ListBox()
         Me.Artista_Button_Limpiar = New System.Windows.Forms.Button()
         Me.Artista_Button_Eliminar = New System.Windows.Forms.Button()
@@ -110,6 +111,7 @@ Partial Class FormularioPrincipal
         '
         'TabArtista
         '
+        Me.TabArtista.Controls.Add(Me.Artista_ComboBox_PaisArtista)
         Me.TabArtista.Controls.Add(Me.Artista_ListBox_Artistas)
         Me.TabArtista.Controls.Add(Me.Artista_Button_Limpiar)
         Me.TabArtista.Controls.Add(Me.Artista_Button_Eliminar)
@@ -128,6 +130,14 @@ Partial Class FormularioPrincipal
         Me.TabArtista.TabIndex = 1
         Me.TabArtista.Text = "Artista"
         Me.TabArtista.UseVisualStyleBackColor = True
+        '
+        'Artista_ComboBox_PaisArtista
+        '
+        Me.Artista_ComboBox_PaisArtista.FormattingEnabled = True
+        Me.Artista_ComboBox_PaisArtista.Location = New System.Drawing.Point(257, 318)
+        Me.Artista_ComboBox_PaisArtista.Name = "Artista_ComboBox_PaisArtista"
+        Me.Artista_ComboBox_PaisArtista.Size = New System.Drawing.Size(119, 24)
+        Me.Artista_ComboBox_PaisArtista.TabIndex = 12
         '
         'Artista_ListBox_Artistas
         '
@@ -800,4 +810,5 @@ Partial Class FormularioPrincipal
     Friend WithEvents Paises_Label_Paises As Label
     Friend WithEvents Paises_Label_Nombre As Label
     Friend WithEvents Paises_TextBox_NombrePais As TextBox
+    Friend WithEvents Artista_ComboBox_PaisArtista As ComboBox
 End Class
