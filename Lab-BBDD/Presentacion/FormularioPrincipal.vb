@@ -54,6 +54,54 @@
 
     End Sub
 
+    Private Sub Artistas_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Actualizar.Click
+        If Artista_ListBox_Artistas.SelectedItem Is Nothing Then
+            MessageBox.Show("Se debe seleccionar un Artista")
+            Exit Sub
+        End If
+
+        Dim artistamodificar As Artista = Artista_ListBox_Artistas.SelectedItem
+
+        If String.IsNullOrEmpty(Artista_TextBox_NombreArtista.Text) Then
+            MessageBox.Show("Se debe introducir un nombre de artista válido")
+            Exit Sub
+        End If
+
+        If String.IsNullOrEmpty(Artista_TextBox_PaisArtista.Text) Then
+            MessageBox.Show("Se debe introducir un nombre de pais válido")
+            Exit Sub
+        End If
+
+        Dim nuevonombre As String = Artista_TextBox_NombreArtista.Text
+
+        Dim nombrepais As String = Artista_TextBox_PaisArtista.Text
+        Dim codpais As String = Pais.obtainID(nombrepais)
+
+        Dim nuevopais As New Pais(codpais, nombrepais)
+
+        artistamodificar.Nombre = nuevonombre
+        artistamodificar.Pais = nuevopais
+
+        Try
+            If artistamodificar.ActualizarArtista() <> 1 Then
+                ' wtf como ocurre esto?
+                MessageBox.Show("no existe (y no se puede modificar) " & artistamodificar.ToString)
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(artistamodificar.ToString & " modificado correctamente")
+
+        ' porque no se ve actualizado en el listbox
+        Artista_ListBox_Artistas.Items.Remove(artistamodificar)
+        Artista_ListBox_Artistas.Items.Add(artistamodificar)
+        Artista_ListBox_Artistas.SelectedItem = artistamodificar
+
+    End Sub
+
     Private Sub Artista_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Eliminar.Click
         If Artista_ListBox_Artistas.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un Artista")
