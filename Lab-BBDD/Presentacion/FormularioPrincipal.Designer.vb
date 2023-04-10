@@ -61,8 +61,7 @@ Partial Class FormularioPrincipal
         Me.Albumes_ButtonVerTodosLosArtistas = New System.Windows.Forms.Button()
         Me.Albumes_ComboBoxArtistas = New System.Windows.Forms.ComboBox()
         Me.TabConciertos = New System.Windows.Forms.TabPage()
-        Me.FechaEjemplo = New System.Windows.Forms.Label()
-        Me.Conciertos_TextBoxFecha = New System.Windows.Forms.TextBox()
+        Me.Conciertos_MonthCalendar_FechaConcierto = New System.Windows.Forms.MonthCalendar()
         Me.Conciertos_ListBoxTodosLosConciertos = New System.Windows.Forms.ListBox()
         Me.Conciertos_LabelArtistaActua = New System.Windows.Forms.Label()
         Me.Conciertos_ButtonLimpiar = New System.Windows.Forms.Button()
@@ -482,8 +481,7 @@ Partial Class FormularioPrincipal
         '
         'TabConciertos
         '
-        Me.TabConciertos.Controls.Add(Me.FechaEjemplo)
-        Me.TabConciertos.Controls.Add(Me.Conciertos_TextBoxFecha)
+        Me.TabConciertos.Controls.Add(Me.Conciertos_MonthCalendar_FechaConcierto)
         Me.TabConciertos.Controls.Add(Me.Conciertos_ListBoxTodosLosConciertos)
         Me.TabConciertos.Controls.Add(Me.Conciertos_LabelArtistaActua)
         Me.TabConciertos.Controls.Add(Me.Conciertos_ButtonLimpiar)
@@ -502,24 +500,6 @@ Partial Class FormularioPrincipal
         Me.TabConciertos.TabIndex = 3
         Me.TabConciertos.Text = "Conciertos"
         Me.TabConciertos.UseVisualStyleBackColor = True
-        '
-        'FechaEjemplo
-        '
-        Me.FechaEjemplo.AutoSize = True
-        Me.FechaEjemplo.BackColor = System.Drawing.Color.Transparent
-        Me.FechaEjemplo.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.FechaEjemplo.Location = New System.Drawing.Point(475, 53)
-        Me.FechaEjemplo.Name = "FechaEjemplo"
-        Me.FechaEjemplo.Size = New System.Drawing.Size(113, 16)
-        Me.FechaEjemplo.TabIndex = 19
-        Me.FechaEjemplo.Text = "Ejemplo: 19/03/23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Conciertos_TextBoxFecha
-        '
-        Me.Conciertos_TextBoxFecha.Location = New System.Drawing.Point(324, 51)
-        Me.Conciertos_TextBoxFecha.Name = "Conciertos_TextBoxFecha"
-        Me.Conciertos_TextBoxFecha.Size = New System.Drawing.Size(143, 22)
-        Me.Conciertos_TextBoxFecha.TabIndex = 18
         '
         'Conciertos_ListBoxTodosLosConciertos
         '
@@ -578,7 +558,7 @@ Partial Class FormularioPrincipal
         'Conciertos_ComboBoxSitiosDondeHayConcierto
         '
         Me.Conciertos_ComboBoxSitiosDondeHayConcierto.FormattingEnabled = True
-        Me.Conciertos_ComboBoxSitiosDondeHayConcierto.Location = New System.Drawing.Point(326, 156)
+        Me.Conciertos_ComboBoxSitiosDondeHayConcierto.Location = New System.Drawing.Point(344, 50)
         Me.Conciertos_ComboBoxSitiosDondeHayConcierto.Name = "Conciertos_ComboBoxSitiosDondeHayConcierto"
         Me.Conciertos_ComboBoxSitiosDondeHayConcierto.Size = New System.Drawing.Size(170, 24)
         Me.Conciertos_ComboBoxSitiosDondeHayConcierto.TabIndex = 11
@@ -586,7 +566,7 @@ Partial Class FormularioPrincipal
         'Conciertos_LabelSitiosDondeHayConciertos
         '
         Me.Conciertos_LabelSitiosDondeHayConciertos.AutoSize = True
-        Me.Conciertos_LabelSitiosDondeHayConciertos.Location = New System.Drawing.Point(324, 122)
+        Me.Conciertos_LabelSitiosDondeHayConciertos.Location = New System.Drawing.Point(341, 22)
         Me.Conciertos_LabelSitiosDondeHayConciertos.Name = "Conciertos_LabelSitiosDondeHayConciertos"
         Me.Conciertos_LabelSitiosDondeHayConciertos.Size = New System.Drawing.Size(175, 16)
         Me.Conciertos_LabelSitiosDondeHayConciertos.TabIndex = 10
@@ -612,11 +592,17 @@ Partial Class FormularioPrincipal
         'Conciertos_LabelArtistas
         '
         Me.Conciertos_LabelArtistas.AutoSize = True
-        Me.Conciertos_LabelArtistas.Location = New System.Drawing.Point(324, 23)
+        Me.Conciertos_LabelArtistas.Location = New System.Drawing.Point(341, 106)
         Me.Conciertos_LabelArtistas.Name = "Conciertos_LabelArtistas"
         Me.Conciertos_LabelArtistas.Size = New System.Drawing.Size(125, 16)
         Me.Conciertos_LabelArtistas.TabIndex = 2
         Me.Conciertos_LabelArtistas.Text = "Fecha del concierto"
+        '
+        'Conciertos_MonthCalendar_FechaConcierto
+        '
+        Me.Conciertos_MonthCalendar_FechaConcierto.Location = New System.Drawing.Point(344, 131)
+        Me.Conciertos_MonthCalendar_FechaConcierto.Name = "Conciertos_MonthCalendar_FechaConcierto"
+        Me.Conciertos_MonthCalendar_FechaConcierto.TabIndex = 20
         '
         'TabCanciones
         '
@@ -959,15 +945,13 @@ Partial Class FormularioPrincipal
     Friend WithEvents Conciertos_ButtonActualizar As Button
     Friend WithEvents Conciertos_LabelArtistaActua As Label
     Friend WithEvents Conciertos_ListBoxTodosLosConciertos As ListBox
+    Friend WithEvents Conciertos_MonthCalendar_FechaConcierto As MonthCalendar
 
 
 
     Friend WithEvents ColorDialog1 As ColorDialog
-    Friend WithEvents FechaEjemplo As Label
 
 
-
-    Friend WithEvents Conciertos_TextBoxFecha As TextBox
     Friend WithEvents Canciones_ButtonLimpiar As Button
     Friend WithEvents Canciones_ButtonEliminar As Button
     Friend WithEvents Canciones_ButtonAgregar As Button
