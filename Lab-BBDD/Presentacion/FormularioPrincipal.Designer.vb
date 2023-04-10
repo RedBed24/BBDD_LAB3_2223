@@ -85,6 +85,19 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonActualizar = New System.Windows.Forms.Button()
         Me.Canciones_LabelNombreCancion = New System.Windows.Forms.Label()
         Me.TabSitio = New System.Windows.Forms.TabPage()
+        Me.Sitios_ListBox_Sitios = New System.Windows.Forms.ListBox()
+        Me.Sitios_Button_Limpiar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Eliminar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Agregar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Actualizar = New System.Windows.Forms.Button()
+        Me.Sitios_Label_PaisSitio = New System.Windows.Forms.Label()
+        Me.Sitios_Label_NombreSitio = New System.Windows.Forms.Label()
+        Me.Sitios_TextBox_NombreSitio = New System.Windows.Forms.TextBox()
+        Me.Sitios_Button_VerTodosSitios = New System.Windows.Forms.Button()
+        Me.Sitios_Label_Sitios = New System.Windows.Forms.Label()
+        Me.Sitios_ComboBox_PaisSitio = New System.Windows.Forms.ComboBox()
+        Me.Sitios_ComboBox_TipoSitio = New System.Windows.Forms.ComboBox()
+        Me.Sitios_Label_Tipo = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TabControl.SuspendLayout()
@@ -93,6 +106,7 @@ Partial Class FormularioPrincipal
         Me.TabAlbum.SuspendLayout()
         Me.TabConciertos.SuspendLayout()
         Me.TabCanciones.SuspendLayout()
+        Me.TabSitio.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl
@@ -702,6 +716,19 @@ Partial Class FormularioPrincipal
         '
         'TabSitio
         '
+        Me.TabSitio.Controls.Add(Me.Sitios_Label_Tipo)
+        Me.TabSitio.Controls.Add(Me.Sitios_ComboBox_TipoSitio)
+        Me.TabSitio.Controls.Add(Me.Sitios_ComboBox_PaisSitio)
+        Me.TabSitio.Controls.Add(Me.Sitios_ListBox_Sitios)
+        Me.TabSitio.Controls.Add(Me.Sitios_Button_Limpiar)
+        Me.TabSitio.Controls.Add(Me.Sitios_Button_Eliminar)
+        Me.TabSitio.Controls.Add(Me.Sitios_Button_Agregar)
+        Me.TabSitio.Controls.Add(Me.Sitios_Button_Actualizar)
+        Me.TabSitio.Controls.Add(Me.Sitios_Label_PaisSitio)
+        Me.TabSitio.Controls.Add(Me.Sitios_Label_NombreSitio)
+        Me.TabSitio.Controls.Add(Me.Sitios_TextBox_NombreSitio)
+        Me.TabSitio.Controls.Add(Me.Sitios_Button_VerTodosSitios)
+        Me.TabSitio.Controls.Add(Me.Sitios_Label_Sitios)
         Me.TabSitio.Location = New System.Drawing.Point(4, 25)
         Me.TabSitio.Name = "TabSitio"
         Me.TabSitio.Padding = New System.Windows.Forms.Padding(3)
@@ -709,6 +736,119 @@ Partial Class FormularioPrincipal
         Me.TabSitio.TabIndex = 5
         Me.TabSitio.Text = "Sitio"
         Me.TabSitio.UseVisualStyleBackColor = True
+        '
+        'Sitios_ListBox_Sitios
+        '
+        Me.Sitios_ListBox_Sitios.FormattingEnabled = True
+        Me.Sitios_ListBox_Sitios.ItemHeight = 16
+        Me.Sitios_ListBox_Sitios.Location = New System.Drawing.Point(29, 49)
+        Me.Sitios_ListBox_Sitios.Name = "Sitios_ListBox_Sitios"
+        Me.Sitios_ListBox_Sitios.Size = New System.Drawing.Size(267, 228)
+        Me.Sitios_ListBox_Sitios.TabIndex = 11
+        '
+        'Sitios_Button_Limpiar
+        '
+        Me.Sitios_Button_Limpiar.Location = New System.Drawing.Point(471, 236)
+        Me.Sitios_Button_Limpiar.Name = "Sitios_Button_Limpiar"
+        Me.Sitios_Button_Limpiar.Size = New System.Drawing.Size(119, 39)
+        Me.Sitios_Button_Limpiar.TabIndex = 10
+        Me.Sitios_Button_Limpiar.Text = "LIMPIAR"
+        Me.Sitios_Button_Limpiar.UseVisualStyleBackColor = True
+        '
+        'Sitios_Button_Eliminar
+        '
+        Me.Sitios_Button_Eliminar.Location = New System.Drawing.Point(334, 236)
+        Me.Sitios_Button_Eliminar.Name = "Sitios_Button_Eliminar"
+        Me.Sitios_Button_Eliminar.Size = New System.Drawing.Size(119, 39)
+        Me.Sitios_Button_Eliminar.TabIndex = 9
+        Me.Sitios_Button_Eliminar.Text = "ELIMINAR"
+        Me.Sitios_Button_Eliminar.UseVisualStyleBackColor = True
+        '
+        'Sitios_Button_Agregar
+        '
+        Me.Sitios_Button_Agregar.Location = New System.Drawing.Point(471, 175)
+        Me.Sitios_Button_Agregar.Name = "Sitios_Button_Agregar"
+        Me.Sitios_Button_Agregar.Size = New System.Drawing.Size(119, 39)
+        Me.Sitios_Button_Agregar.TabIndex = 8
+        Me.Sitios_Button_Agregar.Text = "AGREGAR"
+        Me.Sitios_Button_Agregar.UseVisualStyleBackColor = True
+        '
+        'Sitios_Button_Actualizar
+        '
+        Me.Sitios_Button_Actualizar.Location = New System.Drawing.Point(334, 175)
+        Me.Sitios_Button_Actualizar.Name = "Sitios_Button_Actualizar"
+        Me.Sitios_Button_Actualizar.Size = New System.Drawing.Size(119, 39)
+        Me.Sitios_Button_Actualizar.TabIndex = 7
+        Me.Sitios_Button_Actualizar.Text = "ACTUALIZAR"
+        Me.Sitios_Button_Actualizar.UseVisualStyleBackColor = True
+        '
+        'Sitios_Label_PaisSitio
+        '
+        Me.Sitios_Label_PaisSitio.AutoSize = True
+        Me.Sitios_Label_PaisSitio.Location = New System.Drawing.Point(342, 114)
+        Me.Sitios_Label_PaisSitio.Name = "Sitios_Label_PaisSitio"
+        Me.Sitios_Label_PaisSitio.Size = New System.Drawing.Size(86, 16)
+        Me.Sitios_Label_PaisSitio.TabIndex = 6
+        Me.Sitios_Label_PaisSitio.Text = "País del sitio:"
+        '
+        'Sitios_Label_NombreSitio
+        '
+        Me.Sitios_Label_NombreSitio.AutoSize = True
+        Me.Sitios_Label_NombreSitio.Location = New System.Drawing.Point(342, 10)
+        Me.Sitios_Label_NombreSitio.Name = "Sitios_Label_NombreSitio"
+        Me.Sitios_Label_NombreSitio.Size = New System.Drawing.Size(108, 16)
+        Me.Sitios_Label_NombreSitio.TabIndex = 4
+        Me.Sitios_Label_NombreSitio.Text = "Nombre del sitio:"
+        '
+        'Sitios_TextBox_NombreSitio
+        '
+        Me.Sitios_TextBox_NombreSitio.Location = New System.Drawing.Point(334, 29)
+        Me.Sitios_TextBox_NombreSitio.Name = "Sitios_TextBox_NombreSitio"
+        Me.Sitios_TextBox_NombreSitio.Size = New System.Drawing.Size(256, 22)
+        Me.Sitios_TextBox_NombreSitio.TabIndex = 3
+        '
+        'Sitios_Button_VerTodosSitios
+        '
+        Me.Sitios_Button_VerTodosSitios.Location = New System.Drawing.Point(112, 10)
+        Me.Sitios_Button_VerTodosSitios.Name = "Sitios_Button_VerTodosSitios"
+        Me.Sitios_Button_VerTodosSitios.Size = New System.Drawing.Size(154, 28)
+        Me.Sitios_Button_VerTodosSitios.TabIndex = 2
+        Me.Sitios_Button_VerTodosSitios.Text = "Ver todos los Sitios"
+        Me.Sitios_Button_VerTodosSitios.UseVisualStyleBackColor = True
+        '
+        'Sitios_Label_Sitios
+        '
+        Me.Sitios_Label_Sitios.AutoSize = True
+        Me.Sitios_Label_Sitios.Location = New System.Drawing.Point(46, 22)
+        Me.Sitios_Label_Sitios.Name = "Sitios_Label_Sitios"
+        Me.Sitios_Label_Sitios.Size = New System.Drawing.Size(43, 16)
+        Me.Sitios_Label_Sitios.TabIndex = 1
+        Me.Sitios_Label_Sitios.Text = "Sitios:"
+        '
+        'Sitios_ComboBox_PaisSitio
+        '
+        Me.Sitios_ComboBox_PaisSitio.FormattingEnabled = True
+        Me.Sitios_ComboBox_PaisSitio.Location = New System.Drawing.Point(334, 133)
+        Me.Sitios_ComboBox_PaisSitio.Name = "Sitios_ComboBox_PaisSitio"
+        Me.Sitios_ComboBox_PaisSitio.Size = New System.Drawing.Size(256, 24)
+        Me.Sitios_ComboBox_PaisSitio.TabIndex = 13
+        '
+        'Sitios_ComboBox_TipoSitio
+        '
+        Me.Sitios_ComboBox_TipoSitio.FormattingEnabled = True
+        Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(334, 79)
+        Me.Sitios_ComboBox_TipoSitio.Name = "Sitios_ComboBox_TipoSitio"
+        Me.Sitios_ComboBox_TipoSitio.Size = New System.Drawing.Size(256, 24)
+        Me.Sitios_ComboBox_TipoSitio.TabIndex = 14
+        '
+        'Sitios_Label_Tipo
+        '
+        Me.Sitios_Label_Tipo.AutoSize = True
+        Me.Sitios_Label_Tipo.Location = New System.Drawing.Point(342, 60)
+        Me.Sitios_Label_Tipo.Name = "Sitios_Label_Tipo"
+        Me.Sitios_Label_Tipo.Size = New System.Drawing.Size(87, 16)
+        Me.Sitios_Label_Tipo.TabIndex = 15
+        Me.Sitios_Label_Tipo.Text = "Tipo del sitio:"
         '
         'FormularioPrincipal
         '
@@ -729,6 +869,8 @@ Partial Class FormularioPrincipal
         Me.TabConciertos.PerformLayout()
         Me.TabCanciones.ResumeLayout(False)
         Me.TabCanciones.PerformLayout()
+        Me.TabSitio.ResumeLayout(False)
+        Me.TabSitio.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
