@@ -4,8 +4,8 @@
     ' TAB ARTISTA
     '
 
-    Private Sub Artista_Button_VerTodosArtistas_Click(sender As Object, e As EventArgs) Handles Artista_Button_VerTodosArtistas.Click
-        Artista_Button_Limpiar.PerformClick()
+    Private Sub Artistas_Button_VerTodosArtistas_Click(sender As Object, e As EventArgs) Handles Artistas_Button_VerTodosArtistas.Click
+        Artistas_Button_Limpiar.PerformClick()
 
         Dim artistas As New Artista
 
@@ -17,20 +17,20 @@
         End Try
 
         For Each artista As Artista In artistas.ArtistDAO.Artistas
-            Artista_ListBox_Artistas.Items.Add(artista)
+            Artistas_ListBox_Artistas.Items.Add(artista)
         Next
 
     End Sub
 
-    Private Sub Artista_Button_Agregar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Agregar.Click
-        Dim nombre As String = Artista_TextBox_NombreArtista.Text
+    Private Sub Artistas_Button_Agregar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Agregar.Click
+        Dim nombre As String = Artistas_TextBox_NombreArtista.Text
 
         If String.IsNullOrEmpty(nombre) Then
             MessageBox.Show("El artista debe tener un nombre.")
             Exit Sub
         End If
 
-        Dim nombrepais As String = Artista_TextBox_PaisArtista.Text
+        Dim nombrepais As String = Artistas_TextBox_PaisArtista.Text
         Dim codpais As String = Pais.obtainID(nombrepais)
 
         Dim paisartista As New Pais(codpais, nombre)
@@ -50,31 +50,31 @@
         MessageBox.Show(artistaanadir.Nombre & " añadido correctamente.")
 
         ' no sabemos qué id le ha dado la bbdd
-        Artista_Button_VerTodosArtistas.PerformClick()
+        Artistas_Button_VerTodosArtistas.PerformClick()
 
     End Sub
 
-    Private Sub Artistas_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Actualizar.Click
-        If Artista_ListBox_Artistas.SelectedItem Is Nothing Then
+    Private Sub Artistas_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Actualizar.Click
+        If Artistas_ListBox_Artistas.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un Artista")
             Exit Sub
         End If
 
-        Dim artistamodificar As Artista = Artista_ListBox_Artistas.SelectedItem
+        Dim artistamodificar As Artista = Artistas_ListBox_Artistas.SelectedItem
 
-        If String.IsNullOrEmpty(Artista_TextBox_NombreArtista.Text) Then
+        If String.IsNullOrEmpty(Artistas_TextBox_NombreArtista.Text) Then
             MessageBox.Show("Se debe introducir un nombre de artista válido")
             Exit Sub
         End If
 
-        If String.IsNullOrEmpty(Artista_TextBox_PaisArtista.Text) Then
+        If String.IsNullOrEmpty(Artistas_TextBox_PaisArtista.Text) Then
             MessageBox.Show("Se debe introducir un nombre de pais válido")
             Exit Sub
         End If
 
-        Dim nuevonombre As String = Artista_TextBox_NombreArtista.Text
+        Dim nuevonombre As String = Artistas_TextBox_NombreArtista.Text
 
-        Dim nombrepais As String = Artista_TextBox_PaisArtista.Text
+        Dim nombrepais As String = Artistas_TextBox_PaisArtista.Text
         Dim codpais As String = Pais.obtainID(nombrepais)
 
         Dim nuevopais As New Pais(codpais, nombrepais)
@@ -96,19 +96,19 @@
         MessageBox.Show(artistamodificar.ToString & " modificado correctamente")
 
         ' porque no se ve actualizado en el listbox
-        Artista_ListBox_Artistas.Items.Remove(artistamodificar)
-        Artista_ListBox_Artistas.Items.Add(artistamodificar)
-        Artista_ListBox_Artistas.SelectedItem = artistamodificar
+        Artistas_ListBox_Artistas.Items.Remove(artistamodificar)
+        Artistas_ListBox_Artistas.Items.Add(artistamodificar)
+        Artistas_ListBox_Artistas.SelectedItem = artistamodificar
 
     End Sub
 
-    Private Sub Artista_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Eliminar.Click
-        If Artista_ListBox_Artistas.SelectedItem Is Nothing Then
+    Private Sub Artistas_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Eliminar.Click
+        If Artistas_ListBox_Artistas.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un Artista")
             Exit Sub
         End If
 
-        Dim artistaborrar As Artista = Artista_ListBox_Artistas.SelectedItem
+        Dim artistaborrar As Artista = Artistas_ListBox_Artistas.SelectedItem
 
         Try
             If artistaborrar.BorrarArtista() <> 1 Then
@@ -120,33 +120,33 @@
         End Try
 
         MessageBox.Show(artistaborrar.ToString & " eliminado correctamente")
-        Artista_ListBox_Artistas.Items.Remove(artistaborrar)
+        Artistas_ListBox_Artistas.Items.Remove(artistaborrar)
 
     End Sub
 
-    Private Sub Artista_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Artista_Button_Limpiar.Click
-        Artista_ListBox_Artistas.Items.Clear()
+    Private Sub Artistas_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Limpiar.Click
+        Artistas_ListBox_Artistas.Items.Clear()
 
-        Artista_TextBox_NombreArtista.Clear()
-        Artista_TextBox_PaisArtista.Clear()
+        Artistas_TextBox_NombreArtista.Clear()
+        Artistas_TextBox_PaisArtista.Clear()
 
     End Sub
 
-    Private Sub Artista_ListBox_Artistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Artista_ListBox_Artistas.SelectedIndexChanged
-        If Artista_ListBox_Artistas.SelectedItem Is Nothing Then
+    Private Sub Artistas_ListBox_Artistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Artistas_ListBox_Artistas.SelectedIndexChanged
+        If Artistas_ListBox_Artistas.SelectedItem Is Nothing Then
             Exit Sub
         End If
 
-        Dim artista As Artista = Artista_ListBox_Artistas.SelectedItem
+        Dim artista As Artista = Artistas_ListBox_Artistas.SelectedItem
 
-        Artista_TextBox_NombreArtista.Text = artista.Nombre
-        Artista_TextBox_PaisArtista.Text = artista.Pais.NombrePais
+        Artistas_TextBox_NombreArtista.Text = artista.Nombre
+        Artistas_TextBox_PaisArtista.Text = artista.Pais.NombrePais
 
         Paises_Button_VerTodosPaises.PerformClick()
 
-        For Each pais As Pais In Artista_ComboBox_PaisArtista.Items
+        For Each pais As Pais In Artistas_ComboBox_PaisArtista.Items
             If pais.idPais = artista.Pais.idPais Then
-                Artista_ComboBox_PaisArtista.SelectedItem = pais
+                Artistas_ComboBox_PaisArtista.SelectedItem = pais
                 Exit For
             End If
         Next
@@ -159,7 +159,7 @@
 
     Private Sub Paises_Button_VerTodosPaises_Click(sender As Object, e As EventArgs) Handles Paises_Button_VerTodosPaises.Click
         Paises_Button_Limpiar.PerformClick()
-        Artista_ComboBox_PaisArtista.Items.Clear()
+        Artistas_ComboBox_PaisArtista.Items.Clear()
 
         Dim paises As New Pais
 
@@ -172,7 +172,7 @@
 
         For Each pais As Pais In paises.PaiDAO.Paises
             Paises_ListBox_Paises.Items.Add(pais)
-            Artista_ComboBox_PaisArtista.Items.Add(pais)
+            Artistas_ComboBox_PaisArtista.Items.Add(pais)
         Next
 
     End Sub
