@@ -30,9 +30,10 @@
             Exit Sub
         End If
 
-        ' TODO: Obtener el país??
-        Dim paisartista As New Pais("ESP")
-        paisartista.LeerPais()
+        Dim nombrepais As String = Artista_TextBox_PaisArtista.Text
+        Dim codpais As String = Pais.obtainID(nombrepais)
+
+        Dim paisartista As New Pais(codpais, nombre)
 
         Dim artistaanadir As New Artista(nombre, paisartista)
 
