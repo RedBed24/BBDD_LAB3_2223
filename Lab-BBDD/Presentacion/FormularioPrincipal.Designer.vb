@@ -85,6 +85,9 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonActualizar = New System.Windows.Forms.Button()
         Me.Canciones_LabelNombreCancion = New System.Windows.Forms.Label()
         Me.TabSitio = New System.Windows.Forms.TabPage()
+        Me.Sitios_Label_Tipo = New System.Windows.Forms.Label()
+        Me.Sitios_ComboBox_TipoSitio = New System.Windows.Forms.ComboBox()
+        Me.Sitios_ComboBox_PaisSitio = New System.Windows.Forms.ComboBox()
         Me.Sitios_ListBox_Sitios = New System.Windows.Forms.ListBox()
         Me.Sitios_Button_Limpiar = New System.Windows.Forms.Button()
         Me.Sitios_Button_Eliminar = New System.Windows.Forms.Button()
@@ -736,6 +739,31 @@ Partial Class FormularioPrincipal
         Me.TabSitio.TabIndex = 5
         Me.TabSitio.Text = "Sitio"
         Me.TabSitio.UseVisualStyleBackColor = True
+        '
+        'Sitios_Label_Tipo
+        '
+        Me.Sitios_Label_Tipo.AutoSize = True
+        Me.Sitios_Label_Tipo.Location = New System.Drawing.Point(342, 60)
+        Me.Sitios_Label_Tipo.Name = "Sitios_Label_Tipo"
+        Me.Sitios_Label_Tipo.Size = New System.Drawing.Size(87, 16)
+        Me.Sitios_Label_Tipo.TabIndex = 15
+        Me.Sitios_Label_Tipo.Text = "Tipo del sitio:"
+        '
+        'Sitios_ComboBox_TipoSitio
+        '
+        Me.Sitios_ComboBox_TipoSitio.FormattingEnabled = True
+        Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(334, 79)
+        Me.Sitios_ComboBox_TipoSitio.Name = "Sitios_ComboBox_TipoSitio"
+        Me.Sitios_ComboBox_TipoSitio.Size = New System.Drawing.Size(256, 24)
+        Me.Sitios_ComboBox_TipoSitio.TabIndex = 14
+        '
+        'Sitios_ComboBox_PaisSitio
+        '
+        Me.Sitios_ComboBox_PaisSitio.FormattingEnabled = True
+        Me.Sitios_ComboBox_PaisSitio.Location = New System.Drawing.Point(334, 133)
+        Me.Sitios_ComboBox_PaisSitio.Name = "Sitios_ComboBox_PaisSitio"
+        Me.Sitios_ComboBox_PaisSitio.Size = New System.Drawing.Size(256, 24)
+        Me.Sitios_ComboBox_PaisSitio.TabIndex = 13
         '
         'Sitios_ListBox_Sitios
         '
