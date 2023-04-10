@@ -48,8 +48,9 @@
         End Try
 
         MessageBox.Show(artistaanadir.Nombre & " añadido correctamente.")
-        Artista_ListBox_Artistas.Items.Add(artistaanadir)
-        Artista_ListBox_Artistas.SelectedItem = artistaanadir
+
+        ' no sabemos qué id le ha dado la bbdd
+        Artista_Button_VerTodosArtistas.PerformClick()
 
     End Sub
 
