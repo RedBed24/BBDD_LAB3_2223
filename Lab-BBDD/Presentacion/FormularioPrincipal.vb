@@ -153,6 +153,48 @@
 
     End Sub
 
+    Private Sub Paises_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Paises_Button_Actualizar.Click
+        If Paises_ListBox_Paises.SelectedItem Is Nothing Then
+            MessageBox.Show("Se debe seleccionar un País")
+            Exit Sub
+        End If
+
+        Dim paismodificar As Pais = Paises_ListBox_Paises.SelectedItem
+
+        Dim nuevonombre As String = Paises_TextBox_NombrePais.Text
+
+        If String.IsNullOrEmpty(nuevonombre) Or nuevonombre.Length < 3 Then
+            MessageBox.Show("Se debe introducir un nombre de país válido")
+            Exit Sub
+        End If
+
+        If Pais.obtainID(nuevonombre) <> paismodificar.idPais Then
+            MessageBox.Show("El código ha cambiado")
+            Exit Sub
+        End If
+
+        paismodificar.NombrePais = nuevonombre
+
+        Try
+            If paismodificar.ActualizarPais() <> 1 Then
+                ' wtf como ocurre esto?
+                MessageBox.Show("no existe (y no se puede modificar) " & paismodificar.ToString)
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(paismodificar.ToString & " modificado correctamente")
+
+        ' porque no se ve actualizado en el listbox
+        Paises_ListBox_Paises.Items.Remove(paismodificar)
+        Paises_ListBox_Paises.Items.Add(paismodificar)
+        Paises_ListBox_Paises.SelectedItem = paismodificar
+
+    End Sub
+
     Private Sub Paises_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Paises_Button_Eliminar.Click
         If Paises_ListBox_Paises.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un País")
