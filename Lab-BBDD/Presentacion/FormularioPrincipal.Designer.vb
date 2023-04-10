@@ -98,9 +98,6 @@ Partial Class FormularioPrincipal
         Me.Sitios_TextBox_NombreSitio = New System.Windows.Forms.TextBox()
         Me.Sitios_Button_VerTodosSitios = New System.Windows.Forms.Button()
         Me.Sitios_Label_Sitios = New System.Windows.Forms.Label()
-        Me.Sitios_ComboBox_PaisSitio = New System.Windows.Forms.ComboBox()
-        Me.Sitios_ComboBox_TipoSitio = New System.Windows.Forms.ComboBox()
-        Me.Sitios_Label_Tipo = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TabControl.SuspendLayout()
@@ -274,15 +271,15 @@ Partial Class FormularioPrincipal
         '
         'Paises_TextBox_NombrePais
         '
-        Me.Paises_TextBox_NombrePais.Location = New System.Drawing.Point(328, 67)
+        Me.Paises_TextBox_NombrePais.Location = New System.Drawing.Point(324, 49)
         Me.Paises_TextBox_NombrePais.Name = "Paises_TextBox_NombrePais"
-        Me.Paises_TextBox_NombrePais.Size = New System.Drawing.Size(265, 22)
+        Me.Paises_TextBox_NombrePais.Size = New System.Drawing.Size(156, 22)
         Me.Paises_TextBox_NombrePais.TabIndex = 12
         '
         'Paises_Label_Nombre
         '
         Me.Paises_Label_Nombre.AutoSize = True
-        Me.Paises_Label_Nombre.Location = New System.Drawing.Point(351, 37)
+        Me.Paises_Label_Nombre.Location = New System.Drawing.Point(348, 27)
         Me.Paises_Label_Nombre.Name = "Paises_Label_Nombre"
         Me.Paises_Label_Nombre.Size = New System.Drawing.Size(111, 16)
         Me.Paises_Label_Nombre.TabIndex = 11
@@ -291,7 +288,7 @@ Partial Class FormularioPrincipal
         'Paises_Label_Paises
         '
         Me.Paises_Label_Paises.AutoSize = True
-        Me.Paises_Label_Paises.Location = New System.Drawing.Point(41, 27)
+        Me.Paises_Label_Paises.Location = New System.Drawing.Point(43, 19)
         Me.Paises_Label_Paises.Name = "Paises_Label_Paises"
         Me.Paises_Label_Paises.Size = New System.Drawing.Size(52, 16)
         Me.Paises_Label_Paises.TabIndex = 10
@@ -299,9 +296,9 @@ Partial Class FormularioPrincipal
         '
         'Paises_Button_VerTodosPaises
         '
-        Me.Paises_Button_VerTodosPaises.Location = New System.Drawing.Point(111, 18)
+        Me.Paises_Button_VerTodosPaises.Location = New System.Drawing.Point(112, 10)
         Me.Paises_Button_VerTodosPaises.Name = "Paises_Button_VerTodosPaises"
-        Me.Paises_Button_VerTodosPaises.Size = New System.Drawing.Size(146, 35)
+        Me.Paises_Button_VerTodosPaises.Size = New System.Drawing.Size(154, 28)
         Me.Paises_Button_VerTodosPaises.TabIndex = 9
         Me.Paises_Button_VerTodosPaises.Text = "Ver todos los Paises"
         Me.Paises_Button_VerTodosPaises.UseVisualStyleBackColor = True
@@ -310,43 +307,43 @@ Partial Class FormularioPrincipal
         '
         Me.Paises_ListBox_Paises.FormattingEnabled = True
         Me.Paises_ListBox_Paises.ItemHeight = 16
-        Me.Paises_ListBox_Paises.Location = New System.Drawing.Point(25, 67)
+        Me.Paises_ListBox_Paises.Location = New System.Drawing.Point(29, 49)
         Me.Paises_ListBox_Paises.Name = "Paises_ListBox_Paises"
-        Me.Paises_ListBox_Paises.Size = New System.Drawing.Size(262, 212)
+        Me.Paises_ListBox_Paises.Size = New System.Drawing.Size(267, 228)
         Me.Paises_ListBox_Paises.TabIndex = 8
         '
         'Paises_Button_Limpiar
         '
-        Me.Paises_Button_Limpiar.Location = New System.Drawing.Point(473, 219)
+        Me.Paises_Button_Limpiar.Location = New System.Drawing.Point(471, 236)
         Me.Paises_Button_Limpiar.Name = "Paises_Button_Limpiar"
-        Me.Paises_Button_Limpiar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Limpiar.Size = New System.Drawing.Size(119, 39)
         Me.Paises_Button_Limpiar.TabIndex = 7
         Me.Paises_Button_Limpiar.Text = "LIMPIAR"
         Me.Paises_Button_Limpiar.UseVisualStyleBackColor = True
         '
         'Paises_Button_Eliminar
         '
-        Me.Paises_Button_Eliminar.Location = New System.Drawing.Point(328, 219)
+        Me.Paises_Button_Eliminar.Location = New System.Drawing.Point(334, 236)
         Me.Paises_Button_Eliminar.Name = "Paises_Button_Eliminar"
-        Me.Paises_Button_Eliminar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Eliminar.Size = New System.Drawing.Size(119, 39)
         Me.Paises_Button_Eliminar.TabIndex = 6
         Me.Paises_Button_Eliminar.Text = "ELIMINAR"
         Me.Paises_Button_Eliminar.UseVisualStyleBackColor = True
         '
         'Paises_Button_Agregar
         '
-        Me.Paises_Button_Agregar.Location = New System.Drawing.Point(473, 159)
+        Me.Paises_Button_Agregar.Location = New System.Drawing.Point(471, 175)
         Me.Paises_Button_Agregar.Name = "Paises_Button_Agregar"
-        Me.Paises_Button_Agregar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Agregar.Size = New System.Drawing.Size(119, 39)
         Me.Paises_Button_Agregar.TabIndex = 5
         Me.Paises_Button_Agregar.Text = "AGREGAR"
         Me.Paises_Button_Agregar.UseVisualStyleBackColor = True
         '
         'Paises_Button_Actualizar
         '
-        Me.Paises_Button_Actualizar.Location = New System.Drawing.Point(328, 159)
+        Me.Paises_Button_Actualizar.Location = New System.Drawing.Point(334, 175)
         Me.Paises_Button_Actualizar.Name = "Paises_Button_Actualizar"
-        Me.Paises_Button_Actualizar.Size = New System.Drawing.Size(120, 34)
+        Me.Paises_Button_Actualizar.Size = New System.Drawing.Size(119, 39)
         Me.Paises_Button_Actualizar.TabIndex = 4
         Me.Paises_Button_Actualizar.Text = "ACTUALIZAR"
         Me.Paises_Button_Actualizar.UseVisualStyleBackColor = True
@@ -852,31 +849,6 @@ Partial Class FormularioPrincipal
         Me.Sitios_Label_Sitios.Size = New System.Drawing.Size(43, 16)
         Me.Sitios_Label_Sitios.TabIndex = 1
         Me.Sitios_Label_Sitios.Text = "Sitios:"
-        '
-        'Sitios_ComboBox_PaisSitio
-        '
-        Me.Sitios_ComboBox_PaisSitio.FormattingEnabled = True
-        Me.Sitios_ComboBox_PaisSitio.Location = New System.Drawing.Point(334, 133)
-        Me.Sitios_ComboBox_PaisSitio.Name = "Sitios_ComboBox_PaisSitio"
-        Me.Sitios_ComboBox_PaisSitio.Size = New System.Drawing.Size(256, 24)
-        Me.Sitios_ComboBox_PaisSitio.TabIndex = 13
-        '
-        'Sitios_ComboBox_TipoSitio
-        '
-        Me.Sitios_ComboBox_TipoSitio.FormattingEnabled = True
-        Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(334, 79)
-        Me.Sitios_ComboBox_TipoSitio.Name = "Sitios_ComboBox_TipoSitio"
-        Me.Sitios_ComboBox_TipoSitio.Size = New System.Drawing.Size(256, 24)
-        Me.Sitios_ComboBox_TipoSitio.TabIndex = 14
-        '
-        'Sitios_Label_Tipo
-        '
-        Me.Sitios_Label_Tipo.AutoSize = True
-        Me.Sitios_Label_Tipo.Location = New System.Drawing.Point(342, 60)
-        Me.Sitios_Label_Tipo.Name = "Sitios_Label_Tipo"
-        Me.Sitios_Label_Tipo.Size = New System.Drawing.Size(87, 16)
-        Me.Sitios_Label_Tipo.TabIndex = 15
-        Me.Sitios_Label_Tipo.Text = "Tipo del sitio:"
         '
         'FormularioPrincipal
         '
