@@ -890,6 +890,15 @@ Partial Class FormularioPrincipal
 
     Friend WithEvents Paises_LabelSeleccionar As Label
     Friend WithEvents Paises_ComboBox_Seleccionar As ComboBox
+    Friend WithEvents Paises_Button_Limpiar As Button
+    Friend WithEvents Paises_Button_Eliminar As Button
+    Friend WithEvents Paises_Button_Agregar As Button
+    Friend WithEvents Paises_Button_Actualizar As Button
+    Friend WithEvents Paises_Button_VerTodosPaises As Button
+    Friend WithEvents Paises_Label_Paises As Label
+    Friend WithEvents Paises_Label_Nombre As Label
+    Friend WithEvents Paises_TextBox_NombrePais As TextBox
+    Friend WithEvents Paises_ListBox_Paises As ListBox
 
 
 
@@ -899,7 +908,28 @@ Partial Class FormularioPrincipal
     Friend WithEvents Artistas_Button_VerTodosArtistas As Button
     Friend WithEvents Artistas_Label_PaisArtista As Label
     Friend WithEvents Artistas_TextBox_PaisArtista As TextBox
+    Friend WithEvents Artistas_Button_Eliminar As Button
+    Friend WithEvents Artistas_Button_Agregar As Button
+    Friend WithEvents Artistas_Button_Actualizar As Button
+    Friend WithEvents Artistas_Button_Limpiar As Button
+    Friend WithEvents Artistas_ComboBox_PaisArtista As ComboBox
+    Friend WithEvents Artistas_ListBox_Artistas As ListBox
 
+
+
+    Friend WithEvents Sitios_Label_Sitios As Label
+    Friend WithEvents Sitios_Label_NombreSitio As Label
+    Friend WithEvents Sitios_TextBox_NombreSitio As TextBox
+    Friend WithEvents Sitios_Button_VerTodosSitios As Button
+    Friend WithEvents Sitios_Label_PaisSitio As Label
+    Friend WithEvents Sitios_Button_Eliminar As Button
+    Friend WithEvents Sitios_Button_Agregar As Button
+    Friend WithEvents Sitios_Button_Actualizar As Button
+    Friend WithEvents Sitios_Button_Limpiar As Button
+    Friend WithEvents Sitios_ListBox_Sitios As ListBox
+    Friend WithEvents Sitios_Label_Tipo As Label
+    Friend WithEvents Sitios_ComboBox_TipoSitio As ComboBox
+    Friend WithEvents Sitios_ComboBox_PaisSitio As ComboBox
 
 
 
@@ -912,18 +942,12 @@ Partial Class FormularioPrincipal
     Friend WithEvents Albumes_LabelNombre As Label
     Friend WithEvents Albumes_TextBoxNombreAlbum As TextBox
     Friend WithEvents Albumes_ButtonAgregar As Button
-    Friend WithEvents Artistas_Button_Eliminar As Button
-    Friend WithEvents Artistas_Button_Agregar As Button
-    Friend WithEvents Artistas_Button_Actualizar As Button
-    Friend WithEvents Conciertos_LabelArtistas As Label
-    Friend WithEvents Artistas_Button_Limpiar As Button
-    Friend WithEvents Paises_Button_Limpiar As Button
-    Friend WithEvents Paises_Button_Eliminar As Button
-    Friend WithEvents Paises_Button_Agregar As Button
-    Friend WithEvents Paises_Button_Actualizar As Button
-    Friend WithEvents Albumes_ButtonLimpiar As Button
     Friend WithEvents Albumes_ButtonEliminar As Button
-    Friend WithEvents Paises_ListBox_Paises As ListBox
+    Friend WithEvents Albumes_ButtonLimpiar As Button
+
+
+
+    Friend WithEvents Conciertos_LabelArtistas As Label
     Friend WithEvents Conciertos_LabelArtistasActuan As Label
     Friend WithEvents Conciertos_ComboBoxArtistaActua As ComboBox
     Friend WithEvents Conciertos_ComboBoxSitiosDondeHayConcierto As ComboBox
@@ -934,23 +958,26 @@ Partial Class FormularioPrincipal
     Friend WithEvents Conciertos_ButtonActualizar As Button
     Friend WithEvents Conciertos_LabelArtistaActua As Label
     Friend WithEvents Conciertos_ListBoxTodosLosConciertos As ListBox
+
+
+
     Friend WithEvents ColorDialog1 As ColorDialog
     Friend WithEvents FechaEjemplo As Label
+
+
+
     Friend WithEvents Conciertos_TextBoxFecha As TextBox
     Friend WithEvents Canciones_ButtonLimpiar As Button
     Friend WithEvents Canciones_ButtonEliminar As Button
     Friend WithEvents Canciones_ButtonAgregar As Button
     Friend WithEvents Canciones_ButtonActualizar As Button
     Friend WithEvents Canciones_LabelNombreCancion As Label
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Canciones_TextBoxDuracionCanciones As TextBox
     Friend WithEvents Canciones_LabelDuracion As Label
     Friend WithEvents Canciones_TextBoxNombreCanciones As TextBox
     Friend WithEvents Canciones_ListBoxTodasLasCanciones As ListBox
-    Friend WithEvents Artistas_ListBox_Artistas As ListBox
-    Friend WithEvents Paises_Button_VerTodosPaises As Button
-    Friend WithEvents Paises_Label_Paises As Label
-    Friend WithEvents Paises_Label_Nombre As Label
-    Friend WithEvents Paises_TextBox_NombrePais As TextBox
-    Friend WithEvents Artistas_ComboBox_PaisArtista As ComboBox
+
+
+
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class
