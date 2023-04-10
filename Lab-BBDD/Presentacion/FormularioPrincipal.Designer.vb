@@ -749,6 +749,7 @@ Partial Class FormularioPrincipal
         'Sitios_ComboBox_TipoSitio
         '
         Me.Sitios_ComboBox_TipoSitio.FormattingEnabled = True
+        Me.Sitios_ComboBox_TipoSitio.Items.AddRange(New Object() {"sala", "pabellón", "estadio", "festival"})
         Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(334, 79)
         Me.Sitios_ComboBox_TipoSitio.Name = "Sitios_ComboBox_TipoSitio"
         Me.Sitios_ComboBox_TipoSitio.Size = New System.Drawing.Size(256, 24)
