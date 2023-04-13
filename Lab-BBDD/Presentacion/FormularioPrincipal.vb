@@ -24,6 +24,24 @@ Public Class FormularioPrincipal
                 Artistas_ComboBox_PaisArtista.Items.Add(pais)
             Next
         End If
+
+        If TabControl.SelectedTab.Name = "Albumes" Then
+            ' Cada vez que se seleccione la ventana albumes rellenamos el combobox, por si se ha actualizado en otras ventanas'
+            Albumes_ComboBoxArtistas.Items.Clear()
+
+            Dim artistas As New Artista
+
+            Try
+                artistas.LeerTodosArtistas()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                Exit Sub
+            End Try
+
+            For Each artista As Artista In artistas.ArtistDAO.Artistas
+                Albumes_ComboBoxArtistas.Items.Add(artista)
+            Next
+        End If
     End Sub
 
 
@@ -166,7 +184,7 @@ Public Class FormularioPrincipal
     Private Sub Artistas_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Limpiar.Click
         Artistas_ListBox_Artistas.Items.Clear()
         Artistas_TextBox_NombreArtista.Clear()
-        Artistas_ComboBox_PaisArtista.Items.Clear()
+        TabControl_SelectedIndexChanged(sender, e)
 
     End Sub
 
@@ -190,6 +208,8 @@ Public Class FormularioPrincipal
         Paises_Button_VerTodosPaises.PerformClick()
 
     End Sub
+
+
     '
     '
     '
@@ -203,7 +223,6 @@ Public Class FormularioPrincipal
 
     Private Sub Paises_Button_VerTodosPaises_Click(sender As Object, e As EventArgs) Handles Paises_Button_VerTodosPaises.Click
         Paises_Button_Limpiar.PerformClick()
-        Artistas_ComboBox_PaisArtista.Items.Clear()
 
         Dim paises As New Pais
 
@@ -216,14 +235,12 @@ Public Class FormularioPrincipal
 
         For Each pais As Pais In paises.PaiDAO.Paises
             Paises_ListBox_Paises.Items.Add(pais)
-            Artistas_ComboBox_PaisArtista.Items.Add(pais)
         Next
 
     End Sub
 
     Private Sub Paises_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Paises_Button_Limpiar.Click
         Paises_ListBox_Paises.Items.Clear()
-
         Paises_TextBox_NombrePais.Clear()
     End Sub
 
@@ -333,6 +350,7 @@ Public Class FormularioPrincipal
 
     End Sub
 
+
     '
     '
     '
@@ -343,6 +361,14 @@ Public Class FormularioPrincipal
     '
     ' TAB ALBUMES
     '
+
+    Private Sub Albumes_ComboBoxArtistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Albumes_ComboBoxArtistas.SelectedIndexChanged
+        Albumes_ButtonLimpiar.PerformClick()
+
+        'Leer todos los álbumes del artista seleccionado de la combobox y mostrar en la listBox'
+
+    End Sub
+
 
 
 End Class
