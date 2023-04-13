@@ -48,7 +48,7 @@
         Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (Nombre, País) values ('" & artista.Nombre & "', '" & artista.Pais.idPais & "');")
     End Function
     Public Function Actualizar(ByVal artista As Artista) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreArtista='" & artista.Nombre & "' where " & campoIdentificador & "='" & artista.IdArtista & "';")
+        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set Nombre='" & artista.Nombre & "' where " & campoIdentificador & "='" & artista.IdArtista & "';")
     End Function
 
     Public Function Borrar(ByVal artista As Artista) As Integer
