@@ -1,5 +1,39 @@
-﻿Public Class FormularioPrincipal
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
+Public Class FormularioPrincipal
+
+    Private Sub FormularioPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TabControl_SelectedIndexChanged(sender, e)
+    End Sub
+
+    Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl.SelectedIndexChanged
+        If TabControl.SelectedTab.Name = "Artistas" Then
+            ' Cada vez que se seleccione la ventana artistas rellenamos el combobox, por si se ha actualizado en otras ventanas'
+            Artistas_ComboBox_PaisArtista.Items.Clear()
+
+            Dim paises As New Pais
+
+            Try
+                paises.LeerTodosPaises()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                Exit Sub
+            End Try
+
+            For Each pais As Pais In paises.PaiDAO.Paises
+                Artistas_ComboBox_PaisArtista.Items.Add(pais)
+            Next
+        End If
+    End Sub
+
+
+    '
+    '
+    '
+    '
+    '
+    '
+    '
     '
     ' TAB ARTISTA
     '
@@ -30,7 +64,12 @@
             Exit Sub
         End If
 
-        Dim nombrepais As String = Artistas_TextBox_PaisArtista.Text
+        Dim nombrepais As String = Artistas_ComboBox_PaisArtista.SelectedItem
+        If String.IsNullOrEmpty(nombrepais) Then
+            MessageBox.Show("Debe seleccionar un país primero.")
+            Exit Sub
+        End If
+
         Dim codpais As String = Pais.obtainID(nombrepais)
 
         Dim paisartista As New Pais(codpais, nombre)
@@ -67,14 +106,14 @@
             Exit Sub
         End If
 
-        If String.IsNullOrEmpty(Artistas_TextBox_PaisArtista.Text) Then
+        If String.IsNullOrEmpty(Artistas_ComboBox_PaisArtista.SelectedItem) Then
             MessageBox.Show("Se debe introducir un nombre de pais válido")
             Exit Sub
         End If
 
         Dim nuevonombre As String = Artistas_TextBox_NombreArtista.Text
 
-        Dim nombrepais As String = Artistas_TextBox_PaisArtista.Text
+        Dim nombrepais As String = Artistas_ComboBox_PaisArtista.SelectedItem
         Dim codpais As String = Pais.obtainID(nombrepais)
 
         Dim nuevopais As New Pais(codpais, nombrepais)
@@ -126,13 +165,13 @@
 
     Private Sub Artistas_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Limpiar.Click
         Artistas_ListBox_Artistas.Items.Clear()
-
         Artistas_TextBox_NombreArtista.Clear()
-        Artistas_TextBox_PaisArtista.Clear()
+        Artistas_ComboBox_PaisArtista.Items.Clear()
 
     End Sub
 
     Private Sub Artistas_ListBox_Artistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Artistas_ListBox_Artistas.SelectedIndexChanged
+
         If Artistas_ListBox_Artistas.SelectedItem Is Nothing Then
             Exit Sub
         End If
@@ -140,19 +179,24 @@
         Dim artista As Artista = Artistas_ListBox_Artistas.SelectedItem
 
         Artistas_TextBox_NombreArtista.Text = artista.Nombre
-        Artistas_TextBox_PaisArtista.Text = artista.Pais.NombrePais
 
-        Paises_Button_VerTodosPaises.PerformClick()
-
-        For Each pais As Pais In Artistas_ComboBox_PaisArtista.Items
-            If pais.idPais = artista.Pais.idPais Then
-                Artistas_ComboBox_PaisArtista.SelectedItem = pais
+        For Each item As Object In Artistas_ComboBox_PaisArtista.Items
+            If item.ToString() = artista.Pais.NombrePais Then
+                Artistas_ComboBox_PaisArtista.SelectedItem = item
                 Exit For
             End If
         Next
 
-    End Sub
+        Paises_Button_VerTodosPaises.PerformClick()
 
+    End Sub
+    '
+    '
+    '
+    '
+    '
+    '
+    '
     '
     ' TAB PAISES
     '
@@ -288,5 +332,17 @@
         Paises_TextBox_NombrePais.Text = pais.NombrePais
 
     End Sub
+
+    '
+    '
+    '
+    '
+    '
+    '
+    '
+    '
+    ' TAB ALBUMES
+    '
+
 
 End Class

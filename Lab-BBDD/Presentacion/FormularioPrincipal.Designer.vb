@@ -31,7 +31,6 @@ Partial Class FormularioPrincipal
         Me.Artistas_Button_Agregar = New System.Windows.Forms.Button()
         Me.Artistas_Button_Actualizar = New System.Windows.Forms.Button()
         Me.Artistas_Label_PaisArtista = New System.Windows.Forms.Label()
-        Me.Artistas_TextBox_PaisArtista = New System.Windows.Forms.TextBox()
         Me.Artistas_Label_NombreArtista = New System.Windows.Forms.Label()
         Me.Artistas_TextBox_NombreArtista = New System.Windows.Forms.TextBox()
         Me.Artistas_Button_VerTodosArtistas = New System.Windows.Forms.Button()
@@ -46,9 +45,9 @@ Partial Class FormularioPrincipal
         Me.Paises_Button_Eliminar = New System.Windows.Forms.Button()
         Me.Paises_Button_Agregar = New System.Windows.Forms.Button()
         Me.Paises_Button_Actualizar = New System.Windows.Forms.Button()
-        Me.Paises_ComboBox_Seleccionar = New System.Windows.Forms.ComboBox()
-        Me.Paises_LabelSeleccionar = New System.Windows.Forms.Label()
         Me.TabAlbum = New System.Windows.Forms.TabPage()
+        Me.Albumes_LabelListaAlbumes = New System.Windows.Forms.Label()
+        Me.Albumes_LabelNombreArtista = New System.Windows.Forms.Label()
         Me.Albumes_ButtonLimpiar = New System.Windows.Forms.Button()
         Me.Albumes_ButtonEliminar = New System.Windows.Forms.Button()
         Me.Albumes_ButtonAgregar = New System.Windows.Forms.Button()
@@ -58,7 +57,6 @@ Partial Class FormularioPrincipal
         Me.Albumes_LabelNombre = New System.Windows.Forms.Label()
         Me.Albumes_TextBoxNombreAlbum = New System.Windows.Forms.TextBox()
         Me.Albumes_ListBoxAlbumes = New System.Windows.Forms.ListBox()
-        Me.Albumes_ButtonVerTodosLosArtistas = New System.Windows.Forms.Button()
         Me.Albumes_ComboBoxArtistas = New System.Windows.Forms.ComboBox()
         Me.TabConciertos = New System.Windows.Forms.TabPage()
         Me.Conciertos_MonthCalendar_FechaConcierto = New System.Windows.Forms.MonthCalendar()
@@ -116,7 +114,7 @@ Partial Class FormularioPrincipal
         Me.TabControl.Controls.Add(Me.TabConciertos)
         Me.TabControl.Controls.Add(Me.TabCanciones)
         Me.TabControl.Controls.Add(Me.TabSitio)
-        Me.TabControl.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl.Location = New System.Drawing.Point(0, -4)
         Me.TabControl.Name = "TabControl"
         Me.TabControl.SelectedIndex = 0
         Me.TabControl.Size = New System.Drawing.Size(635, 531)
@@ -131,7 +129,6 @@ Partial Class FormularioPrincipal
         Me.TabArtistas.Controls.Add(Me.Artistas_Button_Agregar)
         Me.TabArtistas.Controls.Add(Me.Artistas_Button_Actualizar)
         Me.TabArtistas.Controls.Add(Me.Artistas_Label_PaisArtista)
-        Me.TabArtistas.Controls.Add(Me.Artistas_TextBox_PaisArtista)
         Me.TabArtistas.Controls.Add(Me.Artistas_Label_NombreArtista)
         Me.TabArtistas.Controls.Add(Me.Artistas_TextBox_NombreArtista)
         Me.TabArtistas.Controls.Add(Me.Artistas_Button_VerTodosArtistas)
@@ -147,9 +144,9 @@ Partial Class FormularioPrincipal
         'Artistas_ComboBox_PaisArtista
         '
         Me.Artistas_ComboBox_PaisArtista.FormattingEnabled = True
-        Me.Artistas_ComboBox_PaisArtista.Location = New System.Drawing.Point(257, 318)
+        Me.Artistas_ComboBox_PaisArtista.Location = New System.Drawing.Point(334, 125)
         Me.Artistas_ComboBox_PaisArtista.Name = "Artistas_ComboBox_PaisArtista"
-        Me.Artistas_ComboBox_PaisArtista.Size = New System.Drawing.Size(119, 24)
+        Me.Artistas_ComboBox_PaisArtista.Size = New System.Drawing.Size(256, 24)
         Me.Artistas_ComboBox_PaisArtista.TabIndex = 12
         '
         'Artistas_ListBox_Artistas
@@ -206,13 +203,6 @@ Partial Class FormularioPrincipal
         Me.Artistas_Label_PaisArtista.TabIndex = 6
         Me.Artistas_Label_PaisArtista.Text = "País del artista:"
         '
-        'Artistas_TextBox_PaisArtista
-        '
-        Me.Artistas_TextBox_PaisArtista.Location = New System.Drawing.Point(334, 120)
-        Me.Artistas_TextBox_PaisArtista.Name = "Artistas_TextBox_PaisArtista"
-        Me.Artistas_TextBox_PaisArtista.Size = New System.Drawing.Size(256, 22)
-        Me.Artistas_TextBox_PaisArtista.TabIndex = 5
-        '
         'Artistas_Label_NombreArtista
         '
         Me.Artistas_Label_NombreArtista.AutoSize = True
@@ -258,8 +248,6 @@ Partial Class FormularioPrincipal
         Me.TabPaises.Controls.Add(Me.Paises_Button_Eliminar)
         Me.TabPaises.Controls.Add(Me.Paises_Button_Agregar)
         Me.TabPaises.Controls.Add(Me.Paises_Button_Actualizar)
-        Me.TabPaises.Controls.Add(Me.Paises_ComboBox_Seleccionar)
-        Me.TabPaises.Controls.Add(Me.Paises_LabelSeleccionar)
         Me.TabPaises.Location = New System.Drawing.Point(4, 25)
         Me.TabPaises.Name = "TabPaises"
         Me.TabPaises.Padding = New System.Windows.Forms.Padding(3)
@@ -347,25 +335,10 @@ Partial Class FormularioPrincipal
         Me.Paises_Button_Actualizar.Text = "ACTUALIZAR"
         Me.Paises_Button_Actualizar.UseVisualStyleBackColor = True
         '
-        'Paises_ComboBox_Seleccionar
-        '
-        Me.Paises_ComboBox_Seleccionar.FormattingEnabled = True
-        Me.Paises_ComboBox_Seleccionar.Location = New System.Drawing.Point(354, 336)
-        Me.Paises_ComboBox_Seleccionar.Name = "Paises_ComboBox_Seleccionar"
-        Me.Paises_ComboBox_Seleccionar.Size = New System.Drawing.Size(121, 24)
-        Me.Paises_ComboBox_Seleccionar.TabIndex = 1
-        '
-        'Paises_LabelSeleccionar
-        '
-        Me.Paises_LabelSeleccionar.AutoSize = True
-        Me.Paises_LabelSeleccionar.Location = New System.Drawing.Point(31, 339)
-        Me.Paises_LabelSeleccionar.Name = "Paises_LabelSeleccionar"
-        Me.Paises_LabelSeleccionar.Size = New System.Drawing.Size(307, 16)
-        Me.Paises_LabelSeleccionar.TabIndex = 0
-        Me.Paises_LabelSeleccionar.Text = "Selecciones el pais en el cual va a buscar artistas:"
-        '
         'TabAlbum
         '
+        Me.TabAlbum.Controls.Add(Me.Albumes_LabelListaAlbumes)
+        Me.TabAlbum.Controls.Add(Me.Albumes_LabelNombreArtista)
         Me.TabAlbum.Controls.Add(Me.Albumes_ButtonLimpiar)
         Me.TabAlbum.Controls.Add(Me.Albumes_ButtonEliminar)
         Me.TabAlbum.Controls.Add(Me.Albumes_ButtonAgregar)
@@ -375,7 +348,6 @@ Partial Class FormularioPrincipal
         Me.TabAlbum.Controls.Add(Me.Albumes_LabelNombre)
         Me.TabAlbum.Controls.Add(Me.Albumes_TextBoxNombreAlbum)
         Me.TabAlbum.Controls.Add(Me.Albumes_ListBoxAlbumes)
-        Me.TabAlbum.Controls.Add(Me.Albumes_ButtonVerTodosLosArtistas)
         Me.TabAlbum.Controls.Add(Me.Albumes_ComboBoxArtistas)
         Me.TabAlbum.Location = New System.Drawing.Point(4, 25)
         Me.TabAlbum.Name = "TabAlbum"
@@ -385,9 +357,27 @@ Partial Class FormularioPrincipal
         Me.TabAlbum.Text = "Albumes"
         Me.TabAlbum.UseVisualStyleBackColor = True
         '
+        'Albumes_LabelListaAlbumes
+        '
+        Me.Albumes_LabelListaAlbumes.AutoSize = True
+        Me.Albumes_LabelListaAlbumes.Location = New System.Drawing.Point(427, 35)
+        Me.Albumes_LabelListaAlbumes.Name = "Albumes_LabelListaAlbumes"
+        Me.Albumes_LabelListaAlbumes.Size = New System.Drawing.Size(60, 16)
+        Me.Albumes_LabelListaAlbumes.TabIndex = 17
+        Me.Albumes_LabelListaAlbumes.Text = "Albumes"
+        '
+        'Albumes_LabelNombreArtista
+        '
+        Me.Albumes_LabelNombreArtista.AutoSize = True
+        Me.Albumes_LabelNombreArtista.Location = New System.Drawing.Point(31, 35)
+        Me.Albumes_LabelNombreArtista.Name = "Albumes_LabelNombreArtista"
+        Me.Albumes_LabelNombreArtista.Size = New System.Drawing.Size(135, 16)
+        Me.Albumes_LabelNombreArtista.TabIndex = 16
+        Me.Albumes_LabelNombreArtista.Text = "Seleccionar un artista"
+        '
         'Albumes_ButtonLimpiar
         '
-        Me.Albumes_ButtonLimpiar.Location = New System.Drawing.Point(480, 431)
+        Me.Albumes_ButtonLimpiar.Location = New System.Drawing.Point(154, 349)
         Me.Albumes_ButtonLimpiar.Name = "Albumes_ButtonLimpiar"
         Me.Albumes_ButtonLimpiar.Size = New System.Drawing.Size(119, 44)
         Me.Albumes_ButtonLimpiar.TabIndex = 15
@@ -396,7 +386,7 @@ Partial Class FormularioPrincipal
         '
         'Albumes_ButtonEliminar
         '
-        Me.Albumes_ButtonEliminar.Location = New System.Drawing.Point(343, 431)
+        Me.Albumes_ButtonEliminar.Location = New System.Drawing.Point(17, 349)
         Me.Albumes_ButtonEliminar.Name = "Albumes_ButtonEliminar"
         Me.Albumes_ButtonEliminar.Size = New System.Drawing.Size(119, 44)
         Me.Albumes_ButtonEliminar.TabIndex = 14
@@ -405,7 +395,7 @@ Partial Class FormularioPrincipal
         '
         'Albumes_ButtonAgregar
         '
-        Me.Albumes_ButtonAgregar.Location = New System.Drawing.Point(480, 368)
+        Me.Albumes_ButtonAgregar.Location = New System.Drawing.Point(154, 286)
         Me.Albumes_ButtonAgregar.Name = "Albumes_ButtonAgregar"
         Me.Albumes_ButtonAgregar.Size = New System.Drawing.Size(119, 44)
         Me.Albumes_ButtonAgregar.TabIndex = 13
@@ -414,7 +404,7 @@ Partial Class FormularioPrincipal
         '
         'Albumes_ButtonActualizar
         '
-        Me.Albumes_ButtonActualizar.Location = New System.Drawing.Point(343, 368)
+        Me.Albumes_ButtonActualizar.Location = New System.Drawing.Point(17, 286)
         Me.Albumes_ButtonActualizar.Name = "Albumes_ButtonActualizar"
         Me.Albumes_ButtonActualizar.Size = New System.Drawing.Size(119, 44)
         Me.Albumes_ButtonActualizar.TabIndex = 12
@@ -457,24 +447,15 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_ListBoxAlbumes.FormattingEnabled = True
         Me.Albumes_ListBoxAlbumes.ItemHeight = 16
-        Me.Albumes_ListBoxAlbumes.Location = New System.Drawing.Point(401, 35)
+        Me.Albumes_ListBoxAlbumes.Location = New System.Drawing.Point(343, 63)
         Me.Albumes_ListBoxAlbumes.Name = "Albumes_ListBoxAlbumes"
-        Me.Albumes_ListBoxAlbumes.Size = New System.Drawing.Size(150, 260)
+        Me.Albumes_ListBoxAlbumes.Size = New System.Drawing.Size(235, 324)
         Me.Albumes_ListBoxAlbumes.TabIndex = 6
-        '
-        'Albumes_ButtonVerTodosLosArtistas
-        '
-        Me.Albumes_ButtonVerTodosLosArtistas.Location = New System.Drawing.Point(133, 24)
-        Me.Albumes_ButtonVerTodosLosArtistas.Name = "Albumes_ButtonVerTodosLosArtistas"
-        Me.Albumes_ButtonVerTodosLosArtistas.Size = New System.Drawing.Size(154, 28)
-        Me.Albumes_ButtonVerTodosLosArtistas.TabIndex = 5
-        Me.Albumes_ButtonVerTodosLosArtistas.Text = "Ver todos los Artistas"
-        Me.Albumes_ButtonVerTodosLosArtistas.UseVisualStyleBackColor = True
         '
         'Albumes_ComboBoxArtistas
         '
         Me.Albumes_ComboBoxArtistas.FormattingEnabled = True
-        Me.Albumes_ComboBoxArtistas.Location = New System.Drawing.Point(43, 61)
+        Me.Albumes_ComboBoxArtistas.Location = New System.Drawing.Point(17, 63)
         Me.Albumes_ComboBoxArtistas.Name = "Albumes_ComboBoxArtistas"
         Me.Albumes_ComboBoxArtistas.Size = New System.Drawing.Size(256, 24)
         Me.Albumes_ComboBoxArtistas.TabIndex = 3
@@ -500,6 +481,12 @@ Partial Class FormularioPrincipal
         Me.TabConciertos.TabIndex = 3
         Me.TabConciertos.Text = "Conciertos"
         Me.TabConciertos.UseVisualStyleBackColor = True
+        '
+        'Conciertos_MonthCalendar_FechaConcierto
+        '
+        Me.Conciertos_MonthCalendar_FechaConcierto.Location = New System.Drawing.Point(344, 131)
+        Me.Conciertos_MonthCalendar_FechaConcierto.Name = "Conciertos_MonthCalendar_FechaConcierto"
+        Me.Conciertos_MonthCalendar_FechaConcierto.TabIndex = 20
         '
         'Conciertos_ListBoxTodosLosConciertos
         '
@@ -597,12 +584,6 @@ Partial Class FormularioPrincipal
         Me.Conciertos_LabelArtistas.Size = New System.Drawing.Size(125, 16)
         Me.Conciertos_LabelArtistas.TabIndex = 2
         Me.Conciertos_LabelArtistas.Text = "Fecha del concierto"
-        '
-        'Conciertos_MonthCalendar_FechaConcierto
-        '
-        Me.Conciertos_MonthCalendar_FechaConcierto.Location = New System.Drawing.Point(344, 131)
-        Me.Conciertos_MonthCalendar_FechaConcierto.Name = "Conciertos_MonthCalendar_FechaConcierto"
-        Me.Conciertos_MonthCalendar_FechaConcierto.TabIndex = 20
         '
         'TabCanciones
         '
@@ -873,10 +854,6 @@ Partial Class FormularioPrincipal
     Friend WithEvents TabCanciones As TabPage
     Friend WithEvents TabSitio As TabPage
 
-
-
-    Friend WithEvents Paises_LabelSeleccionar As Label
-    Friend WithEvents Paises_ComboBox_Seleccionar As ComboBox
     Friend WithEvents Paises_Button_Limpiar As Button
     Friend WithEvents Paises_Button_Eliminar As Button
     Friend WithEvents Paises_Button_Agregar As Button
@@ -894,7 +871,6 @@ Partial Class FormularioPrincipal
     Friend WithEvents Artistas_TextBox_NombreArtista As TextBox
     Friend WithEvents Artistas_Button_VerTodosArtistas As Button
     Friend WithEvents Artistas_Label_PaisArtista As Label
-    Friend WithEvents Artistas_TextBox_PaisArtista As TextBox
     Friend WithEvents Artistas_Button_Eliminar As Button
     Friend WithEvents Artistas_Button_Agregar As Button
     Friend WithEvents Artistas_Button_Actualizar As Button
@@ -921,7 +897,6 @@ Partial Class FormularioPrincipal
 
 
     Friend WithEvents Albumes_ListBoxAlbumes As ListBox
-    Friend WithEvents Albumes_ButtonVerTodosLosArtistas As Button
     Friend WithEvents Albumes_ComboBoxArtistas As ComboBox
     Friend WithEvents Albumes_ButtonActualizar As Button
     Friend WithEvents Albumes_LabelAñoAlbum As Label
@@ -965,4 +940,6 @@ Partial Class FormularioPrincipal
 
 
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Albumes_LabelListaAlbumes As Label
+    Friend WithEvents Albumes_LabelNombreArtista As Label
 End Class
