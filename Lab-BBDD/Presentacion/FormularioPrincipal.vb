@@ -133,13 +133,9 @@ Public Class FormularioPrincipal
         Dim nuevonombre As String = Artistas_TextBox_NombreArtista.Text
 
         Dim pais As Pais = Artistas_ComboBox_PaisArtista.SelectedItem
-        Dim nombrepais As String = pais.NombrePais
-        Dim codpais As String = Pais.obtainID(nombrepais)
-
-        Dim nuevopais As New Pais(codpais, nombrepais)
 
         artistamodificar.Nombre = nuevonombre
-        artistamodificar.Pais = nuevopais
+        artistamodificar.Pais = pais
 
         Try
             If artistamodificar.ActualizarArtista() <> 1 Then
