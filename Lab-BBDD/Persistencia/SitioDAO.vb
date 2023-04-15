@@ -1,8 +1,8 @@
 ﻿Public Class SitioDAO
     Public ReadOnly Property Sitios As Collection
 
-    Private Shared nombreTabla As String = "sitios"
-    Private Shared campoIdentificador As String = "Idsitio"
+    Private Shared nombreTabla As String = "sitio"
+    Private Shared campoIdentificador As String = "idSitio"
 
     Public Sub New()
         Me.Sitios = New Collection
@@ -45,10 +45,10 @@
     End Sub
 
     Public Function Insertar(ByVal sitio As Sitio) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " values ('" & sitio.idSitio & "', '" & sitio.NombreSitio & "');")
+        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (NombreSitio, País, Tipo) values ('" & sitio.NombreSitio & "', '" & sitio.Pais.idPais & "', '" & sitio.tipo & "');")
     End Function
     Public Function Actualizar(ByVal sitio As Sitio) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreSitio='" & sitio.NombreSitio & "' where " & campoIdentificador & "='" & sitio.idSitio & "';")
+        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreSitio='" & sitio.NombreSitio & "', País = '" & sitio.Pais.idPais & "', Tipo = '" & sitio.tipo & "' where " & campoIdentificador & "='" & sitio.idSitio & "';")
     End Function
 
     Public Function Borrar(ByVal sitio As Sitio) As Integer
