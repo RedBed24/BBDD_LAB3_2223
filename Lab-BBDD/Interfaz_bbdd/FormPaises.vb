@@ -1,6 +1,25 @@
 ﻿Public Class FormPaises
+
+    Private Sub FormPaises_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Paises_Button_VerTodosPaises.PerformClick()
+    End Sub
+
     Private Sub Paises_Button_VerTodosPaises_Click(sender As Object, e As EventArgs) Handles Paises_Button_VerTodosPaises.Click
         Paises_Button_Limpiar.PerformClick()
+
+        Dim paises As New Pais
+
+        Try
+            paises.LeerTodosPaises()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        For Each pais As Pais In paises.PaiDAO.Paises
+            Paises_ListBox_Paises.Items.Add(pais)
+        Next
+
     End Sub
 
     Private Sub Paises_ListBox_Paises_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Paises_ListBox_Paises.SelectedIndexChanged
