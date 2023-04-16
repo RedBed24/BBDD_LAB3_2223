@@ -158,7 +158,6 @@
     Private Sub Artistas_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Limpiar.Click
         Artistas_ListBox_Artistas.Items.Clear()
         Artistas_TextBox_NombreArtista.Clear()
-        TabControl_SelectedIndexChanged(sender, e)
         Artistas_ComboBox_PaisArtista.SelectedIndex = -1
         Artistas_ComboBox_PaisArtista.Text = ""
 
