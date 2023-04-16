@@ -26,8 +26,6 @@
             End If
         Next
 
-        Paises_Button_VerTodosPaises.PerformClick()
-
     End Sub
 
     Private Sub Artistas_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Artistas_Button_Actualizar.Click
