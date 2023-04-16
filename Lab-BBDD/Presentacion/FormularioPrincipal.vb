@@ -369,6 +369,55 @@ Public Class FormularioPrincipal
 
     End Sub
 
+    Private Sub Conciertos_MonthCalendar_FechaConcierto_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Conciertos_MonthCalendar_FechaConcierto.DateChanged
 
+    End Sub
 
+    Private Sub Canciones_ButtonActualizar_Click(sender As Object, e As EventArgs) Handles Canciones_ButtonActualizar.Click
+
+    End Sub
+
+    Private Sub Canciones_ButtonAgregar_Click(sender As Object, e As EventArgs) Handles Canciones_ButtonAgregar.Click
+
+    End Sub
+
+    Private Sub Sitios_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Sitios_Button_Eliminar.Click
+
+    End Sub
+
+    Private Sub Sitios_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Sitios_Button_Limpiar.Click
+
+    End Sub
+
+    Private Sub Sitios_Button_Agregar_Click(sender As Object, e As EventArgs) Handles Sitios_Button_Agregar.Click
+
+    End Sub
+
+    Private Sub Sitios_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Sitios_Button_Actualizar.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Artistas_TextBox_NombreArtista_TextChanged(sender As Object, e As EventArgs) Handles Artistas_TextBox_NombreArtista.TextChanged
+
+    End Sub
+
+    Private Sub TabAlbum_Click(sender As Object, e As EventArgs) Handles TabAlbum.Click
+
+    End Sub
+
+    Private Sub Artistas_Label_NombreArtista_Click(sender As Object, e As EventArgs) Handles Artistas_Label_NombreArtista.Click
+
+    End Sub
+
+    Private Sub Artistas_ComboBox_PaisArtista_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Artistas_ComboBox_PaisArtista.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Sitios_ListBox_Sitios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Sitios_ListBox_Sitios.SelectedIndexChanged
+
+    End Sub
 End Class
