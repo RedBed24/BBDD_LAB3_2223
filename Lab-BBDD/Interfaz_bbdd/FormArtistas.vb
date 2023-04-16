@@ -2,11 +2,33 @@
     Public Property Paises_Button_VerTodosPaises As Object
 
     Private Sub FormArtistas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Artistas_Button_VerTodosArtistas.PerformClick()
+
+        Dim temppais As New Pais
+        temppais.LeerTodosPaises()
+
+        For Each pais As Pais In temppais.PaiDAO.Paises
+            Artistas_ComboBox_PaisArtista.Items.Add(pais)
+        Next
 
     End Sub
 
     Private Sub Artistas_Button_VerTodosArtistas_Click(sender As Object, e As EventArgs) Handles Artistas_Button_VerTodosArtistas.Click
         Artistas_Button_Limpiar.PerformClick()
+
+        Dim artistas As New Artista
+
+        Try
+            artistas.LeerTodosArtistas()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        For Each artista As Artista In artistas.ArtistDAO.Artistas
+            Artistas_ListBox_Artistas.Items.Add(artista)
+        Next
+
     End Sub
 
     Private Sub Artistas_ListBox_Artistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Artistas_ListBox_Artistas.SelectedIndexChanged
