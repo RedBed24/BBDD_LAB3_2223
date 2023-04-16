@@ -2,19 +2,17 @@
 
 Public Class FormInicio
 
-    Private Sub AbrirFormEnPanel(ByVal Formhijo As Object)
+    Private Sub AbrirFormEnPanel(ByVal Formhijo As Form)
 
         If Me.PanelFormulario.Controls.Count > 0 Then
             Me.PanelFormulario.Controls.RemoveAt(0)
         End If
 
-        Dim fh As Form = TryCast(Formhijo, Form)
-        fh.TopLevel = False
-        fh.FormBorderStyle = Windows.Forms.FormBorderStyle.None
-        fh.Dock = DockStyle.Fill
-        Me.PanelFormulario.Controls.Add(fh)
-        Me.PanelFormulario.Tag = fh
-        fh.Show()
+        Formhijo.TopLevel = False
+        Formhijo.Dock = DockStyle.Fill
+        Me.PanelFormulario.Controls.Add(Formhijo)
+        Me.PanelFormulario.Tag = Formhijo
+        Formhijo.Show()
 
     End Sub
 
