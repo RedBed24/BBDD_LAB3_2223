@@ -17,6 +17,7 @@ Public Class FormInicio
         fh.Show()
 
     End Sub
+
     Private Sub btnPaises_Click(sender As Object, e As EventArgs) Handles btnPaises.Click
         AbrirFormEnPanel(New FormPaises)
     End Sub
@@ -36,11 +37,4 @@ Public Class FormInicio
         AbrirFormEnPanel(New FormSitios)
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Inicio_LabelMenu.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class
