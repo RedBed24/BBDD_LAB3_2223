@@ -20,7 +20,7 @@
         Artistas_TextBox_NombreArtista.Text = artista.Nombre
 
         For Each item As Pais In Artistas_ComboBox_PaisArtista.Items
-            If item.NombrePais() = artista.Pais.NombrePais Then
+            If item.idPais() = artista.Pais.idPais Then
                 Artistas_ComboBox_PaisArtista.SelectedItem = item
                 Exit For
             End If
