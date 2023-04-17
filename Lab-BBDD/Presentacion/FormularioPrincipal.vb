@@ -361,13 +361,46 @@ Public Class FormularioPrincipal
     Private Sub Albumes_ComboBoxArtistas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Albumes_ComboBoxArtistas.SelectedIndexChanged
         Albumes_ButtonLimpiar.PerformClick()
 
-        'Leer todos los álbumes del artista seleccionado de la combobox y mostrar en la listBox'
+        'Leer todos los álbumes del artista seleccionado en el combobox y mostrar en la listBox'
 
+    End Sub
+
+    Private Sub Albumes_ButtonVerTodosAlbumes_Click(sender As Object, e As EventArgs) Handles Albumes_ButtonVerTodosAlbumes.Click
+        Albumes_ButtonLimpiar.PerformClick()
+
+        Dim albumes As New Album
+
+        Try
+            albumes.LeerTodosAlbumes()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        For Each album As Album In albumes.AlbuDAO.Albumes
+            Albumes_ListBoxAlbumes.Items.Add(album)
+        Next
     End Sub
 
     Private Sub Albumes_ListBoxAlbumes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Albumes_ListBoxAlbumes.SelectedIndexChanged
 
-        'Se rellena nombre de álbum y año album'
+        If Albumes_ListBoxAlbumes.SelectedItem Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim album As Album = Albumes_ListBoxAlbumes.SelectedItem
+
+        Albumes_TextBoxNombreAlbum.Text = album.NombreAlbum
+        Albumes_TextBoxAñoAlbum.Text = album.AñoAlbum
+
+        For Each item As Artista In Albumes_ComboBoxArtistas.Items
+            If item.Nombre() = album.Artist.Nombre Then
+                Albumes_ComboBoxArtistas.SelectedItem = item
+                Exit For
+            End If
+        Next
+
+        Paises_Button_VerTodosPaises.PerformClick()
 
     End Sub
 
@@ -386,8 +419,8 @@ Public Class FormularioPrincipal
         End If
 
         Dim añoInt As Integer = CInt(año)
-        If añoInt < 1860 Then
-            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860")
+        If añoInt < 1860 Or añoInt > 2023 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860 ni de después del año 2023")
             Exit Sub
         End If
 
@@ -440,8 +473,8 @@ Public Class FormularioPrincipal
         End If
 
         Dim añonuevoInt As Integer = CInt(añonuevo)
-        If añonuevoInt < 1860 Then
-            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860")
+        If añonuevoInt < 1860 Or añonuevoInt > 2023 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860 ni de después del año 2023")
             Exit Sub
         End If
 
@@ -506,6 +539,7 @@ Public Class FormularioPrincipal
     End Sub
 
 
+
     '
     '
     '
@@ -516,5 +550,61 @@ Public Class FormularioPrincipal
     '
     ' TAB CANCIONES
     '
+
+    Private Sub Canciones_ButtonAgregar_Click(sender As Object, e As EventArgs) Handles Canciones_ButtonAgregar.Click
+        'DEBEREMOS CONTROLAR EL ORDEN INTRODUCIDO'
+
+        Dim nombre As String = Canciones_TextBoxNombreCanciones.Text
+        Dim duracion As String = Canciones_TextBoxDuracionCanciones.Text
+        Dim orden As Integer = Canciones_TextBoxOrden.Text
+
+        If String.IsNullOrEmpty(nombre) Then
+            MessageBox.Show("La canción debe tener un nombre.")
+            Exit Sub
+        End If
+        If String.IsNullOrEmpty(duracion) Then
+            MessageBox.Show("La canción debe tener una duración")
+            Exit Sub
+        End If
+        If String.IsNullOrEmpty(orden) Then
+            MessageBox.Show("La canción debe tener un orden en el álbum.")
+            Exit Sub
+        End If
+
+        Dim duracionInt As Integer = CInt(duracion)
+        If duracionInt <= 0 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos canciones con duración igual o inferior a 0")
+            Exit Sub
+        End If
+        Dim ordenInt As Integer = CInt(orden)
+        If duracionInt <= 0 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos ordenes de canciones iguales o inferiores a 0")
+            Exit Sub
+        End If
+
+        Dim albumCancion As Album = Canciones_ComboBoxAlbum.SelectedItem
+        Dim nombreAlbum As String = albumCancion.NombreAlbum
+        If String.IsNullOrEmpty(nombreAlbum) Then
+            MessageBox.Show("Debe seleccionar un album primero.")
+            Exit Sub
+        End If
+
+        Dim CancionAnadir As New Cancion(nombre, duracionInt, albumCancion, ordenInt)
+
+        Try
+            If CancionAnadir.InsertarCancion() <> 1 Then
+                MessageBox.Show("wtf cómo puede ocurrir esto?")
+                Exit Sub
+            End If
+        Catch ex As Exception
+            ' no se puede añadir
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(CancionAnadir.ToString & " añadido correctamente")
+        Canciones_ListBoxTodasLasCanciones.Items.Add(CancionAnadir)
+        Canciones_ListBoxTodasLasCanciones.SelectedItem = CancionAnadir
+    End Sub
 
 End Class

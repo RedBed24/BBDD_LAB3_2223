@@ -46,6 +46,7 @@ Partial Class FormularioPrincipal
         Me.Paises_Button_Agregar = New System.Windows.Forms.Button()
         Me.Paises_Button_Actualizar = New System.Windows.Forms.Button()
         Me.TabAlbum = New System.Windows.Forms.TabPage()
+        Me.Albumes_ButtonVerTodosAlbumes = New System.Windows.Forms.Button()
         Me.Albumes_LabelListaAlbumes = New System.Windows.Forms.Label()
         Me.Albumes_LabelNombreArtista = New System.Windows.Forms.Label()
         Me.Albumes_ButtonLimpiar = New System.Windows.Forms.Button()
@@ -72,9 +73,10 @@ Partial Class FormularioPrincipal
         Me.Conciertos_ComboBoxArtistaActua = New System.Windows.Forms.ComboBox()
         Me.Conciertos_LabelArtistas = New System.Windows.Forms.Label()
         Me.TabCanciones = New System.Windows.Forms.TabPage()
+        Me.Canciones_ButtonVerTodasCanciones = New System.Windows.Forms.Button()
+        Me.Canciones_ComboBoxAlbum = New System.Windows.Forms.ComboBox()
+        Me.Canciones_LabelAlbum = New System.Windows.Forms.Label()
         Me.Canciones_LabelCanciones = New System.Windows.Forms.Label()
-        Me.Canciones_comboBoxArtista = New System.Windows.Forms.ComboBox()
-        Me.Canciones_LabelArtista = New System.Windows.Forms.Label()
         Me.Canciones_TextBoxDuracionCanciones = New System.Windows.Forms.TextBox()
         Me.Canciones_LabelDuracion = New System.Windows.Forms.Label()
         Me.Canciones_TextBoxNombreCanciones = New System.Windows.Forms.TextBox()
@@ -100,6 +102,8 @@ Partial Class FormularioPrincipal
         Me.Sitios_Label_Sitios = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Canciones_TextBoxOrden = New System.Windows.Forms.TextBox()
+        Me.Canciones_LabelOrden = New System.Windows.Forms.Label()
         Me.TabControl.SuspendLayout()
         Me.TabArtistas.SuspendLayout()
         Me.TabPaises.SuspendLayout()
@@ -382,6 +386,7 @@ Partial Class FormularioPrincipal
         '
         'TabAlbum
         '
+        Me.TabAlbum.Controls.Add(Me.Albumes_ButtonVerTodosAlbumes)
         Me.TabAlbum.Controls.Add(Me.Albumes_LabelListaAlbumes)
         Me.TabAlbum.Controls.Add(Me.Albumes_LabelNombreArtista)
         Me.TabAlbum.Controls.Add(Me.Albumes_ButtonLimpiar)
@@ -404,15 +409,26 @@ Partial Class FormularioPrincipal
         Me.TabAlbum.UseVisualStyleBackColor = True
         Me.TabAlbum.UseWaitCursor = True
         '
+        'Albumes_ButtonVerTodosAlbumes
+        '
+        Me.Albumes_ButtonVerTodosAlbumes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Albumes_ButtonVerTodosAlbumes.Location = New System.Drawing.Point(415, 23)
+        Me.Albumes_ButtonVerTodosAlbumes.Name = "Albumes_ButtonVerTodosAlbumes"
+        Me.Albumes_ButtonVerTodosAlbumes.Size = New System.Drawing.Size(163, 28)
+        Me.Albumes_ButtonVerTodosAlbumes.TabIndex = 18
+        Me.Albumes_ButtonVerTodosAlbumes.Text = "Ver todos los albumes"
+        Me.Albumes_ButtonVerTodosAlbumes.UseVisualStyleBackColor = True
+        Me.Albumes_ButtonVerTodosAlbumes.UseWaitCursor = True
+        '
         'Albumes_LabelListaAlbumes
         '
         Me.Albumes_LabelListaAlbumes.AutoSize = True
         Me.Albumes_LabelListaAlbumes.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_LabelListaAlbumes.Location = New System.Drawing.Point(427, 35)
+        Me.Albumes_LabelListaAlbumes.Location = New System.Drawing.Point(340, 35)
         Me.Albumes_LabelListaAlbumes.Name = "Albumes_LabelListaAlbumes"
-        Me.Albumes_LabelListaAlbumes.Size = New System.Drawing.Size(60, 16)
+        Me.Albumes_LabelListaAlbumes.Size = New System.Drawing.Size(63, 16)
         Me.Albumes_LabelListaAlbumes.TabIndex = 17
-        Me.Albumes_LabelListaAlbumes.Text = "Albumes"
+        Me.Albumes_LabelListaAlbumes.Text = "Albumes:"
         Me.Albumes_LabelListaAlbumes.UseWaitCursor = True
         '
         'Albumes_LabelNombreArtista
@@ -421,16 +437,16 @@ Partial Class FormularioPrincipal
         Me.Albumes_LabelNombreArtista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Albumes_LabelNombreArtista.Location = New System.Drawing.Point(31, 35)
         Me.Albumes_LabelNombreArtista.Name = "Albumes_LabelNombreArtista"
-        Me.Albumes_LabelNombreArtista.Size = New System.Drawing.Size(135, 16)
+        Me.Albumes_LabelNombreArtista.Size = New System.Drawing.Size(106, 16)
         Me.Albumes_LabelNombreArtista.TabIndex = 16
-        Me.Albumes_LabelNombreArtista.Text = "Seleccionar un artista"
+        Me.Albumes_LabelNombreArtista.Text = "Artista del album"
         Me.Albumes_LabelNombreArtista.UseWaitCursor = True
         '
         'Albumes_ButtonLimpiar
         '
         Me.Albumes_ButtonLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Albumes_ButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_ButtonLimpiar.Location = New System.Drawing.Point(154, 345)
+        Me.Albumes_ButtonLimpiar.Location = New System.Drawing.Point(152, 321)
         Me.Albumes_ButtonLimpiar.Name = "Albumes_ButtonLimpiar"
         Me.Albumes_ButtonLimpiar.Size = New System.Drawing.Size(132, 44)
         Me.Albumes_ButtonLimpiar.TabIndex = 15
@@ -442,7 +458,7 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_ButtonEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Albumes_ButtonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_ButtonEliminar.Location = New System.Drawing.Point(17, 345)
+        Me.Albumes_ButtonEliminar.Location = New System.Drawing.Point(15, 321)
         Me.Albumes_ButtonEliminar.Name = "Albumes_ButtonEliminar"
         Me.Albumes_ButtonEliminar.Size = New System.Drawing.Size(132, 44)
         Me.Albumes_ButtonEliminar.TabIndex = 14
@@ -454,7 +470,7 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_ButtonAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Albumes_ButtonAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_ButtonAgregar.Location = New System.Drawing.Point(154, 282)
+        Me.Albumes_ButtonAgregar.Location = New System.Drawing.Point(152, 258)
         Me.Albumes_ButtonAgregar.Name = "Albumes_ButtonAgregar"
         Me.Albumes_ButtonAgregar.Size = New System.Drawing.Size(132, 44)
         Me.Albumes_ButtonAgregar.TabIndex = 13
@@ -466,7 +482,7 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_ButtonActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Albumes_ButtonActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_ButtonActualizar.Location = New System.Drawing.Point(17, 282)
+        Me.Albumes_ButtonActualizar.Location = New System.Drawing.Point(15, 258)
         Me.Albumes_ButtonActualizar.Name = "Albumes_ButtonActualizar"
         Me.Albumes_ButtonActualizar.Size = New System.Drawing.Size(132, 44)
         Me.Albumes_ButtonActualizar.TabIndex = 12
@@ -478,16 +494,16 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_LabelAñoAlbum.AutoSize = True
         Me.Albumes_LabelAñoAlbum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_LabelAñoAlbum.Location = New System.Drawing.Point(31, 205)
+        Me.Albumes_LabelAñoAlbum.Location = New System.Drawing.Point(31, 176)
         Me.Albumes_LabelAñoAlbum.Name = "Albumes_LabelAñoAlbum"
-        Me.Albumes_LabelAñoAlbum.Size = New System.Drawing.Size(71, 16)
+        Me.Albumes_LabelAñoAlbum.Size = New System.Drawing.Size(93, 16)
         Me.Albumes_LabelAñoAlbum.TabIndex = 11
-        Me.Albumes_LabelAñoAlbum.Text = "Año álbum"
+        Me.Albumes_LabelAñoAlbum.Text = "Año del álbum"
         Me.Albumes_LabelAñoAlbum.UseWaitCursor = True
         '
         'Albumes_TextBoxAñoAlbum
         '
-        Me.Albumes_TextBoxAñoAlbum.Location = New System.Drawing.Point(17, 232)
+        Me.Albumes_TextBoxAñoAlbum.Location = New System.Drawing.Point(17, 203)
         Me.Albumes_TextBoxAñoAlbum.Name = "Albumes_TextBoxAñoAlbum"
         Me.Albumes_TextBoxAñoAlbum.Size = New System.Drawing.Size(256, 22)
         Me.Albumes_TextBoxAñoAlbum.TabIndex = 10
@@ -497,7 +513,7 @@ Partial Class FormularioPrincipal
         '
         Me.Albumes_LabelNombre.AutoSize = True
         Me.Albumes_LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Albumes_LabelNombre.Location = New System.Drawing.Point(31, 139)
+        Me.Albumes_LabelNombre.Location = New System.Drawing.Point(31, 110)
         Me.Albumes_LabelNombre.Name = "Albumes_LabelNombre"
         Me.Albumes_LabelNombre.Size = New System.Drawing.Size(118, 16)
         Me.Albumes_LabelNombre.TabIndex = 9
@@ -506,7 +522,7 @@ Partial Class FormularioPrincipal
         '
         'Albumes_TextBoxNombreAlbum
         '
-        Me.Albumes_TextBoxNombreAlbum.Location = New System.Drawing.Point(17, 161)
+        Me.Albumes_TextBoxNombreAlbum.Location = New System.Drawing.Point(17, 132)
         Me.Albumes_TextBoxNombreAlbum.Name = "Albumes_TextBoxNombreAlbum"
         Me.Albumes_TextBoxNombreAlbum.Size = New System.Drawing.Size(256, 22)
         Me.Albumes_TextBoxNombreAlbum.TabIndex = 8
@@ -520,7 +536,7 @@ Partial Class FormularioPrincipal
         Me.Albumes_ListBoxAlbumes.ItemHeight = 16
         Me.Albumes_ListBoxAlbumes.Location = New System.Drawing.Point(343, 63)
         Me.Albumes_ListBoxAlbumes.Name = "Albumes_ListBoxAlbumes"
-        Me.Albumes_ListBoxAlbumes.Size = New System.Drawing.Size(235, 324)
+        Me.Albumes_ListBoxAlbumes.Size = New System.Drawing.Size(235, 308)
         Me.Albumes_ListBoxAlbumes.TabIndex = 6
         Me.Albumes_ListBoxAlbumes.UseWaitCursor = True
         '
@@ -589,7 +605,7 @@ Partial Class FormularioPrincipal
         '
         Me.Conciertos_ButtonLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Conciertos_ButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Conciertos_ButtonLimpiar.Location = New System.Drawing.Point(446, 432)
+        Me.Conciertos_ButtonLimpiar.Location = New System.Drawing.Point(446, 411)
         Me.Conciertos_ButtonLimpiar.Name = "Conciertos_ButtonLimpiar"
         Me.Conciertos_ButtonLimpiar.Size = New System.Drawing.Size(120, 46)
         Me.Conciertos_ButtonLimpiar.TabIndex = 15
@@ -601,7 +617,7 @@ Partial Class FormularioPrincipal
         '
         Me.Conciertos_ButtonEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Conciertos_ButtonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Conciertos_ButtonEliminar.Location = New System.Drawing.Point(304, 432)
+        Me.Conciertos_ButtonEliminar.Location = New System.Drawing.Point(304, 411)
         Me.Conciertos_ButtonEliminar.Name = "Conciertos_ButtonEliminar"
         Me.Conciertos_ButtonEliminar.Size = New System.Drawing.Size(120, 46)
         Me.Conciertos_ButtonEliminar.TabIndex = 14
@@ -683,9 +699,12 @@ Partial Class FormularioPrincipal
         '
         'TabCanciones
         '
+        Me.TabCanciones.Controls.Add(Me.Canciones_TextBoxOrden)
+        Me.TabCanciones.Controls.Add(Me.Canciones_LabelOrden)
+        Me.TabCanciones.Controls.Add(Me.Canciones_ButtonVerTodasCanciones)
+        Me.TabCanciones.Controls.Add(Me.Canciones_ComboBoxAlbum)
+        Me.TabCanciones.Controls.Add(Me.Canciones_LabelAlbum)
         Me.TabCanciones.Controls.Add(Me.Canciones_LabelCanciones)
-        Me.TabCanciones.Controls.Add(Me.Canciones_comboBoxArtista)
-        Me.TabCanciones.Controls.Add(Me.Canciones_LabelArtista)
         Me.TabCanciones.Controls.Add(Me.Canciones_TextBoxDuracionCanciones)
         Me.TabCanciones.Controls.Add(Me.Canciones_LabelDuracion)
         Me.TabCanciones.Controls.Add(Me.Canciones_TextBoxNombreCanciones)
@@ -704,40 +723,51 @@ Partial Class FormularioPrincipal
         Me.TabCanciones.UseVisualStyleBackColor = True
         Me.TabCanciones.UseWaitCursor = True
         '
+        'Canciones_ButtonVerTodasCanciones
+        '
+        Me.Canciones_ButtonVerTodasCanciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Canciones_ButtonVerTodasCanciones.Location = New System.Drawing.Point(426, 25)
+        Me.Canciones_ButtonVerTodasCanciones.Name = "Canciones_ButtonVerTodasCanciones"
+        Me.Canciones_ButtonVerTodasCanciones.Size = New System.Drawing.Size(163, 28)
+        Me.Canciones_ButtonVerTodasCanciones.TabIndex = 22
+        Me.Canciones_ButtonVerTodasCanciones.Text = "Ver todas las canciones"
+        Me.Canciones_ButtonVerTodasCanciones.UseVisualStyleBackColor = True
+        Me.Canciones_ButtonVerTodasCanciones.UseWaitCursor = True
+        '
+        'Canciones_ComboBoxAlbum
+        '
+        Me.Canciones_ComboBoxAlbum.FormattingEnabled = True
+        Me.Canciones_ComboBoxAlbum.Location = New System.Drawing.Point(24, 67)
+        Me.Canciones_ComboBoxAlbum.Name = "Canciones_ComboBoxAlbum"
+        Me.Canciones_ComboBoxAlbum.Size = New System.Drawing.Size(256, 24)
+        Me.Canciones_ComboBoxAlbum.TabIndex = 21
+        Me.Canciones_ComboBoxAlbum.UseWaitCursor = True
+        '
+        'Canciones_LabelAlbum
+        '
+        Me.Canciones_LabelAlbum.AutoSize = True
+        Me.Canciones_LabelAlbum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Canciones_LabelAlbum.Location = New System.Drawing.Point(43, 37)
+        Me.Canciones_LabelAlbum.Name = "Canciones_LabelAlbum"
+        Me.Canciones_LabelAlbum.Size = New System.Drawing.Size(128, 16)
+        Me.Canciones_LabelAlbum.TabIndex = 20
+        Me.Canciones_LabelAlbum.Text = "Album de la canción"
+        Me.Canciones_LabelAlbum.UseWaitCursor = True
+        '
         'Canciones_LabelCanciones
         '
         Me.Canciones_LabelCanciones.AutoSize = True
         Me.Canciones_LabelCanciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Canciones_LabelCanciones.Location = New System.Drawing.Point(418, 28)
+        Me.Canciones_LabelCanciones.Location = New System.Drawing.Point(346, 37)
         Me.Canciones_LabelCanciones.Name = "Canciones_LabelCanciones"
-        Me.Canciones_LabelCanciones.Size = New System.Drawing.Size(71, 16)
+        Me.Canciones_LabelCanciones.Size = New System.Drawing.Size(74, 16)
         Me.Canciones_LabelCanciones.TabIndex = 19
-        Me.Canciones_LabelCanciones.Text = "Canciones"
+        Me.Canciones_LabelCanciones.Text = "Canciones:"
         Me.Canciones_LabelCanciones.UseWaitCursor = True
-        '
-        'Canciones_comboBoxArtista
-        '
-        Me.Canciones_comboBoxArtista.FormattingEnabled = True
-        Me.Canciones_comboBoxArtista.Location = New System.Drawing.Point(24, 58)
-        Me.Canciones_comboBoxArtista.Name = "Canciones_comboBoxArtista"
-        Me.Canciones_comboBoxArtista.Size = New System.Drawing.Size(256, 24)
-        Me.Canciones_comboBoxArtista.TabIndex = 18
-        Me.Canciones_comboBoxArtista.UseWaitCursor = True
-        '
-        'Canciones_LabelArtista
-        '
-        Me.Canciones_LabelArtista.AutoSize = True
-        Me.Canciones_LabelArtista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Canciones_LabelArtista.Location = New System.Drawing.Point(35, 28)
-        Me.Canciones_LabelArtista.Name = "Canciones_LabelArtista"
-        Me.Canciones_LabelArtista.Size = New System.Drawing.Size(135, 16)
-        Me.Canciones_LabelArtista.TabIndex = 17
-        Me.Canciones_LabelArtista.Text = "Seleccionar un artista"
-        Me.Canciones_LabelArtista.UseWaitCursor = True
         '
         'Canciones_TextBoxDuracionCanciones
         '
-        Me.Canciones_TextBoxDuracionCanciones.Location = New System.Drawing.Point(24, 211)
+        Me.Canciones_TextBoxDuracionCanciones.Location = New System.Drawing.Point(24, 212)
         Me.Canciones_TextBoxDuracionCanciones.Name = "Canciones_TextBoxDuracionCanciones"
         Me.Canciones_TextBoxDuracionCanciones.Size = New System.Drawing.Size(256, 22)
         Me.Canciones_TextBoxDuracionCanciones.TabIndex = 10
@@ -746,7 +776,7 @@ Partial Class FormularioPrincipal
         'Canciones_LabelDuracion
         '
         Me.Canciones_LabelDuracion.AutoSize = True
-        Me.Canciones_LabelDuracion.Location = New System.Drawing.Point(35, 178)
+        Me.Canciones_LabelDuracion.Location = New System.Drawing.Point(35, 183)
         Me.Canciones_LabelDuracion.Name = "Canciones_LabelDuracion"
         Me.Canciones_LabelDuracion.Size = New System.Drawing.Size(144, 16)
         Me.Canciones_LabelDuracion.TabIndex = 9
@@ -766,9 +796,9 @@ Partial Class FormularioPrincipal
         Me.Canciones_ListBoxTodasLasCanciones.BackColor = System.Drawing.SystemColors.Control
         Me.Canciones_ListBoxTodasLasCanciones.FormattingEnabled = True
         Me.Canciones_ListBoxTodasLasCanciones.ItemHeight = 16
-        Me.Canciones_ListBoxTodasLasCanciones.Location = New System.Drawing.Point(341, 58)
+        Me.Canciones_ListBoxTodasLasCanciones.Location = New System.Drawing.Point(349, 67)
         Me.Canciones_ListBoxTodasLasCanciones.Name = "Canciones_ListBoxTodasLasCanciones"
-        Me.Canciones_ListBoxTodasLasCanciones.Size = New System.Drawing.Size(229, 276)
+        Me.Canciones_ListBoxTodasLasCanciones.Size = New System.Drawing.Size(240, 372)
         Me.Canciones_ListBoxTodasLasCanciones.TabIndex = 7
         Me.Canciones_ListBoxTodasLasCanciones.UseWaitCursor = True
         '
@@ -777,7 +807,7 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonLimpiar.BackColor = System.Drawing.Color.Salmon
         Me.Canciones_ButtonLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Canciones_ButtonLimpiar.ForeColor = System.Drawing.Color.Black
-        Me.Canciones_ButtonLimpiar.Location = New System.Drawing.Point(164, 329)
+        Me.Canciones_ButtonLimpiar.Location = New System.Drawing.Point(161, 394)
         Me.Canciones_ButtonLimpiar.Name = "Canciones_ButtonLimpiar"
         Me.Canciones_ButtonLimpiar.Size = New System.Drawing.Size(140, 56)
         Me.Canciones_ButtonLimpiar.TabIndex = 6
@@ -790,7 +820,7 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonEliminar.BackColor = System.Drawing.Color.Salmon
         Me.Canciones_ButtonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Canciones_ButtonEliminar.ForeColor = System.Drawing.Color.Black
-        Me.Canciones_ButtonEliminar.Location = New System.Drawing.Point(24, 329)
+        Me.Canciones_ButtonEliminar.Location = New System.Drawing.Point(21, 394)
         Me.Canciones_ButtonEliminar.Name = "Canciones_ButtonEliminar"
         Me.Canciones_ButtonEliminar.Size = New System.Drawing.Size(140, 56)
         Me.Canciones_ButtonEliminar.TabIndex = 5
@@ -803,7 +833,7 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonAgregar.BackColor = System.Drawing.Color.Salmon
         Me.Canciones_ButtonAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Canciones_ButtonAgregar.ForeColor = System.Drawing.Color.Black
-        Me.Canciones_ButtonAgregar.Location = New System.Drawing.Point(164, 260)
+        Me.Canciones_ButtonAgregar.Location = New System.Drawing.Point(161, 325)
         Me.Canciones_ButtonAgregar.Name = "Canciones_ButtonAgregar"
         Me.Canciones_ButtonAgregar.Size = New System.Drawing.Size(140, 56)
         Me.Canciones_ButtonAgregar.TabIndex = 4
@@ -816,7 +846,7 @@ Partial Class FormularioPrincipal
         Me.Canciones_ButtonActualizar.BackColor = System.Drawing.Color.Salmon
         Me.Canciones_ButtonActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Canciones_ButtonActualizar.ForeColor = System.Drawing.Color.Black
-        Me.Canciones_ButtonActualizar.Location = New System.Drawing.Point(24, 260)
+        Me.Canciones_ButtonActualizar.Location = New System.Drawing.Point(21, 325)
         Me.Canciones_ButtonActualizar.Name = "Canciones_ButtonActualizar"
         Me.Canciones_ButtonActualizar.Size = New System.Drawing.Size(140, 56)
         Me.Canciones_ButtonActualizar.TabIndex = 3
@@ -995,6 +1025,24 @@ Partial Class FormularioPrincipal
         Me.Sitios_Label_Sitios.Text = "Sitios:"
         Me.Sitios_Label_Sitios.UseWaitCursor = True
         '
+        'Canciones_TextBoxOrden
+        '
+        Me.Canciones_TextBoxOrden.Location = New System.Drawing.Point(24, 276)
+        Me.Canciones_TextBoxOrden.Name = "Canciones_TextBoxOrden"
+        Me.Canciones_TextBoxOrden.Size = New System.Drawing.Size(256, 22)
+        Me.Canciones_TextBoxOrden.TabIndex = 24
+        Me.Canciones_TextBoxOrden.UseWaitCursor = True
+        '
+        'Canciones_LabelOrden
+        '
+        Me.Canciones_LabelOrden.AutoSize = True
+        Me.Canciones_LabelOrden.Location = New System.Drawing.Point(32, 248)
+        Me.Canciones_LabelOrden.Name = "Canciones_LabelOrden"
+        Me.Canciones_LabelOrden.Size = New System.Drawing.Size(44, 16)
+        Me.Canciones_LabelOrden.TabIndex = 23
+        Me.Canciones_LabelOrden.Text = "Orden"
+        Me.Canciones_LabelOrden.UseWaitCursor = True
+        '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1121,6 +1169,10 @@ Partial Class FormularioPrincipal
     Friend WithEvents Albumes_LabelNombreArtista As Label
     Friend WithEvents Sitios_Label_Tipo As Label
     Friend WithEvents Canciones_LabelCanciones As Label
-    Friend WithEvents Canciones_comboBoxArtista As ComboBox
-    Friend WithEvents Canciones_LabelArtista As Label
+    Friend WithEvents Canciones_ComboBoxAlbum As ComboBox
+    Friend WithEvents Canciones_LabelAlbum As Label
+    Friend WithEvents Albumes_ButtonVerTodosAlbumes As Button
+    Friend WithEvents Canciones_ButtonVerTodasCanciones As Button
+    Friend WithEvents Canciones_TextBoxOrden As TextBox
+    Friend WithEvents Canciones_LabelOrden As Label
 End Class
