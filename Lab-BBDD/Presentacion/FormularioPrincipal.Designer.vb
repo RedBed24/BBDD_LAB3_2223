@@ -72,6 +72,9 @@ Partial Class FormularioPrincipal
         Me.Conciertos_ComboBoxArtistaActua = New System.Windows.Forms.ComboBox()
         Me.Conciertos_LabelArtistas = New System.Windows.Forms.Label()
         Me.TabCanciones = New System.Windows.Forms.TabPage()
+        Me.Canciones_LabelCanciones = New System.Windows.Forms.Label()
+        Me.Canciones_comboBoxArtista = New System.Windows.Forms.ComboBox()
+        Me.Canciones_LabelArtista = New System.Windows.Forms.Label()
         Me.Canciones_TextBoxDuracionCanciones = New System.Windows.Forms.TextBox()
         Me.Canciones_LabelDuracion = New System.Windows.Forms.Label()
         Me.Canciones_TextBoxNombreCanciones = New System.Windows.Forms.TextBox()
@@ -97,9 +100,6 @@ Partial Class FormularioPrincipal
         Me.Sitios_Label_Sitios = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Canciones_LabelArtista = New System.Windows.Forms.Label()
-        Me.Canciones_comboBoxArtista = New System.Windows.Forms.ComboBox()
-        Me.Canciones_LabelCanciones = New System.Windows.Forms.Label()
         Me.TabControl.SuspendLayout()
         Me.TabArtistas.SuspendLayout()
         Me.TabPaises.SuspendLayout()
@@ -704,6 +704,37 @@ Partial Class FormularioPrincipal
         Me.TabCanciones.UseVisualStyleBackColor = True
         Me.TabCanciones.UseWaitCursor = True
         '
+        'Canciones_LabelCanciones
+        '
+        Me.Canciones_LabelCanciones.AutoSize = True
+        Me.Canciones_LabelCanciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Canciones_LabelCanciones.Location = New System.Drawing.Point(418, 28)
+        Me.Canciones_LabelCanciones.Name = "Canciones_LabelCanciones"
+        Me.Canciones_LabelCanciones.Size = New System.Drawing.Size(71, 16)
+        Me.Canciones_LabelCanciones.TabIndex = 19
+        Me.Canciones_LabelCanciones.Text = "Canciones"
+        Me.Canciones_LabelCanciones.UseWaitCursor = True
+        '
+        'Canciones_comboBoxArtista
+        '
+        Me.Canciones_comboBoxArtista.FormattingEnabled = True
+        Me.Canciones_comboBoxArtista.Location = New System.Drawing.Point(24, 58)
+        Me.Canciones_comboBoxArtista.Name = "Canciones_comboBoxArtista"
+        Me.Canciones_comboBoxArtista.Size = New System.Drawing.Size(256, 24)
+        Me.Canciones_comboBoxArtista.TabIndex = 18
+        Me.Canciones_comboBoxArtista.UseWaitCursor = True
+        '
+        'Canciones_LabelArtista
+        '
+        Me.Canciones_LabelArtista.AutoSize = True
+        Me.Canciones_LabelArtista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Canciones_LabelArtista.Location = New System.Drawing.Point(35, 28)
+        Me.Canciones_LabelArtista.Name = "Canciones_LabelArtista"
+        Me.Canciones_LabelArtista.Size = New System.Drawing.Size(135, 16)
+        Me.Canciones_LabelArtista.TabIndex = 17
+        Me.Canciones_LabelArtista.Text = "Seleccionar un artista"
+        Me.Canciones_LabelArtista.UseWaitCursor = True
+        '
         'Canciones_TextBoxDuracionCanciones
         '
         Me.Canciones_TextBoxDuracionCanciones.Location = New System.Drawing.Point(24, 211)
@@ -717,9 +748,9 @@ Partial Class FormularioPrincipal
         Me.Canciones_LabelDuracion.AutoSize = True
         Me.Canciones_LabelDuracion.Location = New System.Drawing.Point(35, 178)
         Me.Canciones_LabelDuracion.Name = "Canciones_LabelDuracion"
-        Me.Canciones_LabelDuracion.Size = New System.Drawing.Size(147, 16)
+        Me.Canciones_LabelDuracion.Size = New System.Drawing.Size(144, 16)
         Me.Canciones_LabelDuracion.TabIndex = 9
-        Me.Canciones_LabelDuracion.Text = "Duracion de la cancion:"
+        Me.Canciones_LabelDuracion.Text = "Duracion de la cancion"
         Me.Canciones_LabelDuracion.UseWaitCursor = True
         '
         'Canciones_TextBoxNombreCanciones
@@ -798,9 +829,9 @@ Partial Class FormularioPrincipal
         Me.Canciones_LabelNombreCancion.AutoSize = True
         Me.Canciones_LabelNombreCancion.Location = New System.Drawing.Point(35, 109)
         Me.Canciones_LabelNombreCancion.Name = "Canciones_LabelNombreCancion"
-        Me.Canciones_LabelNombreCancion.Size = New System.Drawing.Size(142, 16)
+        Me.Canciones_LabelNombreCancion.Size = New System.Drawing.Size(139, 16)
         Me.Canciones_LabelNombreCancion.TabIndex = 1
-        Me.Canciones_LabelNombreCancion.Text = "Nombre de la cancion:"
+        Me.Canciones_LabelNombreCancion.Text = "Nombre de la cancion"
         Me.Canciones_LabelNombreCancion.UseWaitCursor = True
         '
         'TabSitio
@@ -963,37 +994,6 @@ Partial Class FormularioPrincipal
         Me.Sitios_Label_Sitios.TabIndex = 1
         Me.Sitios_Label_Sitios.Text = "Sitios:"
         Me.Sitios_Label_Sitios.UseWaitCursor = True
-        '
-        'Canciones_LabelArtista
-        '
-        Me.Canciones_LabelArtista.AutoSize = True
-        Me.Canciones_LabelArtista.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Canciones_LabelArtista.Location = New System.Drawing.Point(35, 28)
-        Me.Canciones_LabelArtista.Name = "Canciones_LabelArtista"
-        Me.Canciones_LabelArtista.Size = New System.Drawing.Size(135, 16)
-        Me.Canciones_LabelArtista.TabIndex = 17
-        Me.Canciones_LabelArtista.Text = "Seleccionar un artista"
-        Me.Canciones_LabelArtista.UseWaitCursor = True
-        '
-        'Canciones_comboBoxArtista
-        '
-        Me.Canciones_comboBoxArtista.FormattingEnabled = True
-        Me.Canciones_comboBoxArtista.Location = New System.Drawing.Point(24, 58)
-        Me.Canciones_comboBoxArtista.Name = "Canciones_comboBoxArtista"
-        Me.Canciones_comboBoxArtista.Size = New System.Drawing.Size(256, 24)
-        Me.Canciones_comboBoxArtista.TabIndex = 18
-        Me.Canciones_comboBoxArtista.UseWaitCursor = True
-        '
-        'Canciones_LabelCanciones
-        '
-        Me.Canciones_LabelCanciones.AutoSize = True
-        Me.Canciones_LabelCanciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Canciones_LabelCanciones.Location = New System.Drawing.Point(418, 28)
-        Me.Canciones_LabelCanciones.Name = "Canciones_LabelCanciones"
-        Me.Canciones_LabelCanciones.Size = New System.Drawing.Size(71, 16)
-        Me.Canciones_LabelCanciones.TabIndex = 19
-        Me.Canciones_LabelCanciones.Text = "Canciones"
-        Me.Canciones_LabelCanciones.UseWaitCursor = True
         '
         'FormularioPrincipal
         '

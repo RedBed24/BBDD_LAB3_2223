@@ -84,16 +84,12 @@ Public Class FormularioPrincipal
 
         Dim pais As Pais = Artistas_ComboBox_PaisArtista.SelectedItem
         Dim nombrePais As String = pais.NombrePais
-        If String.IsNullOrEmpty(nombrepais) Then
+        If String.IsNullOrEmpty(nombrePais) Then
             MessageBox.Show("Debe seleccionar un país primero.")
             Exit Sub
         End If
 
-        Dim codpais As String = Pais.obtainID(nombrepais)
-
-        Dim paisartista As New Pais(codpais, nombre)
-
-        Dim artistaanadir As New Artista(nombre, paisartista)
+        Dim artistaanadir As New Artista(nombre, pais)
 
         Try
             If artistaanadir.InsertarArtista() <> 1 Then
@@ -369,5 +365,156 @@ Public Class FormularioPrincipal
 
     End Sub
 
+    Private Sub Albumes_ListBoxAlbumes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Albumes_ListBoxAlbumes.SelectedIndexChanged
+
+        'Se rellena nombre de álbum y año album'
+
+    End Sub
+
+    Private Sub Albumes_ButtonAgregar_Click(sender As Object, e As EventArgs) Handles Albumes_ButtonAgregar.Click
+
+        Dim nombre As String = Albumes_TextBoxNombreAlbum.Text
+        Dim año As String = Albumes_TextBoxAñoAlbum.Text
+
+        If String.IsNullOrEmpty(nombre) Then
+            MessageBox.Show("El album debe tener un nombre.")
+            Exit Sub
+        End If
+        If String.IsNullOrEmpty(año) Then
+            MessageBox.Show("El album debe tener un año.")
+            Exit Sub
+        End If
+
+        Dim añoInt As Integer = CInt(año)
+        If añoInt < 1860 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860")
+            Exit Sub
+        End If
+
+        Dim artistaAlbum As Artista = Albumes_ComboBoxArtistas.SelectedItem
+        Dim nombreArtista As String = artistaAlbum.Nombre
+        If String.IsNullOrEmpty(nombreArtista) Then
+            MessageBox.Show("Debe seleccionar un artista primero.")
+            Exit Sub
+        End If
+
+        Dim albumAnadir As New Album(nombre, añoInt, artistaAlbum)
+
+        Try
+            If albumAnadir.InsertarAlbum() <> 1 Then
+                MessageBox.Show("wtf cómo puede ocurrir esto?")
+                Exit Sub
+            End If
+        Catch ex As Exception
+            ' no se puede añadir
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(albumAnadir.ToString & " añadido correctamente")
+        Albumes_ListBoxAlbumes.Items.Add(albumAnadir)
+        Albumes_ComboBoxArtistas.SelectedItem = albumAnadir
+
+    End Sub
+
+    Private Sub Albumes_ButtonActualizar_Click(sender As Object, e As EventArgs) Handles Albumes_ButtonActualizar.Click
+
+        Dim nombrenuevo As String = Albumes_TextBoxNombreAlbum.Text
+        Dim añonuevo As String = Albumes_TextBoxAñoAlbum.Text
+
+        If Albumes_ListBoxAlbumes.SelectedItem Is Nothing Then
+            MessageBox.Show("Se debe seleccionar un Artista")
+            Exit Sub
+        End If
+
+        Dim albummodificar As Album = Albumes_ListBoxAlbumes.SelectedItem
+
+        If String.IsNullOrEmpty(nombrenuevo) Then
+            MessageBox.Show("Se debe introducir un nombre de album válido")
+            Exit Sub
+        End If
+
+        If String.IsNullOrEmpty(añonuevo) Then
+            MessageBox.Show("Se debe introducir un año válido")
+            Exit Sub
+        End If
+
+        Dim añonuevoInt As Integer = CInt(añonuevo)
+        If añonuevoInt < 1860 Then
+            MessageBox.Show("El programa no permite añadir a la base de datos canciones de antes del año 1860")
+            Exit Sub
+        End If
+
+        If Albumes_ComboBoxArtistas.SelectedItem Is Nothing Then
+            MessageBox.Show("Se debe seleccionar un artista")
+            Exit Sub
+        End If
+
+        Dim artistaNuevo As Artista = Albumes_ComboBoxArtistas.SelectedItem
+
+        albummodificar.NombreAlbum = nombrenuevo
+        albummodificar.AñoAlbum = añonuevoInt
+        albummodificar.Artist = artistaNuevo
+
+        Try
+            If albummodificar.ActualizarAlbum() <> 1 Then
+                ' wtf como ocurre esto?
+                MessageBox.Show("no existe (y no se puede modificar) " & albummodificar.ToString)
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(albummodificar.ToString & " modificado correctamente")
+
+        ' porque no se ve actualizado en el listbox
+        Albumes_ListBoxAlbumes.Items.Remove(albummodificar)
+        Albumes_ListBoxAlbumes.Items.Add(albummodificar)
+        Albumes_ListBoxAlbumes.SelectedItem = albummodificar
+    End Sub
+
+    Private Sub Albumes_ButtonEliminar_Click(sender As Object, e As EventArgs) Handles Albumes_ButtonEliminar.Click
+        If Albumes_ListBoxAlbumes.SelectedItem Is Nothing Then
+            MessageBox.Show("Se debe seleccionar un Album")
+            Exit Sub
+        End If
+
+        Dim albumborrar As Album = Albumes_ListBoxAlbumes.SelectedItem
+
+        Try
+            If albumborrar.BorrarAlbum() <> 1 Then
+                MessageBox.Show("no existe (y no se puede borrar) " & albumborrar.ToString)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        MessageBox.Show(albumborrar.ToString & " eliminado correctamente")
+        Albumes_ListBoxAlbumes.Items.Remove(albumborrar)
+    End Sub
+
+    Private Sub Albumes_ButtonLimpiar_Click(sender As Object, e As EventArgs) Handles Albumes_ButtonLimpiar.Click
+        Albumes_ListBoxAlbumes.Items.Clear()
+        Albumes_TextBoxAñoAlbum.Clear()
+        Albumes_TextBoxNombreAlbum.Clear()
+        TabControl_SelectedIndexChanged(sender, e)
+        Albumes_ComboBoxArtistas.SelectedIndex = -1
+        Albumes_ComboBoxArtistas.Text = ""
+    End Sub
+
+
+    '
+    '
+    '
+    '
+    '
+    '
+    '
+    '
+    ' TAB CANCIONES
+    '
 
 End Class
