@@ -38,7 +38,7 @@
         Albumes_TextBoxAñoAlbum.Text = album.AñoAlbum
 
         For Each item As Artista In Albumes_ComboBoxArtistas.Items
-            If item.Nombre() = album.Artist.Nombre Then
+            If item.IdArtista = album.Artist.IdArtista Then
                 Albumes_ComboBoxArtistas.SelectedItem = item
                 Exit For
             End If
