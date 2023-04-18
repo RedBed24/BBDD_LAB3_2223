@@ -48,7 +48,7 @@
         Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (NombreCancion, Duración, Album, OrdenCanción) values ('" & cancion.NombreCancion & "', '" & cancion.Duracion & "', '" & cancion.Album.idAlbum & "', '" & cancion.OrdenCancion & "');")
     End Function
     Public Function Actualizar(ByVal cancion As Cancion) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreCancion='" & cancion.NombreCancion & "', Duración='" & cancion.Duracion & "', Album='" & cancion.Album.idAlbum & ", OrdenCanción='" & cancion.OrdenCancion & "' where " & campoIdentificador & "='" & cancion.idCancion & "';")
+        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set NombreCancion='" & cancion.NombreCancion & "', Duración='" & cancion.Duracion & "', Album='" & cancion.Album.idAlbum & "', OrdenCanción='" & cancion.OrdenCancion & "' where " & campoIdentificador & "='" & cancion.idCancion & "';")
     End Function
 
     Public Function Borrar(ByVal cancion As Cancion) As Integer
