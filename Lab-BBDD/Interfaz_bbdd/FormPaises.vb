@@ -27,6 +27,9 @@
             Exit Sub
         End If
 
+        Paises_Button_Actualizar.Enabled = True
+        Paises_Button_Eliminar.Enabled = True
+
         Dim pais As Pais = Paises_ListBox_Paises.SelectedItem
 
         Paises_TextBox_NombrePais.Text = pais.NombrePais
@@ -131,5 +134,8 @@
     Private Sub Artistas_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Paises_Button_Limpiar.Click
         Paises_ListBox_Paises.Items.Clear()
         Paises_TextBox_NombrePais.Clear()
+
+        Paises_Button_Actualizar.Enabled = False
+        Paises_Button_Eliminar.Enabled = False
     End Sub
 End Class

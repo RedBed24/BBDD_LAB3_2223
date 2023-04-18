@@ -32,6 +32,9 @@
             Exit Sub
         End If
 
+        Albumes_Button_Actualizar.Enabled = True
+        Albumes_Button_Eliminar.Enabled = True
+
         Dim album As Album = Albumes_ListBox_Albumes.SelectedItem
 
         Albumes_TextBoxNombreAlbum.Text = album.NombreAlbum
@@ -177,5 +180,8 @@
         Albumes_TextBoxNombreAlbum.Clear()
         Albumes_ComboBoxArtistas.SelectedIndex = -1
         Albumes_ComboBoxArtistas.Text = ""
+
+        Albumes_Button_Actualizar.Enabled = False
+        Albumes_Button_Eliminar.Enabled = False
     End Sub
 End Class

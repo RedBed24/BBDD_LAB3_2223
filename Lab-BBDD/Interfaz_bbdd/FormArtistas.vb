@@ -36,6 +36,9 @@
             Exit Sub
         End If
 
+        Artistas_Button_Actualizar.Enabled = True
+        Artistas_Button_Eliminar.Enabled = True
+
         Dim artista As Artista = Artistas_ListBox_Artistas.SelectedItem
 
         Artistas_TextBox_NombreArtista.Text = artista.Nombre
@@ -160,5 +163,7 @@
         Artistas_ComboBox_PaisArtista.SelectedIndex = -1
         Artistas_ComboBox_PaisArtista.Text = ""
 
+        Artistas_Button_Actualizar.Enabled = False
+        Artistas_Button_Eliminar.Enabled = False
     End Sub
 End Class
