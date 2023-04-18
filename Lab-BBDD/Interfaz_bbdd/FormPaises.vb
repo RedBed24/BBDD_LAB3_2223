@@ -1,7 +1,7 @@
 ﻿Public Class FormPaises
 
     Private Sub FormPaises_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Paises_Button_VerTodosPaises.PerformClick()
+
     End Sub
 
     Private Sub Paises_Button_VerTodosPaises_Click(sender As Object, e As EventArgs) Handles Paises_Button_VerTodosPaises.Click

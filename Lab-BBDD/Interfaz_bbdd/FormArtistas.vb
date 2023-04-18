@@ -2,7 +2,6 @@
     Public Property Paises_Button_VerTodosPaises As Object
 
     Private Sub FormArtistas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Artistas_Button_VerTodosArtistas.PerformClick()
 
         Dim temppais As New Pais
         temppais.LeerTodosPaises()

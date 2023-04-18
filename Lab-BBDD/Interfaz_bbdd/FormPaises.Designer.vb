@@ -66,7 +66,7 @@ Partial Class FormPaises
         '
         Me.Paises_Button_VerTodosPaises.BackColor = System.Drawing.Color.MistyRose
         Me.Paises_Button_VerTodosPaises.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Paises_Button_VerTodosPaises.Location = New System.Drawing.Point(456, 73)
+        Me.Paises_Button_VerTodosPaises.Location = New System.Drawing.Point(435, 72)
         Me.Paises_Button_VerTodosPaises.Name = "Paises_Button_VerTodosPaises"
         Me.Paises_Button_VerTodosPaises.Size = New System.Drawing.Size(154, 28)
         Me.Paises_Button_VerTodosPaises.TabIndex = 30
