@@ -44,8 +44,6 @@
             End If
         Next
 
-        Albumes_Button_VerTodosAlbumes.PerformClick()
-
     End Sub
 
     Private Sub Albumes_ButtonAgregar_Click(sender As Object, e As EventArgs) Handles Albumes_Button_Agregar.Click
