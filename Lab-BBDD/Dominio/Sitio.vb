@@ -13,14 +13,21 @@
         SiteDAO = New SitioDAO
     End Sub
 
-    Public Sub New(id As String)
+    Public Sub New(id As Integer)
         SiteDAO = New SitioDAO
         idSitio = id
     End Sub
 
-    Public Sub New(id As String, nomb As String, pai As Pais, typ As String)
+    Public Sub New(id As Integer, nomb As String, pai As Pais, typ As String)
         SiteDAO = New SitioDAO
         idSitio = id
+        NombreSitio = nomb
+        Pais = pai
+        tipo = typ
+    End Sub
+
+    Public Sub New(nomb As String, pai As Pais, typ As String)
+        SiteDAO = New SitioDAO
         NombreSitio = nomb
         Pais = pai
         tipo = typ

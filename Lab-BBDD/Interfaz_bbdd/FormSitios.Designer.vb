@@ -31,10 +31,10 @@ Partial Class FormSitios
         Me.Sitios_Label_NombreSitio = New System.Windows.Forms.Label()
         Me.Sitios_TextBox_NombreSitio = New System.Windows.Forms.TextBox()
         Me.Sitios_Button_VerTodosSitios = New System.Windows.Forms.Button()
-        Me.Artistas_Button_Eliminar = New System.Windows.Forms.Button()
-        Me.Artistas_Button_Limpiar = New System.Windows.Forms.Button()
-        Me.Artistas_Button_Actualizar = New System.Windows.Forms.Button()
-        Me.Artistas_Button_Agregar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Eliminar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Limpiar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Actualizar = New System.Windows.Forms.Button()
+        Me.Sitios_Button_Agregar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblTitulo_Sit
@@ -51,7 +51,7 @@ Partial Class FormSitios
         'Sitios_Label_Tipo
         '
         Me.Sitios_Label_Tipo.AutoSize = True
-        Me.Sitios_Label_Tipo.Location = New System.Drawing.Point(435, 143)
+        Me.Sitios_Label_Tipo.Location = New System.Drawing.Point(373, 137)
         Me.Sitios_Label_Tipo.Name = "Sitios_Label_Tipo"
         Me.Sitios_Label_Tipo.Size = New System.Drawing.Size(87, 16)
         Me.Sitios_Label_Tipo.TabIndex = 23
@@ -62,7 +62,7 @@ Partial Class FormSitios
         '
         Me.Sitios_ComboBox_TipoSitio.FormattingEnabled = True
         Me.Sitios_ComboBox_TipoSitio.Items.AddRange(New Object() {"sala", "pabellón", "estadio", "festival"})
-        Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(427, 162)
+        Me.Sitios_ComboBox_TipoSitio.Location = New System.Drawing.Point(365, 156)
         Me.Sitios_ComboBox_TipoSitio.Name = "Sitios_ComboBox_TipoSitio"
         Me.Sitios_ComboBox_TipoSitio.Size = New System.Drawing.Size(256, 24)
         Me.Sitios_ComboBox_TipoSitio.TabIndex = 22
@@ -71,7 +71,7 @@ Partial Class FormSitios
         'Sitios_ComboBox_PaisSitio
         '
         Me.Sitios_ComboBox_PaisSitio.FormattingEnabled = True
-        Me.Sitios_ComboBox_PaisSitio.Location = New System.Drawing.Point(427, 216)
+        Me.Sitios_ComboBox_PaisSitio.Location = New System.Drawing.Point(365, 210)
         Me.Sitios_ComboBox_PaisSitio.Name = "Sitios_ComboBox_PaisSitio"
         Me.Sitios_ComboBox_PaisSitio.Size = New System.Drawing.Size(256, 24)
         Me.Sitios_ComboBox_PaisSitio.TabIndex = 21
@@ -91,7 +91,7 @@ Partial Class FormSitios
         'Sitios_Label_PaisSitio
         '
         Me.Sitios_Label_PaisSitio.AutoSize = True
-        Me.Sitios_Label_PaisSitio.Location = New System.Drawing.Point(435, 197)
+        Me.Sitios_Label_PaisSitio.Location = New System.Drawing.Point(373, 191)
         Me.Sitios_Label_PaisSitio.Name = "Sitios_Label_PaisSitio"
         Me.Sitios_Label_PaisSitio.Size = New System.Drawing.Size(86, 16)
         Me.Sitios_Label_PaisSitio.TabIndex = 19
@@ -101,7 +101,7 @@ Partial Class FormSitios
         'Sitios_Label_NombreSitio
         '
         Me.Sitios_Label_NombreSitio.AutoSize = True
-        Me.Sitios_Label_NombreSitio.Location = New System.Drawing.Point(435, 93)
+        Me.Sitios_Label_NombreSitio.Location = New System.Drawing.Point(373, 87)
         Me.Sitios_Label_NombreSitio.Name = "Sitios_Label_NombreSitio"
         Me.Sitios_Label_NombreSitio.Size = New System.Drawing.Size(108, 16)
         Me.Sitios_Label_NombreSitio.TabIndex = 18
@@ -110,7 +110,7 @@ Partial Class FormSitios
         '
         'Sitios_TextBox_NombreSitio
         '
-        Me.Sitios_TextBox_NombreSitio.Location = New System.Drawing.Point(427, 112)
+        Me.Sitios_TextBox_NombreSitio.Location = New System.Drawing.Point(365, 106)
         Me.Sitios_TextBox_NombreSitio.Name = "Sitios_TextBox_NombreSitio"
         Me.Sitios_TextBox_NombreSitio.Size = New System.Drawing.Size(256, 22)
         Me.Sitios_TextBox_NombreSitio.TabIndex = 17
@@ -127,57 +127,57 @@ Partial Class FormSitios
         Me.Sitios_Button_VerTodosSitios.UseVisualStyleBackColor = False
         Me.Sitios_Button_VerTodosSitios.UseWaitCursor = True
         '
-        'Artistas_Button_Eliminar
+        'Sitios_Button_Eliminar
         '
-        Me.Artistas_Button_Eliminar.Enabled = False
-        Me.Artistas_Button_Eliminar.Location = New System.Drawing.Point(561, 277)
-        Me.Artistas_Button_Eliminar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Artistas_Button_Eliminar.Name = "Artistas_Button_Eliminar"
-        Me.Artistas_Button_Eliminar.Size = New System.Drawing.Size(106, 35)
-        Me.Artistas_Button_Eliminar.TabIndex = 52
-        Me.Artistas_Button_Eliminar.Text = "Eliminar"
-        Me.Artistas_Button_Eliminar.UseVisualStyleBackColor = True
+        Me.Sitios_Button_Eliminar.Enabled = False
+        Me.Sitios_Button_Eliminar.Location = New System.Drawing.Point(545, 261)
+        Me.Sitios_Button_Eliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Sitios_Button_Eliminar.Name = "Sitios_Button_Eliminar"
+        Me.Sitios_Button_Eliminar.Size = New System.Drawing.Size(106, 35)
+        Me.Sitios_Button_Eliminar.TabIndex = 52
+        Me.Sitios_Button_Eliminar.Text = "Eliminar"
+        Me.Sitios_Button_Eliminar.UseVisualStyleBackColor = True
         '
-        'Artistas_Button_Limpiar
+        'Sitios_Button_Limpiar
         '
-        Me.Artistas_Button_Limpiar.Location = New System.Drawing.Point(561, 331)
-        Me.Artistas_Button_Limpiar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Artistas_Button_Limpiar.Name = "Artistas_Button_Limpiar"
-        Me.Artistas_Button_Limpiar.Size = New System.Drawing.Size(106, 35)
-        Me.Artistas_Button_Limpiar.TabIndex = 51
-        Me.Artistas_Button_Limpiar.Text = "Limpiar"
-        Me.Artistas_Button_Limpiar.UseVisualStyleBackColor = True
+        Me.Sitios_Button_Limpiar.Location = New System.Drawing.Point(545, 315)
+        Me.Sitios_Button_Limpiar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Sitios_Button_Limpiar.Name = "Sitios_Button_Limpiar"
+        Me.Sitios_Button_Limpiar.Size = New System.Drawing.Size(106, 35)
+        Me.Sitios_Button_Limpiar.TabIndex = 51
+        Me.Sitios_Button_Limpiar.Text = "Limpiar"
+        Me.Sitios_Button_Limpiar.UseVisualStyleBackColor = True
         '
-        'Artistas_Button_Actualizar
+        'Sitios_Button_Actualizar
         '
-        Me.Artistas_Button_Actualizar.Enabled = False
-        Me.Artistas_Button_Actualizar.Location = New System.Drawing.Point(381, 331)
-        Me.Artistas_Button_Actualizar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Artistas_Button_Actualizar.Name = "Artistas_Button_Actualizar"
-        Me.Artistas_Button_Actualizar.Size = New System.Drawing.Size(112, 35)
-        Me.Artistas_Button_Actualizar.TabIndex = 50
-        Me.Artistas_Button_Actualizar.Text = "Actualizar"
-        Me.Artistas_Button_Actualizar.UseVisualStyleBackColor = True
+        Me.Sitios_Button_Actualizar.Enabled = False
+        Me.Sitios_Button_Actualizar.Location = New System.Drawing.Point(365, 315)
+        Me.Sitios_Button_Actualizar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Sitios_Button_Actualizar.Name = "Sitios_Button_Actualizar"
+        Me.Sitios_Button_Actualizar.Size = New System.Drawing.Size(112, 35)
+        Me.Sitios_Button_Actualizar.TabIndex = 50
+        Me.Sitios_Button_Actualizar.Text = "Actualizar"
+        Me.Sitios_Button_Actualizar.UseVisualStyleBackColor = True
         '
-        'Artistas_Button_Agregar
+        'Sitios_Button_Agregar
         '
-        Me.Artistas_Button_Agregar.Location = New System.Drawing.Point(381, 277)
-        Me.Artistas_Button_Agregar.Margin = New System.Windows.Forms.Padding(2)
-        Me.Artistas_Button_Agregar.Name = "Artistas_Button_Agregar"
-        Me.Artistas_Button_Agregar.Size = New System.Drawing.Size(112, 35)
-        Me.Artistas_Button_Agregar.TabIndex = 49
-        Me.Artistas_Button_Agregar.Text = "Agregar"
-        Me.Artistas_Button_Agregar.UseVisualStyleBackColor = True
+        Me.Sitios_Button_Agregar.Location = New System.Drawing.Point(365, 261)
+        Me.Sitios_Button_Agregar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Sitios_Button_Agregar.Name = "Sitios_Button_Agregar"
+        Me.Sitios_Button_Agregar.Size = New System.Drawing.Size(112, 35)
+        Me.Sitios_Button_Agregar.TabIndex = 49
+        Me.Sitios_Button_Agregar.Text = "Agregar"
+        Me.Sitios_Button_Agregar.UseVisualStyleBackColor = True
         '
         'FormSitios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(760, 384)
-        Me.Controls.Add(Me.Artistas_Button_Eliminar)
-        Me.Controls.Add(Me.Artistas_Button_Limpiar)
-        Me.Controls.Add(Me.Artistas_Button_Actualizar)
-        Me.Controls.Add(Me.Artistas_Button_Agregar)
+        Me.Controls.Add(Me.Sitios_Button_Eliminar)
+        Me.Controls.Add(Me.Sitios_Button_Limpiar)
+        Me.Controls.Add(Me.Sitios_Button_Actualizar)
+        Me.Controls.Add(Me.Sitios_Button_Agregar)
         Me.Controls.Add(Me.Sitios_Label_Tipo)
         Me.Controls.Add(Me.Sitios_ComboBox_TipoSitio)
         Me.Controls.Add(Me.Sitios_ComboBox_PaisSitio)
@@ -205,8 +205,8 @@ Partial Class FormSitios
     Friend WithEvents Sitios_Label_NombreSitio As Label
     Friend WithEvents Sitios_TextBox_NombreSitio As TextBox
     Friend WithEvents Sitios_Button_VerTodosSitios As Button
-    Friend WithEvents Artistas_Button_Eliminar As Button
-    Friend WithEvents Artistas_Button_Limpiar As Button
-    Friend WithEvents Artistas_Button_Actualizar As Button
-    Friend WithEvents Artistas_Button_Agregar As Button
+    Friend WithEvents Sitios_Button_Eliminar As Button
+    Friend WithEvents Sitios_Button_Limpiar As Button
+    Friend WithEvents Sitios_Button_Actualizar As Button
+    Friend WithEvents Sitios_Button_Agregar As Button
 End Class

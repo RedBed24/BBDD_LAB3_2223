@@ -91,7 +91,7 @@
 
         MessageBox.Show(albumAnadir.ToString & " añadido correctamente")
         Albumes_ListBox_Albumes.Items.Add(albumAnadir)
-        Albumes_ComboBoxArtistas.SelectedItem = albumAnadir
+        Albumes_ListBox_Albumes.SelectedItem = albumAnadir
 
     End Sub
 
