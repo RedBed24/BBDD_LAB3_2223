@@ -90,8 +90,8 @@
         End Try
 
         MessageBox.Show(albumAnadir.ToString & " añadido correctamente")
-        Albumes_ListBox_Albumes.Items.Add(albumAnadir)
-        Albumes_ListBox_Albumes.SelectedItem = albumAnadir
+        Albumes_Button_VerTodosAlbumes.PerformClick()
+        Albumes_ListBox_Albumes.SelectedIndex = Albumes_ListBox_Albumes.Items.Count - 1
 
     End Sub
 

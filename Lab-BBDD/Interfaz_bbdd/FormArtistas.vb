@@ -132,6 +132,7 @@
 
         ' no sabemos qué id le ha dado la bbdd
         Artistas_Button_VerTodosArtistas.PerformClick()
+        Artistas_ListBox_Artistas.SelectedIndex = Artistas_ListBox_Artistas.Items.Count - 1
 
     End Sub
 

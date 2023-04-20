@@ -101,8 +101,8 @@
         End Try
 
         MessageBox.Show(CancionAnadir.ToString & " añadido correctamente")
-        Canciones_ListBoxTodasLasCanciones.Items.Add(CancionAnadir)
-        Canciones_ListBoxTodasLasCanciones.SelectedItem = CancionAnadir
+        Canciones_Button_VerTodasCanciones.PerformClick()
+        Canciones_ListBoxTodasLasCanciones.SelectedIndex = Canciones_ListBoxTodasLasCanciones.Items.Count - 1
     End Sub
 
     Private Sub Canciones_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Canciones_Button_Actualizar.Click

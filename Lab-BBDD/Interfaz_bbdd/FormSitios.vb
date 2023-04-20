@@ -90,8 +90,8 @@
         End Try
 
         MessageBox.Show(sitioAnadir.ToString & " añadido correctamente")
-        Sitios_ListBox_Sitios.Items.Add(sitioAnadir)
-        Sitios_ListBox_Sitios.SelectedItem = sitioAnadir
+        Sitios_Button_VerTodosSitios.PerformClick()
+        Sitios_ListBox_Sitios.SelectedIndex = Sitios_ListBox_Sitios.Items.Count - 1
 
     End Sub
 
