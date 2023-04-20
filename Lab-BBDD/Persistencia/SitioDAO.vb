@@ -22,7 +22,7 @@
             ' leemos la información de ese pais
             tempPais.LeerPais()
 
-            tempSitio = New Sitio(tupla(1).ToString, tupla(2).ToString, tempPais, tupla(3).ToString)
+            tempSitio = New Sitio(tupla(1).ToString, tupla(2).ToString, tempPais, tupla(4).ToString)
 
             Me.Sitios.Add(tempSitio)
         Next
