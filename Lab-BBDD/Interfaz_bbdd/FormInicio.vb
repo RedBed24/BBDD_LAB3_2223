@@ -35,4 +35,8 @@ Public Class FormInicio
         AbrirFormEnPanel(New FormSitios)
     End Sub
 
+    Private Sub btnConciertos_Click(sender As Object, e As EventArgs) Handles btnConciertos.Click
+        AbrirFormEnPanel(New FormConciertos)
+    End Sub
+
 End Class

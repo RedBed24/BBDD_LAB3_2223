@@ -33,6 +33,7 @@ Partial Class FormInicio
         Me.Inicio_LabelMenu = New System.Windows.Forms.Label()
         Me.PanelFormulario = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnConciertos = New System.Windows.Forms.Button()
         Me.PanelMenu.SuspendLayout()
         Me.PanelMenuSuperior.SuspendLayout()
         Me.PanelFormulario.SuspendLayout()
@@ -42,6 +43,7 @@ Partial Class FormInicio
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelMenu.Controls.Add(Me.btnConciertos)
         Me.PanelMenu.Controls.Add(Me.btnArtistas)
         Me.PanelMenu.Controls.Add(Me.btnSitios)
         Me.PanelMenu.Controls.Add(Me.btnAlbum)
@@ -169,6 +171,21 @@ Partial Class FormInicio
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'btnConciertos
+        '
+        Me.btnConciertos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnConciertos.FlatAppearance.BorderSize = 0
+        Me.btnConciertos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConciertos.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnConciertos.ForeColor = System.Drawing.Color.White
+        Me.btnConciertos.Location = New System.Drawing.Point(1, 321)
+        Me.btnConciertos.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnConciertos.Name = "btnConciertos"
+        Me.btnConciertos.Size = New System.Drawing.Size(240, 51)
+        Me.btnConciertos.TabIndex = 4
+        Me.btnConciertos.Text = "CONCIERTOS"
+        Me.btnConciertos.UseVisualStyleBackColor = False
+        '
         'FormInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -199,4 +216,5 @@ Partial Class FormInicio
     Friend WithEvents PanelFormulario As Panel
     Friend WithEvents Inicio_LabelMenu As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnConciertos As Button
 End Class

@@ -129,6 +129,12 @@
     <Compile Include="Interfaz_bbdd\FormPaises.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Interfaz_bbdd\FormConciertos.Designer.vb">
+      <DependentUpon>FormConciertos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz_bbdd\FormConciertos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interfaz_bbdd\FormSitios.Designer.vb">
       <DependentUpon>FormSitios.vb</DependentUpon>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz_bbdd\FormPaises.resx">
       <DependentUpon>FormPaises.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz_bbdd\FormConciertos.resx">
+      <DependentUpon>FormConciertos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz_bbdd\FormSitios.resx">
       <DependentUpon>FormSitios.vb</DependentUpon>
