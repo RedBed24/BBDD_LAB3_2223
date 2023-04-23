@@ -5,7 +5,7 @@
         Dim tabla As Collection
         Dim tempcancion As Cancion
 
-        tabla = AgenteBD.ObtenerAgente().Leer("select * from setlists where Concierto='" & concierto.idConcierto & "';")
+        tabla = AgenteBD.ObtenerAgente().Leer("select * from setlists where Concierto='" & concierto.idConcierto & "' order by OrdenSetlist;")
 
         For Each tupla As Collection In tabla
             tempcancion = New Cancion(tupla(2).ToString)
