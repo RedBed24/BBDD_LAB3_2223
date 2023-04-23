@@ -1,5 +1,21 @@
 ﻿Public Class FormConciertos
 
+    Private Sub FormConciertos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim artista As New Artista
+        artista.LeerTodosArtistas()
+
+        For Each artist As Artista In artista.ArtistDAO.Artistas
+            Concierto_ComboBox_Artista.Items.Add(artist)
+        Next
+
+        Dim sitio As New Sitio
+        sitio.LeerTodosSitios()
+
+        For Each artist As Sitio In sitio.SiteDAO.Sitios
+            Concierto_ComboBox_Sitio.Items.Add(artist)
+        Next
+    End Sub
+
     '
     '
     '
@@ -38,6 +54,5 @@
             Conciertos_CheckedListBox_Canciones.Items.Insert(targetIndex, draggedItem)
         End If
     End Sub
-
 
 End Class
