@@ -63,8 +63,8 @@
 
         tabla = AgenteBD.ObtenerAgente().Leer(
             "Select c.idCancion, c.NombreCancion, c.Duración, c.Album, c.OrdenCanción
-            From artistas a, canciones c, albumes l
-            Where a.IdArtista = " & artista.IdArtista & " And l.Artista = a.IdArtista And c.Album = l.idAlbum;"
+            From canciones c, albumes l
+            Where l.Artista = " & artista.IdArtista & " And c.Album = l.idAlbum;"
             )
 
         For Each tupla As Collection In tabla
