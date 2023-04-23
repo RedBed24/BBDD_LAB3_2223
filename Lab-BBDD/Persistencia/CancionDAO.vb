@@ -55,4 +55,26 @@
         Return AgenteBD.ObtenerAgente().Modificar("delete from " & nombreTabla & " where " & campoIdentificador & "='" & cancion.idCancion & "';")
     End Function
 
+    Public Sub LeerCancionesArtista(artista As Artista)
+        Dim tempCancion As Cancion
+        Dim tempAlbum As Album
+
+        Dim tabla As Collection
+
+        tabla = AgenteBD.ObtenerAgente().Leer(
+            "Select c.idCancion, c.NombreCancion, c.Duración, c.Album, c.OrdenCanción
+            From artistas a, canciones c, albumes l
+            Where a.IdArtista = " & artista.IdArtista & " And l.Artista = a.IdArtista And c.Album = l.idAlbum;"
+            )
+
+        For Each tupla As Collection In tabla
+            tempAlbum = New Album(Integer.Parse(tupla(4).ToString))
+            tempAlbum.LeerAlbum()
+
+            tempCancion = New Cancion(Integer.Parse(tupla(1).ToString), tupla(2).ToString, Integer.Parse(tupla(3).ToString), tempAlbum, Integer.Parse(tupla(5).ToString))
+
+            Me.Canciones.Add(tempCancion)
+        Next
+    End Sub
+
 End Class
