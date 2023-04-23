@@ -50,8 +50,8 @@
         Return Me.AlbuDAO.Borrar(Me)
     End Function
 
-    Public Overrides Function ToString() As String
-        Return idAlbum & ": " & NombreAlbum & ", artist " & Artist.ToString
+    Overrides Public Function ToString() As String
+        Return NombreAlbum
     End Function
 
 End Class

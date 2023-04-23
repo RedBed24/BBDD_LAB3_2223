@@ -53,5 +53,9 @@
         Return Me.SiteDAO.Borrar(Me)
     End Function
 
+    Overrides Public Function toString() As String
+        Return NombreSitio
+    End Function
+
 End Class
 

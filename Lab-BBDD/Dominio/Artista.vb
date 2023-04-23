@@ -47,7 +47,7 @@
         Return Me.ArtistDAO.Borrar(Me)
     End Function
 
-    Public Overrides Function ToString() As String
-        Return IdArtista & ": " & Nombre & ", from " & Pais.ToString
+    Overrides Public Function ToString() As String
+        Return Nombre
     End Function
 End Class

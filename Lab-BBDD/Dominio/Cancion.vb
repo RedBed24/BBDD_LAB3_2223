@@ -54,8 +54,8 @@
         Return Me.CancioDAO.Borrar(Me)
     End Function
 
-    Public Overrides Function ToString() As String
-        Return idCancion & ": " & NombreCancion & ", artist " & Album.ToString
+    Overrides Public Function ToString() As String
+        Return NombreCancion
     End Function
 
 End Class

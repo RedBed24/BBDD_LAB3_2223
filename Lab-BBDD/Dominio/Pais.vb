@@ -43,7 +43,7 @@
     End Function
 
     Overrides Public Function ToString() As String
-        Return idPais & " - " & NombrePais
+        Return NombrePais
     End Function
 
 End Class

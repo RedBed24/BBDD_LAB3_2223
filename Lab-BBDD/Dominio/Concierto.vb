@@ -95,7 +95,7 @@
         Return cancionesAñadidas - cancionesBorradas
     End Function
 
-    Public Overrides Function ToString() As String
+    Overrides Public Function ToString() As String
         Return FechaConcierto.ToString & " " & Artista.ToString
     End Function
 
