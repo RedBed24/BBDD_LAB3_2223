@@ -165,12 +165,6 @@
     <Compile Include="Persistencia\ArtistaDAO.vb" />
     <Compile Include="Persistencia\SetlistDAO.vb" />
     <Compile Include="Persistencia\SitioDAO.vb" />
-    <Compile Include="Presentacion\FormularioPrincipal.Designer.vb">
-      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FormularioPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Interfaz_bbdd\FormAlbumes.resx">
