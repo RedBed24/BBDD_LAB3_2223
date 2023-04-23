@@ -62,4 +62,76 @@
         Return AgenteBD.ObtenerAgente().Modificar("delete from " & nombreTabla & " where " & campoIdentificador & "='" & concierto.idConcierto & "';")
     End Function
 
+    Public Sub LeerConciertosArtista(artista As Artista)
+        Dim tempConcierto As Concierto
+        Dim tempSitio As Sitio
+
+        Dim tabla As Collection
+
+        tabla = AgenteBD.ObtenerAgente().Leer(
+                "Select *
+                From conciertos
+                Where Artista = " & artista.IdArtista & ";"
+                )
+
+        For Each tupla As Collection In tabla
+            tempSitio = New Sitio(tupla(3).ToString)
+            tempSitio.LeerSitio()
+
+            tempConcierto = New Concierto(Integer.Parse(tupla(1).ToString), artista, tempSitio, Date.Parse(tupla(4).ToString))
+
+            tempConcierto.LeerSetlist()
+
+            Me.Conciertos.Add(tempConcierto)
+        Next
+    End Sub
+
+    Public Sub LeerConciertosArtistaPais(artista As Artista, pais As Pais)
+        Dim tempConcierto As Concierto
+        Dim tempSitio As Sitio
+
+        Dim tabla As Collection
+
+        tabla = AgenteBD.ObtenerAgente().Leer(
+                "select c.idConcierto, c.Artista, c.Sitio, c.FechaConcierto
+                from conciertos c, sitios s
+                where s.País = '" & pais.idPais & "' and s.idSitio = c.Sitio and c.Artista = " & artista.IdArtista & ";"
+                )
+
+        For Each tupla As Collection In tabla
+            tempSitio = New Sitio(tupla(3).ToString)
+            tempSitio.LeerSitio()
+
+            tempConcierto = New Concierto(Integer.Parse(tupla(1).ToString), artista, tempSitio, Date.Parse(tupla(4).ToString))
+
+            tempConcierto.LeerSetlist()
+
+            Me.Conciertos.Add(tempConcierto)
+        Next
+    End Sub
+
+    Public Sub LeerConciertosSitio(Sitio As Sitio)
+        Dim tempConcierto As Concierto
+        Dim tempArtista As Artista
+
+        Dim tabla As Collection
+
+        tabla = AgenteBD.ObtenerAgente().Leer(
+                "select *
+                from conciertos
+                where Sitio = " & Sitio.idSitio & ";"
+                )
+
+        For Each tupla As Collection In tabla
+            tempArtista = New Artista(tupla(2).ToString)
+            tempArtista.LeerArtista()
+
+            tempConcierto = New Concierto(Integer.Parse(tupla(1).ToString), tempArtista, Sitio, Date.Parse(tupla(4).ToString))
+
+            tempConcierto.LeerSetlist()
+
+            Me.Conciertos.Add(tempConcierto)
+        Next
+    End Sub
+
 End Class
