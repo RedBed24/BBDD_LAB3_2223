@@ -99,46 +99,46 @@
     <Compile Include="Dominio\Concierto.vb" />
     <Compile Include="Dominio\Pais.vb" />
     <Compile Include="Dominio\Sitio.vb" />
-    <Compile Include="Interfaz_bbdd\FormAlbumes.designer.vb">
+    <Compile Include="Presentacion\FormAlbumes.designer.vb">
       <DependentUpon>FormAlbumes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormAlbumes.vb">
+    <Compile Include="Presentacion\FormAlbumes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormArtistas.Designer.vb">
+    <Compile Include="Presentacion\FormArtistas.Designer.vb">
       <DependentUpon>FormArtistas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormArtistas.vb">
+    <Compile Include="Presentacion\FormArtistas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormCanciones.Designer.vb">
+    <Compile Include="Presentacion\FormCanciones.Designer.vb">
       <DependentUpon>FormCanciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormCanciones.vb">
+    <Compile Include="Presentacion\FormCanciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormInicio.Designer.vb">
+    <Compile Include="Presentacion\FormInicio.Designer.vb">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormInicio.vb">
+    <Compile Include="Presentacion\FormInicio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormPaises.Designer.vb">
+    <Compile Include="Presentacion\FormPaises.Designer.vb">
       <DependentUpon>FormPaises.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormPaises.vb">
+    <Compile Include="Presentacion\FormPaises.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormConciertos.Designer.vb">
+    <Compile Include="Presentacion\FormConciertos.Designer.vb">
       <DependentUpon>FormConciertos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormConciertos.vb">
+    <Compile Include="Presentacion\FormConciertos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormSitios.Designer.vb">
+    <Compile Include="Presentacion\FormSitios.Designer.vb">
       <DependentUpon>FormSitios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz_bbdd\FormSitios.vb">
+    <Compile Include="Presentacion\FormSitios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -167,35 +167,31 @@
     <Compile Include="Persistencia\SitioDAO.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Interfaz_bbdd\FormAlbumes.resx">
+    <EmbeddedResource Include="Presentacion\FormAlbumes.resx">
       <DependentUpon>FormAlbumes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormArtistas.resx">
+    <EmbeddedResource Include="Presentacion\FormArtistas.resx">
       <DependentUpon>FormArtistas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormCanciones.resx">
+    <EmbeddedResource Include="Presentacion\FormCanciones.resx">
       <DependentUpon>FormCanciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormInicio.resx">
+    <EmbeddedResource Include="Presentacion\FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormPaises.resx">
+    <EmbeddedResource Include="Presentacion\FormPaises.resx">
       <DependentUpon>FormPaises.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormConciertos.resx">
+    <EmbeddedResource Include="Presentacion\FormConciertos.resx">
       <DependentUpon>FormConciertos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz_bbdd\FormSitios.resx">
+    <EmbeddedResource Include="Presentacion\FormSitios.resx">
       <DependentUpon>FormSitios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FormularioPrincipal.resx">
-      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
