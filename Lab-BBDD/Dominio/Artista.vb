@@ -48,7 +48,7 @@
     End Function
 
     Public Sub LeerArtistasQueInterpretaronUnAlbumCompleto()
-        Me.ArtistDAO.LeerArtistasQueInterpretaronUnAlbumCompleto(Me)
+        Me.ArtistDAO.LeerArtistasQueInterpretaronUnAlbumCompleto()
     End Sub
 
     Overrides Public Function ToString() As String
