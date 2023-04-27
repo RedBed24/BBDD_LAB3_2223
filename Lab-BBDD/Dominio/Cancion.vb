@@ -54,6 +54,14 @@
         Return Me.CancioDAO.Borrar(Me)
     End Function
 
+    ''' <summary>
+    ''' Obtiene todas las canciones del artista dado y las carga en Me.CancioDAO.Canciones sin modificar las canciones de Me
+    ''' </summary>
+    ''' <param name="artista"></param>
+    Public Sub LeerCancionesArtista(artista As Artista)
+        Me.CancioDAO.LeerCancionesArtista(artista)
+    End Sub
+
     Overrides Public Function ToString() As String
         Return NombreCancion
     End Function
