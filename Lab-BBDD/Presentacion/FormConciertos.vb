@@ -1,6 +1,23 @@
 ﻿Imports Mysqlx.Cursor
 
 Public Class FormConciertos
+    Private dragItem As Object
+
+    Private Sub DesasociarEventos()
+        ' Desasociamos los eventos necesarios
+        RemoveHandler Conciertos_CheckedListBox_Canciones.MouseDown, AddressOf Conciertos_CheckedListBox_Canciones_MouseDown
+        RemoveHandler Conciertos_CheckedListBox_Canciones.DragEnter, AddressOf Conciertos_CheckedListBox_Canciones_DragEnter
+        RemoveHandler Conciertos_CheckedListBox_Canciones.DragDrop, AddressOf Conciertos_CheckedListBox_Canciones_DragDrop
+    End Sub
+
+    Private Sub AsociarEventos()
+        ' Asignamos los eventos necesarios
+        For i As Integer = 0 To Conciertos_CheckedListBox_Canciones.Items.Count - 1
+            AddHandler Conciertos_CheckedListBox_Canciones.MouseDown, AddressOf Conciertos_CheckedListBox_Canciones_MouseDown
+            AddHandler Conciertos_CheckedListBox_Canciones.DragEnter, AddressOf Conciertos_CheckedListBox_Canciones_DragEnter
+            AddHandler Conciertos_CheckedListBox_Canciones.DragDrop, AddressOf Conciertos_CheckedListBox_Canciones_DragDrop
+        Next
+    End Sub
 
     Private Sub FormConciertos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim artista As New Artista
@@ -28,16 +45,12 @@ Public Class FormConciertos
     '
 
     Private Sub Conciertos_CheckedListBox_Canciones_MouseDown(sender As Object, e As MouseEventArgs) Handles Conciertos_CheckedListBox_Canciones.MouseDown
-        ' Comprobar que se ha hecho clic en un elemento de la lista
-        Dim index As Integer = Conciertos_CheckedListBox_Canciones.IndexFromPoint(e.Location)
-        If index >= 0 AndAlso index < Conciertos_CheckedListBox_Canciones.Items.Count Then
-            ' Iniciar la operación de arrastre
-            Conciertos_CheckedListBox_Canciones.DoDragDrop(Conciertos_CheckedListBox_Canciones.Items(index), DragDropEffects.Move)
-        End If
+        ' Iniciamos el proceso de drag and drop
+        Conciertos_CheckedListBox_Canciones.DoDragDrop(Conciertos_CheckedListBox_Canciones.SelectedItem, DragDropEffects.Move)
     End Sub
 
     Private Sub Conciertos_CheckedListBox_Canciones_DragEnter(sender As Object, e As DragEventArgs) Handles Conciertos_CheckedListBox_Canciones.DragEnter
-        ' Comprobar que se está arrastrando un elemento de la lista
+        ' Permitimos que se pueda soltar el elemento en el control
         If e.Data.GetDataPresent(GetType(String)) Then
             e.Effect = DragDropEffects.Move
         Else
@@ -46,16 +59,16 @@ Public Class FormConciertos
     End Sub
 
     Private Sub Conciertos_CheckedListBox_Canciones_DragDrop(sender As Object, e As DragEventArgs) Handles Conciertos_CheckedListBox_Canciones.DragDrop
-        ' Obtener el elemento arrastrado y la posición de destino
-        Dim draggedItem As String = e.Data.GetData(GetType(String))
-        Dim targetIndex As Integer = Conciertos_CheckedListBox_Canciones.IndexFromPoint(Conciertos_CheckedListBox_Canciones.PointToClient(New Point(e.X, e.Y)))
-
-        ' Mover el elemento a la nueva posición
-        If targetIndex >= 0 AndAlso targetIndex < Conciertos_CheckedListBox_Canciones.Items.Count Then
-            Conciertos_CheckedListBox_Canciones.Items.Remove(draggedItem)
-            Conciertos_CheckedListBox_Canciones.Items.Insert(targetIndex, draggedItem)
+        ' Obtenemos la posición donde soltamos el elemento y lo insertamos en la nueva posición
+        Dim newIndex As Integer = Conciertos_CheckedListBox_Canciones.IndexFromPoint(Conciertos_CheckedListBox_Canciones.PointToClient(New Point(e.X, e.Y)))
+        If newIndex <> -1 Then
+            Dim item As String = CType(e.Data.GetData(GetType(String)), String)
+            Conciertos_CheckedListBox_Canciones.Items.Remove(item)
+            Conciertos_CheckedListBox_Canciones.Items.Insert(newIndex, item)
+            Conciertos_CheckedListBox_Canciones.SetItemChecked(newIndex, True)
         End If
     End Sub
+
 
     '
     '
@@ -108,6 +121,9 @@ Public Class FormConciertos
             Exit Sub
         End Try
 
+        DesasociarEventos()
+
+        Conciertos_CheckedListBox_Canciones.Items.Clear()
 
         For i As Integer = 0 To concierto.SetList.Count - 1 Step +1
             Dim cancion As Cancion = concierto.SetList.ElementAt(i)
@@ -130,6 +146,8 @@ Public Class FormConciertos
             Conciertos_CheckedListBox_Canciones.Items.Add(cancion)
         Next
 
+        Conciertos_CheckedListBox_Canciones.SelectionMode = SelectionMode.One ' o SelectionMode.None
+        AsociarEventos()
 
         For Each item As Artista In Concierto_ComboBox_Artista.Items
             If item.IdArtista = concierto.Artista.IdArtista Then
@@ -294,6 +312,8 @@ Public Class FormConciertos
         Dim artista As New Artista
         artista = Concierto_ComboBox_Artista.SelectedItem
 
+        DesasociarEventos()
+
         Conciertos_CheckedListBox_Canciones.Items.Clear()
 
         Try
@@ -307,6 +327,10 @@ Public Class FormConciertos
         For Each cancion As Cancion In canciones.CancioDAO.Canciones
             Conciertos_CheckedListBox_Canciones.Items.Add(cancion)
         Next
+
+        Conciertos_CheckedListBox_Canciones.SelectionMode = SelectionMode.One ' o SelectionMode.None
+        AsociarEventos()
+
     End Sub
 End Class
 
