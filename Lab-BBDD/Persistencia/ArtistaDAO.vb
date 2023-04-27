@@ -63,6 +63,18 @@
         conciertos.LeerTodosConciertoes()
 
         Dim albumes As New List(Of List(Of Cancion))
+
+        Dim max = 0
+        For Each cancion As Cancion In canciones.CancioDAO.Canciones
+            If max < cancion.Album.idAlbum Then
+                max = cancion.Album.idAlbum
+            End If
+        Next
+
+        For i As Integer = 0 To max
+            albumes.Add(New List(Of Cancion))
+        Next
+
         For Each cancion As Cancion In canciones.CancioDAO.Canciones
             ' para cada canción, la añadimos al album correspondiente
             ' el album se selecciona por el índice
