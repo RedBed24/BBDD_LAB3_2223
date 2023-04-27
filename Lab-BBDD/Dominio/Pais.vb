@@ -42,6 +42,10 @@
         Return Me.PaiDAO.Borrar(Me)
     End Function
 
+    Public Sub LeerPaisesMasConciertos(fechaInicio As Date, fechaFin As Date)
+        Me.PaiDAO.LeerPaisesMasConciertos(fechaInicio, fechaFin)
+    End Sub
+
     Overrides Public Function ToString() As String
         Return NombrePais
     End Function

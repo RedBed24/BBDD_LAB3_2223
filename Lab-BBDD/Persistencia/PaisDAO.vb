@@ -39,4 +39,18 @@
         Return AgenteBD.ObtenerAgente().Modificar("delete from " & nombreTabla & " where " & campoIdentificador & "='" & pais.idPais & "';")
     End Function
 
+    Public Sub LeerPaisesMasConciertos(fechaInicio As Date, fechaFin As Date)
+        Dim tabla As Collection = AgenteBD.ObtenerAgente().Leer("
+            select count(*) || ': ' || p.NombrePais  
+            from paises p, sitio s, conciertos c
+            where p.idPais = s.País and s.idSitio = c.Sitio
+            group by p.idPais
+            order by count(*) desc;
+            ")
+
+        For Each tupla As Collection In tabla
+            Me.Paises.Add(tupla.ToString)
+        Next
+    End Sub
+
 End Class
