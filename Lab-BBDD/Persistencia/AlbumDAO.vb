@@ -60,7 +60,7 @@
 
         tabla = AgenteBD.ObtenerAgente().Leer("
             Select count(s.Concierto) || ': ' || a.NombreAlbum
-            from album a, canciones c, setlists s
+            from albumes a, canciones c, setlists s
             where a.idAlbum = c.Album and c.idCancion = s.canción
             group by a.idAlbum
             order by count(s.Concierto) desc;
