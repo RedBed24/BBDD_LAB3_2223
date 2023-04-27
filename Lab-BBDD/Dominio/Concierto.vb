@@ -106,6 +106,18 @@
         Return cancionesAñadidas - cancionesBorradas
     End Function
 
+    Public Sub LeerConciertosArtista(artista As Artista)
+        Me.ConciertDAO.LeerConciertosArtista(artista)
+    End Sub
+
+    Public Sub LeerConciertosArtistaPais(artista As Artista, pais As Pais)
+        Me.ConciertDAO.LeerConciertosArtistaPais(artista, pais)
+    End Sub
+
+    Public Sub LeerConciertosSitio(Sitio As Sitio)
+        Me.ConciertDAO.LeerConciertosSitio(Sitio)
+    End Sub
+
     Overrides Public Function ToString() As String
         Return FechaConcierto.ToString & " " & Artista.ToString
     End Function
