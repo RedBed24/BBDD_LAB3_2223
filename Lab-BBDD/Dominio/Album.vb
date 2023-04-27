@@ -50,6 +50,10 @@
         Return Me.AlbuDAO.Borrar(Me)
     End Function
 
+    Public Sub LeerAlbumesMasInterpretadosArtista(Artista As Artista)
+        Me.AlbuDAO.LeerAlbumesMasInterpretadosArtista(Artista)
+    End Sub
+
     Overrides Public Function ToString() As String
         Return NombreAlbum
     End Function
