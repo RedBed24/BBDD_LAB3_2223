@@ -84,7 +84,7 @@
             select count(*) || ': ' || c.NombreCancion
             from canciones c, albumes a, setlists s
             where c.Album = a.idAlbum and a.Artista = " & artista.IdArtista & " and c.idCancion = s.Canción
-            group by c.idCanción
+            group by c.idCancion
             order by count(*) desc;
         ")
 
