@@ -58,7 +58,7 @@ Partial Class FormNavegacion
         '
         'Albumes_Button_Limpiar
         '
-        Me.Albumes_Button_Limpiar.Location = New System.Drawing.Point(584, 352)
+        Me.Albumes_Button_Limpiar.Location = New System.Drawing.Point(492, 330)
         Me.Albumes_Button_Limpiar.Margin = New System.Windows.Forms.Padding(2)
         Me.Albumes_Button_Limpiar.Name = "Albumes_Button_Limpiar"
         Me.Albumes_Button_Limpiar.Size = New System.Drawing.Size(106, 35)
