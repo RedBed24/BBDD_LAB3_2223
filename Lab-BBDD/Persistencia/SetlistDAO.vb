@@ -21,7 +21,7 @@
         Dim SQL As String = "insert into setlists values "
 
         ' Por cada canción, excepto la última (para que no ponga una , al final)
-        For i As Integer = 1 To concierto.SetList.Count - 1
+        For i As Integer = 0 To concierto.SetList.Count - 1
             Dim cancion As Cancion = concierto.SetList.ElementAt(i)
             ' añadimos la tupla de esta setlist a la sentencia de insert con el orden que le corresponde
             SQL += "('" & concierto.idConcierto & "', '" & cancion.idCancion & "', " & i & "), "

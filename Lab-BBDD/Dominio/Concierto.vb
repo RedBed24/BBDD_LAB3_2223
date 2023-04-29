@@ -16,13 +16,24 @@
     Public Sub New(id As Integer)
         ConciertDAO = New ConciertoDAO
         SetlisDAO = New SetlistDAO
+        SetList = New List(Of Cancion)
         idConcierto = id
     End Sub
 
     Public Sub New(id As Integer, artist As Artista, site As Sitio, fecha As Date)
         ConciertDAO = New ConciertoDAO
         SetlisDAO = New SetlistDAO
+        SetList = New List(Of Cancion)
         idConcierto = id
+        Artista = artist
+        Sitio = site
+        FechaConcierto = fecha
+    End Sub
+
+    Public Sub New(artist As Artista, site As Sitio, fecha As Date, setliste As List(Of Cancion))
+        ConciertDAO = New ConciertoDAO
+        SetlisDAO = New SetlistDAO
+        SetList = setliste
         Artista = artist
         Sitio = site
         FechaConcierto = fecha
@@ -94,6 +105,18 @@
         Dim cancionesAñadidas As Integer = Me.SetlisDAO.Insertar(Me)
         Return cancionesAñadidas - cancionesBorradas
     End Function
+
+    Public Sub LeerConciertosArtista(artista As Artista)
+        Me.ConciertDAO.LeerConciertosArtista(artista)
+    End Sub
+
+    Public Sub LeerConciertosArtistaPais(artista As Artista, pais As Pais)
+        Me.ConciertDAO.LeerConciertosArtistaPais(artista, pais)
+    End Sub
+
+    Public Sub LeerConciertosSitio(Sitio As Sitio)
+        Me.ConciertDAO.LeerConciertosSitio(Sitio)
+    End Sub
 
     Overrides Public Function ToString() As String
         Return FechaConcierto.ToString & " " & Artista.ToString

@@ -39,4 +39,12 @@ Public Class FormInicio
         AbrirFormEnPanel(New FormConciertos)
     End Sub
 
+    Private Sub BtnNavegaciones_Click(sender As Object, e As EventArgs) Handles BtnNavegaciones.Click
+        'AbrirFormEnPanel(New FormNavegaciones)
+    End Sub
+
+    Private Sub BtnListados_Click(sender As Object, e As EventArgs) Handles BtnListados.Click
+        AbrirFormEnPanel(New FormListados)
+    End Sub
+
 End Class

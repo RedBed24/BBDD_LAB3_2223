@@ -47,6 +47,10 @@
         Return Me.ArtistDAO.Borrar(Me)
     End Function
 
+    Public Sub LeerArtistasQueInterpretaronUnAlbumCompleto()
+        Me.ArtistDAO.LeerArtistasQueInterpretaronUnAlbumCompleto()
+    End Sub
+
     Overrides Public Function ToString() As String
         Return Nombre
     End Function

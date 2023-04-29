@@ -36,6 +36,7 @@ Partial Class FormConciertos
         Me.Conciertos_Button_Agregar = New System.Windows.Forms.Button()
         Me.Concierto_DateTimePicker_Fecha = New System.Windows.Forms.DateTimePicker()
         Me.Conciertos_CheckedListBox_Canciones = New System.Windows.Forms.CheckedListBox()
+        Me.concierto_labelcanciones = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblTitulo_Sit
@@ -178,11 +179,21 @@ Partial Class FormConciertos
         Me.Conciertos_CheckedListBox_Canciones.Size = New System.Drawing.Size(154, 225)
         Me.Conciertos_CheckedListBox_Canciones.TabIndex = 54
         '
+        'concierto_labelcanciones
+        '
+        Me.concierto_labelcanciones.AutoSize = True
+        Me.concierto_labelcanciones.Location = New System.Drawing.Point(242, 84)
+        Me.concierto_labelcanciones.Name = "concierto_labelcanciones"
+        Me.concierto_labelcanciones.Size = New System.Drawing.Size(74, 16)
+        Me.concierto_labelcanciones.TabIndex = 55
+        Me.concierto_labelcanciones.Text = "Canciones "
+        '
         'FormConciertos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(760, 384)
+        Me.Controls.Add(Me.concierto_labelcanciones)
         Me.Controls.Add(Me.Conciertos_CheckedListBox_Canciones)
         Me.Controls.Add(Me.Concierto_DateTimePicker_Fecha)
         Me.Controls.Add(Me.Conciertos_Button_Eliminar)
@@ -220,4 +231,5 @@ Partial Class FormConciertos
     Friend WithEvents Conciertos_Button_Agregar As Button
     Friend WithEvents Concierto_DateTimePicker_Fecha As DateTimePicker
     Friend WithEvents Conciertos_CheckedListBox_Canciones As CheckedListBox
+    Friend WithEvents concierto_labelcanciones As Label
 End Class

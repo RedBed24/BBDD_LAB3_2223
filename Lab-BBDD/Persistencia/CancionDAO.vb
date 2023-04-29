@@ -77,4 +77,21 @@
         Next
     End Sub
 
+    Public Sub LeerCancionesCuentaMasInterpretadas(artista As Artista)
+        Dim tabla As Collection
+
+        tabla = AgenteBD.ObtenerAgente().Leer("
+            select count(*) || ': ' || c.NombreCancion
+            from canciones c, albumes a, setlists s
+            where c.Album = a.idAlbum and a.Artista = " & artista.IdArtista & " and c.idCancion = s.Canción
+            group by c.idCancion
+            order by count(*) desc;
+        ")
+
+        For Each tupla As Collection In tabla
+            Canciones.Add(tupla)
+        Next
+
+    End Sub
+
 End Class
