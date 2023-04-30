@@ -40,7 +40,7 @@ Public Class FormInicio
     End Sub
 
     Private Sub BtnNavegaciones_Click(sender As Object, e As EventArgs) Handles BtnNavegaciones.Click
-        'AbrirFormEnPanel(New FormNavegaciones)
+        AbrirFormEnPanel(New FormNavegacion)
     End Sub
 
     Private Sub BtnListados_Click(sender As Object, e As EventArgs) Handles BtnListados.Click
