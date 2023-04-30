@@ -51,6 +51,10 @@
         Me.ArtistDAO.LeerArtistasQueInterpretaronUnAlbumCompleto()
     End Sub
 
+    Public Sub LeerArtistasMasConciertos(fechaInicio As Date, fechaFin As Date)
+        Me.ArtistDAO.LeerArtistasMasConciertos(fechaInicio, fechaFin)
+    End Sub
+
     Overrides Public Function ToString() As String
         Return Nombre
     End Function
