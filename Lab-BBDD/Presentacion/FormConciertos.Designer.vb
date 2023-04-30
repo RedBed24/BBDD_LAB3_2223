@@ -175,6 +175,7 @@ Partial Class FormConciertos
         'Concierto_DateTimePicker_Fecha
         '
         Me.Concierto_DateTimePicker_Fecha.Checked = False
+        Me.Concierto_DateTimePicker_Fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Concierto_DateTimePicker_Fecha.Location = New System.Drawing.Point(333, 74)
         Me.Concierto_DateTimePicker_Fecha.Margin = New System.Windows.Forms.Padding(2)
         Me.Concierto_DateTimePicker_Fecha.Name = "Concierto_DateTimePicker_Fecha"
