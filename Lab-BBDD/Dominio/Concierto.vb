@@ -11,13 +11,7 @@
     Public Sub New()
         ConciertDAO = New ConciertoDAO
         SetlisDAO = New SetlistDAO
-    End Sub
-
-    Public Sub New(id As Integer)
-        ConciertDAO = New ConciertoDAO
-        SetlisDAO = New SetlistDAO
         SetList = New List(Of Cancion)
-        idConcierto = id
     End Sub
 
     Public Sub New(id As Integer, artist As Artista, site As Sitio, fecha As Date)
