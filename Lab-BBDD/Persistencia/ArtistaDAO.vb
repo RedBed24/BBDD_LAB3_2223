@@ -152,7 +152,7 @@
         Dim tabla As Collection = AgenteBD.ObtenerAgente().Leer("
             select count(*) || ': ' || a.IdArtista  
             from conciertos c, artistas a
-            where c.Artista = a.IdArtista and c.FechaConcierto between '" & fechaInicio & "' and '" & fechaFin & "
+            where c.Artista = a.IdArtista and c.FechaConcierto between '" & fechaInicio & "' and '" & fechaFin & "'
             group by a.IdArtista
             order by count(*) desc;
             ")
