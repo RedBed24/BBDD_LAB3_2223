@@ -1,23 +1,4 @@
-﻿Imports Mysqlx.Cursor
-
-Public Class FormConciertos
-    Private dragItem As Object
-
-    Private Sub DesasociarEventos()
-        ' Desasociamos los eventos necesarios
-        RemoveHandler Conciertos_CheckedListBox_Canciones.MouseDown, AddressOf Conciertos_CheckedListBox_Canciones_MouseDown
-        RemoveHandler Conciertos_CheckedListBox_Canciones.DragEnter, AddressOf Conciertos_CheckedListBox_Canciones_DragEnter
-        RemoveHandler Conciertos_CheckedListBox_Canciones.DragDrop, AddressOf Conciertos_CheckedListBox_Canciones_DragDrop
-    End Sub
-
-    Private Sub AsociarEventos()
-        ' Asignamos los eventos necesarios
-        For i As Integer = 0 To Conciertos_CheckedListBox_Canciones.Items.Count - 1
-            AddHandler Conciertos_CheckedListBox_Canciones.MouseDown, AddressOf Conciertos_CheckedListBox_Canciones_MouseDown
-            AddHandler Conciertos_CheckedListBox_Canciones.DragEnter, AddressOf Conciertos_CheckedListBox_Canciones_DragEnter
-            AddHandler Conciertos_CheckedListBox_Canciones.DragDrop, AddressOf Conciertos_CheckedListBox_Canciones_DragDrop
-        Next
-    End Sub
+﻿Public Class FormConciertos
 
     Private Sub FormConciertos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim artista As New Artista
@@ -40,47 +21,67 @@ Public Class FormConciertos
     '
     '
     '
-    ' ARRASTRAR ELEMENTOS EN LA CHECKED LIST BOX
+    ' FUNCIONES AUXILIARES
     '
-    '
-
-    Private Sub Conciertos_CheckedListBox_Canciones_MouseDown(sender As Object, e As MouseEventArgs) Handles Conciertos_CheckedListBox_Canciones.MouseDown
-        ' Iniciamos el proceso de drag and drop
-        Conciertos_CheckedListBox_Canciones.DoDragDrop(Conciertos_CheckedListBox_Canciones.SelectedItem, DragDropEffects.Move)
+    Private Sub SetArtistaInComboBox(concierto As Concierto)
+        For Each item As Artista In Concierto_ComboBox_Artista.Items
+            If item.IdArtista = concierto.Artista.IdArtista Then
+                Concierto_ComboBox_Artista.SelectedItem = item
+                Exit For
+            End If
+        Next
     End Sub
 
-    Private Sub Conciertos_CheckedListBox_Canciones_DragEnter(sender As Object, e As DragEventArgs) Handles Conciertos_CheckedListBox_Canciones.DragEnter
-        ' Permitimos que se pueda soltar el elemento en el control
-        If e.Data.GetDataPresent(GetType(String)) Then
-            e.Effect = DragDropEffects.Move
-        Else
-            e.Effect = DragDropEffects.None
-        End If
+    Public Function CancionInSetlist(cancion As Cancion, concierto As Concierto) As Boolean
+        For Each canciontmp As Cancion In concierto.SetList
+            If cancion.idCancion = canciontmp.idCancion Then
+                Return True
+            End If
+        Next
+
+        Return False
+    End Function
+
+    Public Sub CargarCancionesListBox(concierto As Concierto, artista As Artista)
+        Concierto_ListBox_CancionesArtista.Items.Clear()
+        Concierto_ListBox_CancionesSeleccionadas.Items.Clear()
+
+        Dim canciones As New Cancion
+
+        Try
+            canciones.LeerCancionesArtista(artista)
+        Catch ex As Exception
+            Exit Sub
+        End Try
+
+        For Each cancion As Cancion In canciones.CancioDAO.Canciones
+            If CancionInSetlist(cancion, concierto) Then
+                Concierto_ListBox_CancionesSeleccionadas.Items.Add(cancion)
+            Else
+                Concierto_ListBox_CancionesArtista.Items.Add(cancion)
+            End If
+        Next
     End Sub
 
-    Private Sub Conciertos_CheckedListBox_Canciones_DragDrop(sender As Object, e As DragEventArgs) Handles Conciertos_CheckedListBox_Canciones.DragDrop
-        ' Obtenemos la posición donde soltamos el elemento y lo insertamos en la nueva posición
-        Dim newIndex As Integer = Conciertos_CheckedListBox_Canciones.IndexFromPoint(Conciertos_CheckedListBox_Canciones.PointToClient(New Point(e.X, e.Y)))
-        If newIndex <> -1 Then
-            Dim item As String = CType(e.Data.GetData(GetType(String)), String)
-            Conciertos_CheckedListBox_Canciones.Items.Remove(item)
-            Conciertos_CheckedListBox_Canciones.Items.Insert(newIndex, item)
-            Conciertos_CheckedListBox_Canciones.SetItemChecked(newIndex, True)
-        End If
+    Private Sub SetSitio(concierto As Concierto)
+        For Each item As Sitio In Concierto_ComboBox_Sitio.Items
+            If item.idSitio = concierto.Sitio.idSitio Then
+                Concierto_ComboBox_Sitio.SelectedItem = item
+                Exit For
+            End If
+        Next
     End Sub
 
-
     '
     '
     '
     '
     '
-    ' 
-    '
+    ' FUNCIONES BOTONES
     '
 
     Private Sub Concierto_Button_VerTodosConcierto_Click(sender As Object, e As EventArgs) Handles Concierto_Button_VerTodosConcierto.Click
-        Conciertos_Button_Limpiar.PerformClick()
+        Concierto_Button_Limpiar.PerformClick()
 
         Dim conciertos As New Concierto
 
@@ -96,100 +97,26 @@ Public Class FormConciertos
         Next
     End Sub
 
-    Private Sub Concierto_ListBox_Concierto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Concierto_ListBox_Concierto.SelectedIndexChanged
 
-        If Concierto_ListBox_Concierto.SelectedItem Is Nothing Then
-            Exit Sub
-        End If
+    Private Sub Concierto_Button_Agregar_Click(sender As Object, e As EventArgs) Handles Concierto_Button_Agregar.Click
 
-        Dim concierto As Concierto = Concierto_ListBox_Concierto.SelectedItem
-
-        Conciertos_Button_Actualizar.Enabled = True
-        Conciertos_Button_Eliminar.Enabled = True
-
-        Concierto_DateTimePicker_Fecha.Value = concierto.FechaConcierto
-        Concierto_ComboBox_Artista.SelectedItem = concierto.Artista
-        Concierto_ComboBox_Sitio.SelectedItem = concierto.Sitio
-
-        ' Al cambiar el indice se cargan todas las canciones de un artista '
-        Dim canciones As New Cancion
-
-        Try
-            canciones.LeerCancionesArtista(concierto.Artista)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Exit Sub
-        End Try
-
-        DesasociarEventos()
-
-        Conciertos_CheckedListBox_Canciones.Items.Clear()
-
-        For i As Integer = 0 To concierto.SetList.Count - 1 Step +1
-            Dim cancion As Cancion = concierto.SetList.ElementAt(i)
-            Conciertos_CheckedListBox_Canciones.Items.Add(cancion)
-            Conciertos_CheckedListBox_Canciones.SetItemChecked(i, True)
-            ' checkear esta canción
-
-            ' lo recorremos a la inversa para no tener problemas con los indices
-            For j As Integer = canciones.CancioDAO.Canciones.Count - 1 To 0 Step -1
-                Dim cancion2 As Cancion = canciones.CancioDAO.Canciones.Item(j)
-                If cancion2.idCancion = cancion.idCancion Then
-                    ' quitar cancion2 de canciones.CancionDAO.Canciones
-                    canciones.CancioDAO.Canciones.Remove(j)
-                End If
-            Next
-        Next
-
-        ' cargar en el listbox las canciones que queden en canciones.CancioDAO.Canciones
-        For Each cancion As Cancion In canciones.CancioDAO.Canciones
-            Conciertos_CheckedListBox_Canciones.Items.Add(cancion)
-        Next
-
-        Conciertos_CheckedListBox_Canciones.SelectionMode = SelectionMode.One ' o SelectionMode.None
-        AsociarEventos()
-
-        For Each item As Artista In Concierto_ComboBox_Artista.Items
-            If item.IdArtista = concierto.Artista.IdArtista Then
-                Concierto_ComboBox_Artista.SelectedItem = item
-                Exit For
-            End If
-        Next
-
-        For Each item As Sitio In Concierto_ComboBox_Sitio.Items
-            If item.idSitio = concierto.Sitio.idSitio Then
-                Concierto_ComboBox_Sitio.SelectedItem = item
-                Exit For
-            End If
-        Next
-
-    End Sub
-
-    Private Sub Conciertos_Button_Agregar_Click(sender As Object, e As EventArgs) Handles Conciertos_Button_Agregar.Click
-
-        Dim artistaConcierto As Artista = Concierto_ComboBox_Artista.SelectedItem
-        Dim nombreArtista As String = artistaConcierto.Nombre
-        Dim sitioConcierto As Sitio = Concierto_ComboBox_Sitio.SelectedItem
-        Dim nombreSitio As String = sitioConcierto.NombreSitio
-        Dim fecha As Date = Concierto_DateTimePicker_Fecha.Value
-        Dim stringFecha As String = fecha.ToString("yyyy-MM-dd")
-        If String.IsNullOrEmpty(nombreArtista) Then
+        If Concierto_ComboBox_Artista.SelectedItem Is Nothing Then
             MessageBox.Show("Debe seleccionar un artista primero.")
             Exit Sub
         End If
-        If String.IsNullOrEmpty(nombreSitio) Then
+        If Concierto_ComboBox_Sitio.SelectedItem Is Nothing Then
             MessageBox.Show("Debe seleccionar un sitio primero.")
             Exit Sub
         End If
-        If String.IsNullOrEmpty(stringFecha) Then
-            MessageBox.Show("Debe seleccionar una fecha primero.")
-            Exit Sub
-        End If
+
+        Dim artistaConcierto As Artista = Concierto_ComboBox_Artista.SelectedItem
+        Dim sitioConcierto As Sitio = Concierto_ComboBox_Sitio.SelectedItem
+        Dim fecha As Date = Concierto_DateTimePicker_Fecha.Value
 
         ' Creamos la setlist
         Dim setlist As New List(Of Cancion)
-        For Each i As Integer In Conciertos_CheckedListBox_Canciones.CheckedIndices
-            setlist.Add(Conciertos_CheckedListBox_Canciones.Items(i))
+        For Each cancion As Cancion In Concierto_ListBox_CancionesSeleccionadas.Items
+            setlist.Add(cancion)
         Next
 
         If setlist.Count = 0 Then
@@ -200,8 +127,8 @@ Public Class FormConciertos
         Dim conciertoAnadir As New Concierto(artistaConcierto, sitioConcierto, fecha, setlist)
 
         Try
-            If conciertoAnadir.InsertarConcierto() <> 1 Then
-                MessageBox.Show("wtf cómo puede ocurrir esto?")
+            If conciertoAnadir.InsertarConcierto() <> setlist.Count Then
+                MessageBox.Show("Ha ocurrido un error al insertar alguna canción.")
                 Exit Sub
             End If
         Catch ex As Exception
@@ -215,8 +142,7 @@ Public Class FormConciertos
         Concierto_ListBox_Concierto.SelectedIndex = Concierto_ListBox_Concierto.Items.Count - 1
     End Sub
 
-    Private Sub Conciertos_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Conciertos_Button_Actualizar.Click
-
+    Private Sub Concierto_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Concierto_Button_Actualizar.Click
 
         If Concierto_ComboBox_Artista.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un artista")
@@ -231,15 +157,10 @@ Public Class FormConciertos
         Dim sitioNuevo As Sitio = Concierto_ComboBox_Sitio.SelectedItem
 
         Dim fecha As Date = Concierto_DateTimePicker_Fecha.Value
-        Dim stringFecha As String = fecha.ToString("yyyy-MM-dd")
-        If String.IsNullOrEmpty(stringFecha) Then
-            MessageBox.Show("Debe seleccionar una fecha primero.")
-            Exit Sub
-        End If
 
         Dim setlist As New List(Of Cancion)
-        For Each i As Integer In Conciertos_CheckedListBox_Canciones.CheckedIndices
-            setlist.Add(Conciertos_CheckedListBox_Canciones.Items(i))
+        For Each cancion As Cancion In Concierto_ListBox_CancionesSeleccionadas.Items
+            setlist.Add(cancion)
         Next
 
         If setlist.Count = 0 Then
@@ -254,11 +175,7 @@ Public Class FormConciertos
         conciertomodificar.FechaConcierto = fecha
 
         Try
-            If conciertomodificar.ActualizarConcierto() <> 1 Then
-                ' wtf como ocurre esto?
-                MessageBox.Show("no existe (y no se puede modificar) " & conciertomodificar.ToString)
-                Exit Sub
-            End If
+            conciertomodificar.ActualizarConcierto()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             Exit Sub
@@ -272,7 +189,7 @@ Public Class FormConciertos
         Concierto_ListBox_Concierto.SelectedItem = conciertomodificar
     End Sub
 
-    Private Sub Conciertos_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Conciertos_Button_Eliminar.Click
+    Private Sub Concierto_Button_Eliminar_Click(sender As Object, e As EventArgs) Handles Concierto_Button_Eliminar.Click
         If Concierto_ListBox_Concierto.SelectedItem Is Nothing Then
             MessageBox.Show("Se debe seleccionar un concierto")
             Exit Sub
@@ -282,7 +199,7 @@ Public Class FormConciertos
 
         Try
             If conciertoborrar.BorrarConcierto() <> 1 Then
-                MessageBox.Show("no existe (y no se puede borrar) " & conciertoborrar.ToString)
+                MessageBox.Show("Hubo un error al borrar alguna canción del setlist.")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -293,44 +210,54 @@ Public Class FormConciertos
         Concierto_ListBox_Concierto.Items.Remove(conciertoborrar)
     End Sub
 
-    Private Sub Conciertos_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Conciertos_Button_Limpiar.Click
+    Private Sub Concierto_Button_Limpiar_Click(sender As Object, e As EventArgs) Handles Concierto_Button_Limpiar.Click
         Concierto_ListBox_Concierto.Items.Clear()
-        Conciertos_CheckedListBox_Canciones.Items.Clear()
-        Concierto_ComboBox_Sitio.SelectedItem = -1
+        Concierto_ListBox_CancionesArtista.Items.Clear()
+        Concierto_ListBox_CancionesSeleccionadas.Items.Clear()
+        Concierto_ComboBox_Sitio.SelectedIndex = -1
         Concierto_ComboBox_Sitio.Text = ""
         Concierto_ComboBox_Artista.SelectedIndex = -1
         Concierto_ComboBox_Artista.Text = ""
-        'Habría que limpiar el date?
+        Concierto_DateTimePicker_Fecha.Value = Now
 
-        Conciertos_Button_Actualizar.Enabled = False
-        Conciertos_Button_Eliminar.Enabled = False
+        Concierto_Button_Actualizar.Enabled = False
+        Concierto_Button_Eliminar.Enabled = False
+    End Sub
+
+    '
+    '
+    '
+    '
+    '
+    '
+    ' FUNCIONES DE CAMBIO DE SELECCIÓN
+    '
+
+    Private Sub Concierto_ListBox_Concierto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Concierto_ListBox_Concierto.SelectedIndexChanged
+        If Concierto_ListBox_Concierto.SelectedItem Is Nothing Then
+            Exit Sub
+        End If
+
+        Dim concierto As Concierto = Concierto_ListBox_Concierto.SelectedItem
+
+        Concierto_Button_Actualizar.Enabled = True
+        Concierto_Button_Eliminar.Enabled = True
+
+        Concierto_DateTimePicker_Fecha.Value = concierto.FechaConcierto
+        SetArtistaInComboBox(concierto)
+        CargarCancionesListBox(concierto, concierto.Artista)
+        SetSitio(concierto)
     End Sub
 
     Private Sub Concierto_ComboBox_Artista_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Concierto_ComboBox_Artista.SelectedIndexChanged
-        ' Al cambiar el artista se cargan todas las canciones de otro artista '
-        Dim canciones As New Cancion
-        Dim artista As New Artista
-        artista = Concierto_ComboBox_Artista.SelectedItem
-
-        DesasociarEventos()
-
-        Conciertos_CheckedListBox_Canciones.Items.Clear()
-
-        Try
-            canciones.LeerCancionesArtista(artista)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+        If Concierto_ComboBox_Artista.SelectedItem Is Nothing Then
             Exit Sub
-        End Try
-
-        ' cargar en el listbox las canciones del artista
-        For Each cancion As Cancion In canciones.CancioDAO.Canciones
-            Conciertos_CheckedListBox_Canciones.Items.Add(cancion)
-        Next
-
-        Conciertos_CheckedListBox_Canciones.SelectionMode = SelectionMode.One ' o SelectionMode.None
-        AsociarEventos()
-
+        ElseIf Concierto_ListBox_Concierto.SelectedItem Is Nothing Then
+            CargarCancionesListBox(New Concierto, Concierto_ComboBox_Artista.SelectedItem)
+        Else
+            CargarCancionesListBox(Concierto_ListBox_Concierto.SelectedItem, Concierto_ComboBox_Artista.SelectedItem)
+        End If
     End Sub
+
 End Class
 
