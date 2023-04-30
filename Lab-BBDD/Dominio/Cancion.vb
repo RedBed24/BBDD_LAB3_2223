@@ -71,6 +71,10 @@
         Me.CancioDAO.LeerCancionesCuentaMasInterpretadas(artista)
     End Sub
 
+    Public Sub LeerCancionesCuentaMasInterpretadas()
+        Me.CancioDAO.LeerCancionesCuentaMasInterpretadas()
+    End Sub
+
     Overrides Public Function ToString() As String
         Return NombreCancion
     End Function
