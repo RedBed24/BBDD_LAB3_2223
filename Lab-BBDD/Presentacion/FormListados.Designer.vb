@@ -32,6 +32,7 @@ Partial Class FormListados
         Me.Listados_ListBox_PaisesMasConciertos = New System.Windows.Forms.ListBox()
         Me.Listados_Label_FiltrarArtista = New System.Windows.Forms.Label()
         Me.Listados_Label_CancionesMasInterpretadas = New System.Windows.Forms.Label()
+        Me.Listados_ListBox_CancionesMasIntepretadas = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'Listados_ComboBox_Artista
@@ -128,11 +129,20 @@ Partial Class FormListados
         Me.Listados_Label_CancionesMasInterpretadas.TabIndex = 10
         Me.Listados_Label_CancionesMasInterpretadas.Text = "Canciones mas interpretadas del artista"
         '
+        'Listados_ListBox_CancionesMasIntepretadas
+        '
+        Me.Listados_ListBox_CancionesMasIntepretadas.FormattingEnabled = True
+        Me.Listados_ListBox_CancionesMasIntepretadas.Location = New System.Drawing.Point(225, 180)
+        Me.Listados_ListBox_CancionesMasIntepretadas.Name = "Listados_ListBox_CancionesMasIntepretadas"
+        Me.Listados_ListBox_CancionesMasIntepretadas.Size = New System.Drawing.Size(126, 108)
+        Me.Listados_ListBox_CancionesMasIntepretadas.TabIndex = 11
+        '
         'FormListados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(760, 368)
+        Me.Controls.Add(Me.Listados_ListBox_CancionesMasIntepretadas)
         Me.Controls.Add(Me.Listados_Label_CancionesMasInterpretadas)
         Me.Controls.Add(Me.Listados_Label_FiltrarArtista)
         Me.Controls.Add(Me.Listados_ListBox_PaisesMasConciertos)
@@ -162,4 +172,5 @@ Partial Class FormListados
     Friend WithEvents Listados_ListBox_PaisesMasConciertos As ListBox
     Friend WithEvents Listados_Label_FiltrarArtista As Label
     Friend WithEvents Listados_Label_CancionesMasInterpretadas As Label
+    Friend WithEvents Listados_ListBox_CancionesMasIntepretadas As ListBox
 End Class
