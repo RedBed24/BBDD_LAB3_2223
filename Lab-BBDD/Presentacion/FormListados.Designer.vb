@@ -23,7 +23,7 @@ Partial Class FormListados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Listados_ComboBox_Artista = New System.Windows.Forms.ComboBox()
-        Me.Listados_ListBox_CancionesMasInterpretadas = New System.Windows.Forms.ListBox()
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista = New System.Windows.Forms.ListBox()
         Me.Listados_ListBox_AlbumesMasInterpretados = New System.Windows.Forms.ListBox()
         Me.Listados_ListBox_ArtistasAlbumCompleto = New System.Windows.Forms.ListBox()
         Me.Listados_DateTimePicker_FechaInicio = New System.Windows.Forms.DateTimePicker()
@@ -43,15 +43,14 @@ Partial Class FormListados
         Me.Listados_ComboBox_Artista.Size = New System.Drawing.Size(255, 24)
         Me.Listados_ComboBox_Artista.TabIndex = 0
         '
-        'Listados_ListBox_CancionesMasInterpretadas
+        'Listados_ListBox_CancionesMasInterpretadasArtista
         '
-        Me.Listados_ListBox_CancionesMasInterpretadas.FormattingEnabled = True
-        Me.Listados_ListBox_CancionesMasInterpretadas.ItemHeight = 16
-        Me.Listados_ListBox_CancionesMasInterpretadas.Location = New System.Drawing.Point(15, 85)
-        Me.Listados_ListBox_CancionesMasInterpretadas.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Listados_ListBox_CancionesMasInterpretadas.Name = "Listados_ListBox_CancionesMasInterpretadas"
-        Me.Listados_ListBox_CancionesMasInterpretadas.Size = New System.Drawing.Size(255, 100)
-        Me.Listados_ListBox_CancionesMasInterpretadas.TabIndex = 1
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.FormattingEnabled = True
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.Location = New System.Drawing.Point(11, 69)
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.Name = "Listados_ListBox_CancionesMasInterpretadasArtista"
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.Size = New System.Drawing.Size(192, 82)
+        Me.Listados_ListBox_CancionesMasInterpretadasArtista.TabIndex = 1
         '
         'Listados_ListBox_AlbumesMasInterpretados
         '
@@ -142,7 +141,7 @@ Partial Class FormListados
         Me.Controls.Add(Me.Listados_DateTimePicker_FechaInicio)
         Me.Controls.Add(Me.Listados_ListBox_ArtistasAlbumCompleto)
         Me.Controls.Add(Me.Listados_ListBox_AlbumesMasInterpretados)
-        Me.Controls.Add(Me.Listados_ListBox_CancionesMasInterpretadas)
+        Me.Controls.Add(Me.Listados_ListBox_CancionesMasInterpretadasArtista)
         Me.Controls.Add(Me.Listados_ComboBox_Artista)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -154,7 +153,7 @@ Partial Class FormListados
     End Sub
 
     Friend WithEvents Listados_ComboBox_Artista As ComboBox
-    Friend WithEvents Listados_ListBox_CancionesMasInterpretadas As ListBox
+    Friend WithEvents Listados_ListBox_CancionesMasInterpretadasArtista As ListBox
     Friend WithEvents Listados_ListBox_AlbumesMasInterpretados As ListBox
     Friend WithEvents Listados_ListBox_ArtistasAlbumCompleto As ListBox
     Friend WithEvents Listados_DateTimePicker_FechaInicio As DateTimePicker

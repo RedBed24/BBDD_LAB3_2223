@@ -51,7 +51,7 @@
         canciones.LeerCancionesCuentaMasInterpretadas(artista)
 
         For Each cancion As Cancion In canciones.CancioDAO.Canciones
-            Listados_ListBox_CancionesMasInterpretadas.Items.Add(cancion)
+            Listados_ListBox_CancionesMasInterpretadasArtista.Items.Add(cancion)
         Next
     End Sub
 
