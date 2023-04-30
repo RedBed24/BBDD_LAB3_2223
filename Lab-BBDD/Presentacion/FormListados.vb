@@ -4,6 +4,7 @@
         Try
             CargarArtistas()
             CargarArtistasAlbumCompleto()
+            CargarCancionesMasInterpretadas()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
@@ -42,6 +43,16 @@
 
         For Each artista As Artista In artistat.ArtistDAO.Artistas
             Listados_ComboBox_Artista.Items.Add(artista)
+        Next
+    End Sub
+
+    Private Sub CargarCancionesMasInterpretadas()
+        Dim canciones As New Cancion
+
+        canciones.LeerCancionesCuentaMasInterpretadas()
+
+        For Each cancion In canciones.CancioDAO.Canciones
+            Listados_ComboBox_Artista.Items.Add(cancion)
         Next
     End Sub
 
