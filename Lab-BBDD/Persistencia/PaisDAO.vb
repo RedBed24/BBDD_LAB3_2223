@@ -43,7 +43,7 @@
         Dim tabla As Collection = AgenteBD.ObtenerAgente().Leer("
             select count(*) || ': ' || p.NombrePais  
             from paises p, sitio s, conciertos c
-            where p.idPais = s.País and s.idSitio = c.Sitio
+            where p.idPais = s.País and s.idSitio = c.Sitio and c.FechaConcierto between '" & fechaInicio & "' and '" & fechaFin & "
             group by p.idPais
             order by count(*) desc;
             ")
