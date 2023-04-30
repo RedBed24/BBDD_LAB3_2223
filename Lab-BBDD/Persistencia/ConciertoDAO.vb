@@ -94,7 +94,7 @@
 
         tabla = AgenteBD.ObtenerAgente().Leer(
                 "select c.idConcierto, c.Artista, c.Sitio, c.FechaConcierto
-                from conciertos c, sitios s
+                from conciertos c, sitio s
                 where s.País = '" & pais.idPais & "' and s.idSitio = c.Sitio and c.Artista = " & artista.IdArtista & ";"
                 )
 
