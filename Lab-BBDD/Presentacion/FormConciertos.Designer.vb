@@ -214,7 +214,7 @@ Partial Class FormConciertos
         Me.Concierto_Button_MoverArriba.Name = "Concierto_Button_MoverArriba"
         Me.Concierto_Button_MoverArriba.Size = New System.Drawing.Size(26, 23)
         Me.Concierto_Button_MoverArriba.TabIndex = 58
-        Me.Concierto_Button_MoverArriba.Text = "^"
+        Me.Concierto_Button_MoverArriba.Text = "↑"
         Me.Concierto_Button_MoverArriba.UseVisualStyleBackColor = True
         '
         'Concierto_Button_MoverAbajo
@@ -223,7 +223,7 @@ Partial Class FormConciertos
         Me.Concierto_Button_MoverAbajo.Name = "Concierto_Button_MoverAbajo"
         Me.Concierto_Button_MoverAbajo.Size = New System.Drawing.Size(26, 23)
         Me.Concierto_Button_MoverAbajo.TabIndex = 59
-        Me.Concierto_Button_MoverAbajo.Text = "v"
+        Me.Concierto_Button_MoverAbajo.Text = "↓"
         Me.Concierto_Button_MoverAbajo.UseVisualStyleBackColor = True
         '
         'Label1

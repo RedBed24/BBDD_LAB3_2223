@@ -259,5 +259,85 @@
         End If
     End Sub
 
+    Private Sub Concierto_ListBox_CancionesArtista_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Concierto_ListBox_CancionesArtista.SelectedIndexChanged
+        ' para que a la hora de mover canciones, no se perjudiquen el uno al otro
+        Concierto_ListBox_CancionesSeleccionadas.SelectedIndex = -1
+    End Sub
+
+    Private Sub Concierto_ListBox_CancionesSeleccionadas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Concierto_ListBox_CancionesSeleccionadas.SelectedIndexChanged
+        Concierto_ListBox_CancionesArtista.SelectedIndex = -1
+    End Sub
+
+
+    '
+    '
+    '
+    '
+    '
+    '
+    '
+    ' FUNCIONES PARA SELECCIONAR CANCIONES
+    '
+
+    '
+    ' Botones
+    '
+
+    Private Sub Concierto_Button_MoverAbajo_Click(sender As Object, e As EventArgs) Handles Concierto_Button_MoverAbajo.Click
+        If Concierto_ListBox_CancionesArtista.SelectedItem Is Nothing And Concierto_ListBox_CancionesSeleccionadas.SelectedItem Is Nothing Then
+            Exit Sub
+        ElseIf Concierto_ListBox_CancionesSeleccionadas.SelectedItem IsNot Nothing Then
+            CambiarOrden(Concierto_ListBox_CancionesSeleccionadas.SelectedItem, +1)
+        Else
+            MoverAListBoxSeleccionadas(Concierto_ListBox_CancionesArtista.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub Concierto_Button_MoverArriba_Click(sender As Object, e As EventArgs) Handles Concierto_Button_MoverArriba.Click
+        If Concierto_ListBox_CancionesArtista.SelectedItem Is Nothing And Concierto_ListBox_CancionesSeleccionadas.SelectedItem Is Nothing Then
+            Exit Sub
+        ElseIf Concierto_ListBox_CancionesSeleccionadas.SelectedItem IsNot Nothing Then
+            ' ya se encarga de mover a ListBox Artista
+            CambiarOrden(Concierto_ListBox_CancionesSeleccionadas.SelectedItem, -1)
+        End If
+    End Sub
+
+    '
+    ' Auxiliares
+    '
+
+    Private Sub MoverAListBoxSeleccionadas(cancion As Cancion)
+        Concierto_ListBox_CancionesArtista.Items.Remove(cancion)
+        Concierto_ListBox_CancionesSeleccionadas.Items.Insert(0, cancion)
+
+        Concierto_ListBox_CancionesSeleccionadas.SelectedIndex = 0
+    End Sub
+
+    Private Sub MoverAListBoxArtista(cancion As Cancion)
+        Concierto_ListBox_CancionesSeleccionadas.Items.Remove(cancion)
+        Concierto_ListBox_CancionesArtista.Items.Add(cancion)
+
+        Concierto_ListBox_CancionesArtista.SelectedIndex = Concierto_ListBox_CancionesArtista.Items.Count - 1
+    End Sub
+
+    Private Sub CambiarOrden(cancion As Cancion, diferencia As Integer)
+        Dim index As Integer = Concierto_ListBox_CancionesSeleccionadas.Items.IndexOf(cancion)
+
+        If index + diferencia < 0 Then
+            MoverAListBoxArtista(cancion)
+            Exit Sub
+        ElseIf index + diferencia >= Concierto_ListBox_CancionesSeleccionadas.Items.Count Then
+            ' Esto está hecho para que la diferencia pueda ser general, pero la idea es usarla de 1 en 1
+            diferencia = Concierto_ListBox_CancionesSeleccionadas.Items.Count - index - 1
+        End If
+
+        Dim otracancion As Cancion = Concierto_ListBox_CancionesSeleccionadas.Items.Item(index + diferencia)
+
+        Concierto_ListBox_CancionesSeleccionadas.Items.Item(index + diferencia) = cancion
+        Concierto_ListBox_CancionesSeleccionadas.Items.Item(index) = otracancion
+
+        Concierto_ListBox_CancionesSeleccionadas.SelectedIndex = index + diferencia
+    End Sub
+
 End Class
 
