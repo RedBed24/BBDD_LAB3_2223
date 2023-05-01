@@ -55,6 +55,9 @@
     ''' <returns>El número de tuplas insertadas en la tabla setlist</returns>
     Public Function InsertarConcierto() As Integer
         Me.ConciertDAO.Insertar(Me)
+        ' NO TENENEMOS EL ID, PERO YA QUE ES LA ÚLTIMA AÑADIDA, SERÁ LA DEL ID MÁS ALTO
+        Me.ConciertDAO.LeerTodo()
+        idConcierto = CType(Me.ConciertDAO.Conciertos.Item(Me.ConciertDAO.Conciertos.Count), Concierto).idConcierto
         ' si no se ha podido añaidir el concierto, intentar insertar las setlist dará un fallo por la integridad referencial
         Return Me.SetlisDAO.Insertar(Me)
     End Function
