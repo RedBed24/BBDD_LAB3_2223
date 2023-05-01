@@ -92,7 +92,7 @@
         albumes.LeerAlbumesMasInterpretadosArtista(artista)
 
         For Each album In albumes.AlbuDAO.Albumes
-            Listados_ListBox_AlbumesMasInterpretados.Items.Add(artista)
+            Listados_ListBox_AlbumesMasInterpretados.Items.Add(album)
         Next
     End Sub
 
