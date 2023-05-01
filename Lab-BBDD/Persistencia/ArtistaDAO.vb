@@ -102,6 +102,7 @@
                 If artistasAlbumCompleto.ElementAt(i).IdArtista = album.Artist.IdArtista Then
                     yaAñadido = True
                 End If
+                i += 1
             End While
             ' sólo lo añadimos si no estaba ya añadido
             If Not yaAñadido Then
@@ -137,12 +138,14 @@
                 If album.ElementAt(i).idCancion = concierto.SetList.ElementAt(j).idCancion Then
                     encontrada = True
                 End If
+                j += 1
             End While
             ' si no la hemos encontrado
             If Not encontrada Then
                 ' no está completo
                 complet = False
             End If
+            i += 1
         End While
 
         Return completo
