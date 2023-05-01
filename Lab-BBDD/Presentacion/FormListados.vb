@@ -81,7 +81,7 @@
 
         canciones.LeerCancionesCuentaMasInterpretadas(artista)
 
-        For Each cancion As Cancion In canciones.CancioDAO.Canciones
+        For Each cancion In canciones.CancioDAO.Canciones
             Listados_ListBox_CancionesMasInterpretadasArtista.Items.Add(cancion)
         Next
     End Sub
@@ -91,7 +91,7 @@
 
         albumes.LeerAlbumesMasInterpretadosArtista(artista)
 
-        For Each album As Album In albumes.AlbuDAO.Albumes
+        For Each album In albumes.AlbuDAO.Albumes
             Listados_ListBox_AlbumesMasInterpretados.Items.Add(artista)
         Next
     End Sub
