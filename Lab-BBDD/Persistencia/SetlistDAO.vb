@@ -21,14 +21,14 @@
         Dim SQL As String = "insert into setlists values "
 
         ' Por cada canción, excepto la última (para que no ponga una , al final)
-        For i As Integer = 0 To concierto.SetList.Count - 1
-            Dim cancion As Cancion = concierto.SetList.ElementAt(i)
+        For i As Integer = 0 To concierto.SetList.Count - 2
+            Dim cancion As Cancion = concierto.SetList.Item(i)
             ' añadimos la tupla de esta setlist a la sentencia de insert con el orden que le corresponde
             SQL += "('" & concierto.idConcierto & "', '" & cancion.idCancion & "', " & i & "), "
         Next
 
         ' Debe devolver concierto.SetList.Count
-        Return AgenteBD.ObtenerAgente().Modificar(SQL & "('" & concierto.idConcierto & "', '" & concierto.SetList.ElementAt(concierto.SetList.Count).idCancion & "', '" & concierto.SetList.Count & "');")
+        Return AgenteBD.ObtenerAgente().Modificar(SQL & "('" & concierto.idConcierto & "', '" & concierto.SetList.ElementAt(concierto.SetList.Count - 1).idCancion & "', '" & concierto.SetList.Count - 1 & "');")
     End Function
 
     ' Para actualizar la setlist del concierto es mucho más fácil borrar la setlist y añadirla de nuevo para no tener que ir canción a canción
