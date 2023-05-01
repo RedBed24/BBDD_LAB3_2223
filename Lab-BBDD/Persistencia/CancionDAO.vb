@@ -81,7 +81,7 @@
         Dim tabla As Collection
 
         tabla = AgenteBD.ObtenerAgente().Leer("
-            select count(*) || ': ' || c.NombreCancion
+            select count(*), c.NombreCancion
             from canciones c, setlists s
             where c.idCancion = s.Canción
             group by c.idCancion
@@ -89,7 +89,7 @@
         ")
 
         For Each tupla As Collection In tabla
-            Canciones.Add(tupla(1))
+            Canciones.Add(tupla(1) & ": " & tupla(2))
         Next
 
     End Sub
@@ -98,7 +98,7 @@
         Dim tabla As Collection
 
         tabla = AgenteBD.ObtenerAgente().Leer("
-            select count(*) || ': ' || c.NombreCancion
+            select count(*), c.NombreCancion
             from canciones c, albumes a, setlists s
             where c.Album = a.idAlbum and a.Artista = " & artista.IdArtista & " and c.idCancion = s.Canción
             group by c.idCancion
@@ -106,7 +106,7 @@
         ")
 
         For Each tupla As Collection In tabla
-            Canciones.Add(tupla(1))
+            Canciones.Add(tupla(1) & ": " & tupla(2))
         Next
 
     End Sub

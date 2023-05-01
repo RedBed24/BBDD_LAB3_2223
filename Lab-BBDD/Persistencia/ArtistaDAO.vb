@@ -153,7 +153,7 @@
 
     Public Sub LeerArtistasMasConciertos(fechaInicio As Date, fechaFin As Date)
         Dim tabla As Collection = AgenteBD.ObtenerAgente().Leer("
-            select count(*) || ': ' || a.IdArtista  
+            select count(*), a.IdArtista  
             from conciertos c, artistas a
             where c.Artista = a.IdArtista and c.FechaConcierto between '" & fechaInicio.ToString("yyyy-MM-dd") & "' and '" & fechaFin.ToString("yyyy-MM-dd") & "'
             group by a.IdArtista
@@ -161,7 +161,7 @@
             ")
 
         For Each tupla As Collection In tabla
-            Me.Artistas.Add(tupla(1))
+            Me.Artistas.Add(tupla(1) & ": " & tupla(2))
         Next
     End Sub
 
