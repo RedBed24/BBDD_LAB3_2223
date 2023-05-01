@@ -138,8 +138,8 @@
         End Try
 
         MessageBox.Show(conciertoAnadir.ToString & " añadido correctamente")
-        Concierto_Button_VerTodosConcierto.PerformClick()
-        Concierto_ListBox_Concierto.SelectedIndex = Concierto_ListBox_Concierto.Items.Count - 1
+        Concierto_ListBox_Concierto.Items.Add(conciertoAnadir)
+        Concierto_ListBox_Concierto.SelectedItem = conciertoAnadir
     End Sub
 
     Private Sub Concierto_Button_Actualizar_Click(sender As Object, e As EventArgs) Handles Concierto_Button_Actualizar.Click
