@@ -62,7 +62,7 @@
         artistat.LeerArtistasQueInterpretaronUnAlbumCompleto()
 
         For Each artista As Artista In artistat.ArtistDAO.Artistas
-            Listados_ComboBox_Artista.Items.Add(artista)
+            Listados_ListBox_ArtistasAlbumCompleto.Items.Add(artista)
         Next
     End Sub
 
@@ -72,7 +72,7 @@
         canciones.LeerCancionesCuentaMasInterpretadas()
 
         For Each cancion In canciones.CancioDAO.Canciones
-            Listados_ComboBox_Artista.Items.Add(cancion)
+            Listados_ListBox_CancionesMasIntepretadas.Items.Add(cancion)
         Next
     End Sub
 
