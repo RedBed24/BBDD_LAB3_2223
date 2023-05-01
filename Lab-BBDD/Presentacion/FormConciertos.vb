@@ -173,6 +173,7 @@
         conciertomodificar.Artista = artistaNuevo
         conciertomodificar.Sitio = sitioNuevo
         conciertomodificar.FechaConcierto = fecha
+        conciertomodificar.SetList = setlist
 
         Try
             conciertomodificar.ActualizarConcierto()
