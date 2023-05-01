@@ -52,10 +52,10 @@
 
     Public Function Insertar(ByVal concierto As Concierto) As Integer
         ' No le pasamos una clave porque esta la genera la bbdd automáticamente
-        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (Artista, Sitio, FechaConcierto) values ('" & concierto.Artista.IdArtista & "', '" & concierto.Sitio.idSitio & "', '" & concierto.FechaConcierto.ToString & "');")
+        Return AgenteBD.ObtenerAgente().Modificar("insert into " & nombreTabla & " (Artista, Sitio, FechaConcierto) values ('" & concierto.Artista.IdArtista & "', '" & concierto.Sitio.idSitio & "', '" & concierto.FechaConcierto.ToString("yyyy-MM-dd") & "');")
     End Function
     Public Function Actualizar(ByVal concierto As Concierto) As Integer
-        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set Artista='" & concierto.Artista.IdArtista & "', Sitio ='" & concierto.Sitio.idSitio & "', FechaConcierto = '" & concierto.FechaConcierto.ToString & "' where " & campoIdentificador & "='" & concierto.idConcierto & "';")
+        Return AgenteBD.ObtenerAgente().Modificar("update " & nombreTabla & " set Artista='" & concierto.Artista.IdArtista & "', Sitio ='" & concierto.Sitio.idSitio & "', FechaConcierto = '" & concierto.FechaConcierto.ToString("yyyy-MM-dd") & "' where " & campoIdentificador & "='" & concierto.idConcierto & "';")
     End Function
 
     Public Function Borrar(ByVal concierto As Concierto) As Integer
