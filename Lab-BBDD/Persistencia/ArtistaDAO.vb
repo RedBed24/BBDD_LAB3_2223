@@ -161,7 +161,7 @@
             ")
 
         For Each tupla As Collection In tabla
-            Me.Artistas.Add(tupla.ToString)
+            Me.Artistas.Add(tupla(1))
         Next
     End Sub
 

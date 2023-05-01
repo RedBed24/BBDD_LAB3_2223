@@ -49,7 +49,7 @@
             ")
 
         For Each tupla As Collection In tabla
-            Me.Paises.Add(tupla.ToString)
+            Me.Paises.Add(tupla(1))
         Next
     End Sub
 

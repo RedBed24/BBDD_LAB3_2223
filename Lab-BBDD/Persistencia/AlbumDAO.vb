@@ -67,7 +67,7 @@
             ")
 
         For Each tupla As Collection In tabla
-            Me.Albumes.Add(tupla)
+            Me.Albumes.Add(tupla(1))
         Next
     End Sub
 

@@ -89,7 +89,7 @@
         ")
 
         For Each tupla As Collection In tabla
-            Canciones.Add(tupla)
+            Canciones.Add(tupla(1))
         Next
 
     End Sub
@@ -106,7 +106,7 @@
         ")
 
         For Each tupla As Collection In tabla
-            Canciones.Add(tupla)
+            Canciones.Add(tupla(1))
         Next
 
     End Sub
