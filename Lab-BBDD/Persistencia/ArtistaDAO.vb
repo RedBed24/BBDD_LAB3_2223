@@ -124,8 +124,8 @@
     ''' <param name="concierto">Concierto con las canciones</param>
     ''' <returns>True si el album ha sido completamente cantado en el concierto. False si falta alguna canción del album dentro del concierto</returns>
     Private Function completo(album As List(Of Cancion), concierto As Concierto) As Boolean
-        ' se asume completo
-        Dim complet = True
+        ' se asume completo si es que tiene canciones
+        Dim complet = album.Count > 0
         Dim i = 0
         ' para cada canción del album
         While complet And i < album.Count
@@ -148,7 +148,7 @@
             i += 1
         End While
 
-        Return completo
+        Return complet
     End Function
 
     Public Sub LeerArtistasMasConciertos(fechaInicio As Date, fechaFin As Date)
