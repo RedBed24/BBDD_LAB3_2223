@@ -80,7 +80,7 @@
         End Try
 
         For Each concierto As Concierto In conciertos.ConciertDAO.Conciertos
-            Navegacion_ListBox_ConciertosNav2.Items.Add(concierto)
+            Navegacion_ListBox_ConciertosNav1.Items.Add(concierto)
         Next
 
     End Sub
