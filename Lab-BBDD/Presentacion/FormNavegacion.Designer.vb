@@ -120,18 +120,18 @@ Partial Class FormNavegacion
         Me.Navegaciones_Label_ConciertosNav1.AutoSize = True
         Me.Navegaciones_Label_ConciertosNav1.Location = New System.Drawing.Point(12, 124)
         Me.Navegaciones_Label_ConciertosNav1.Name = "Navegaciones_Label_ConciertosNav1"
-        Me.Navegaciones_Label_ConciertosNav1.Size = New System.Drawing.Size(57, 13)
+        Me.Navegaciones_Label_ConciertosNav1.Size = New System.Drawing.Size(127, 13)
         Me.Navegaciones_Label_ConciertosNav1.TabIndex = 9
-        Me.Navegaciones_Label_ConciertosNav1.Text = "Conciertos"
+        Me.Navegaciones_Label_ConciertosNav1.Text = "Conciertos Navegación 1"
         '
         'Navegaciones_Label_ConciertosNav2
         '
         Me.Navegaciones_Label_ConciertosNav2.AutoSize = True
         Me.Navegaciones_Label_ConciertosNav2.Location = New System.Drawing.Point(393, 124)
         Me.Navegaciones_Label_ConciertosNav2.Name = "Navegaciones_Label_ConciertosNav2"
-        Me.Navegaciones_Label_ConciertosNav2.Size = New System.Drawing.Size(57, 13)
+        Me.Navegaciones_Label_ConciertosNav2.Size = New System.Drawing.Size(127, 13)
         Me.Navegaciones_Label_ConciertosNav2.TabIndex = 10
-        Me.Navegaciones_Label_ConciertosNav2.Text = "Conciertos"
+        Me.Navegaciones_Label_ConciertosNav2.Text = "Conciertos Navegación 2"
         '
         'Navegacion_Label_CancionesConcierto
         '
